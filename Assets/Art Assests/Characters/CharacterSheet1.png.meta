@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 83d16b7fb9800ca489d1e67339b5588d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FatAbomination_Hook
+    21300002: FatAbomination_Thigh
+    21300004: FatAbomination_Body
+    21300006: FatAbomination_Shoulder
+    21300008: FatAbomination_Head
+    21300010: ThickSuccubus_Head
+    21300012: ThickSuccubus_Shoulder
+    21300014: ThickSuccubus_LArm
+    21300016: ThickSuccubus_RArm
+    21300018: FatAbomination_Foot
+    21300020: FatAbomination_Arm
+    21300022: ThickSuccubus_Thigh
+    21300024: ThickSuccubus_Body
+    21300026: ThickSuccubus_Foot
+    21300028: BabeWarrior_Sword
+    21300030: BabeWarrior_Head
+    21300032: BabeWarrior_Boobs
+    21300034: BabeWarrior_Shoulder
+    21300036: BabeWarrior_Hair
+    21300038: BabeWarrior_Thigh
+    21300040: BabeWarrior_LArm
+    21300042: Ghoul_Head
+    21300044: Ghoul_Body
+    21300046: BabeWarrior_Foot
+    21300048: BabeWarrior_RArm
+    21300050: Ghoul_Shoulder
+    21300052: Ghoul_Foot
+    21300054: BabeWarrior_Body
+    21300056: Big_LilD_Head
+    21300058: Big_LilD_Shoulder
+    21300060: Big_LilD_Arm
+    21300062: Big_LilD_WingBone2
+    21300064: Big_LilD_WingBone1
+    21300066: Big_LilD_Hand
+    21300068: Big_LilD_Wing
+    21300070: Big_LilD_Scyth
+    21300072: Big_LilD_Body
+    21300074: LilD_Head
+    21300076: LilD_Arm
+    21300078: LilD_Shoulder
+    21300080: LilD_Body
+    21300082: LilD_Head_Defeated
+    21300084: LilD_Body_Defeated
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FatAbomination_Hook
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 2693
+        width: 94
+        height: 237
+      alignment: 9
+      pivot: {x: .838636696, y: .937595785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FatAbomination_Thigh
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 2839
+        width: 86
+        height: 99
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FatAbomination_Body
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 2730
+        width: 248
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FatAbomination_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 2815
+        width: 70
+        height: 125
+      alignment: 9
+      pivot: {x: .362239301, y: .890874982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FatAbomination_Head
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 2739
+        width: 163
+        height: 185
+      alignment: 9
+      pivot: {x: .723178625, y: .217681065}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_Head
+      rect:
+        serializedVersion: 2
+        x: 2597
+        y: 2796
+        width: 151
+        height: 138
+      alignment: 9
+      pivot: {x: .668450534, y: .123511992}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 2781
+        y: 2879
+        width: 35
+        height: 68
+      alignment: 9
+      pivot: {x: .540527344, y: .854599893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_LArm
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 2868
+        width: 43
+        height: 78
+      alignment: 9
+      pivot: {x: .681424856, y: .886421382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_RArm
+      rect:
+        serializedVersion: 2
+        x: 2929
+        y: 2877
+        width: 41
+        height: 78
+      alignment: 9
+      pivot: {x: .603783607, y: .899485171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FatAbomination_Foot
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 2724
+        width: 82
+        height: 65
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FatAbomination_Arm
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 2633
+        width: 78
+        height: 142
+      alignment: 9
+      pivot: {x: .675332606, y: .90461272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_Thigh
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 2703
+        width: 52
+        height: 60
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_Body
+      rect:
+        serializedVersion: 2
+        x: 2781
+        y: 2649
+        width: 172
+        height: 187
+      alignment: 9
+      pivot: {x: .263117254, y: .299744636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ThickSuccubus_Foot
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 2641
+        width: 49
+        height: 39
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Sword
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 19
+        width: 183
+        height: 488
+      alignment: 9
+      pivot: {x: .440585613, y: .115992822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Head
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 317
+        width: 144
+        height: 142
+      alignment: 9
+      pivot: {x: .673661768, y: .132469714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Boobs
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 299
+        width: 97
+        height: 65
+      alignment: 9
+      pivot: {x: .55365622, y: .840307176}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 286
+        width: 46
+        height: 82
+      alignment: 9
+      pivot: {x: .406157106, y: .88354528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Hair
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 114
+        width: 150
+        height: 171
+      alignment: 9
+      pivot: {x: .417777091, y: .944518864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Thigh
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 113
+        width: 62
+        height: 70
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_LArm
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 173
+        width: 51
+        height: 92
+      alignment: 9
+      pivot: {x: .705559313, y: .922290981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ghoul_Head
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 175
+        width: 137
+        height: 140
+      alignment: 9
+      pivot: {x: .78666389, y: .248006001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ghoul_Body
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 159
+        width: 189
+        height: 145
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Foot
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 61
+        width: 59
+        height: 46
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_RArm
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 56
+        width: 51
+        height: 92
+      alignment: 9
+      pivot: {x: .705559254, y: .922290981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ghoul_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 8
+        width: 90
+        height: 99
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ghoul_Foot
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 15
+        width: 82
+        height: 65
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BabeWarrior_Body
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 137
+        width: 120
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Head
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 2266
+        width: 232
+        height: 186
+      alignment: 9
+      pivot: {x: .739827573, y: .221490681}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 2221
+        width: 94
+        height: 309
+      alignment: 9
+      pivot: {x: .485903472, y: .774451196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Arm
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1635
+        width: 180
+        height: 500
+      alignment: 9
+      pivot: {x: .550959945, y: .960934579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_WingBone2
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 537
+        width: 93
+        height: 496
+      alignment: 9
+      pivot: {x: .552809834, y: .094023183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_WingBone1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 643
+        width: 253
+        height: 343
+      alignment: 9
+      pivot: {x: .111752473, y: .924790263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Hand
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 2302
+        width: 133
+        height: 239
+      alignment: 9
+      pivot: {x: .957493365, y: .960575879}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Wing
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 574
+        width: 502
+        height: 906
+      alignment: 9
+      pivot: {x: .0466966368, y: .968004107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Scyth
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 829
+        width: 808
+        height: 1553
+      alignment: 9
+      pivot: {x: .892843127, y: .473340571}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_Body
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1079
+        width: 561
+        height: 1105
+      alignment: 9
+      pivot: {x: .380897075, y: .00536954729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LilD_Head
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 2719
+        width: 173
+        height: 215
+      alignment: 9
+      pivot: {x: .709812045, y: .28293854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LilD_Arm
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 2580
+        width: 64
+        height: 102
+      alignment: 9
+      pivot: {x: .633441925, y: .921195209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LilD_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 2583
+        width: 51
+        height: 90
+      alignment: 9
+      pivot: {x: .362094045, y: .840497494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LilD_Body
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 2580
+        width: 161
+        height: 233
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LilD_Head_Defeated
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 2744
+        width: 192
+        height: 232
+      alignment: 9
+      pivot: {x: .894632995, y: .344014138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LilD_Body_Defeated
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2506
+        width: 276
+        height: 209
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

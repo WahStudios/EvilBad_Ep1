@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 12a28a65ed1e845418ee95df12d68740
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FireBall
+    21300002: GreenFireBall
+    21300004: SpecialEffects1_2
+    21300006: SpecialEffects1_3
+    21300008: SuccubusSpring
+    21300010: SkullPile
+    21300012: BossGate
+    21300014: GoldCoin
+    21300016: GodAlter
+    21300018: ChaosAlter
+    21300020: TreasureChest
+    21300022: TresureChest_Broken
+    21300024: SuccubusSpring_Explode3
+    21300026: SuccubusSpring_Explode2
+    21300028: SuccubusSpring_Explode1
+    21300030: Snot
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FireBall
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2716
+        width: 212
+        height: 213
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBall
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2437
+        width: 211
+        height: 213
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpecialEffects1_2
+      rect:
+        serializedVersion: 2
+        x: 2733
+        y: 278
+        width: 211
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpecialEffects1_3
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 0
+        width: 212
+        height: 213
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SuccubusSpring
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 2062
+        width: 246
+        height: 247
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SkullPile
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1743
+        width: 278
+        height: 239
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BossGate
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1602
+        width: 64
+        height: 389
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GoldCoin
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1711
+        width: 248
+        height: 252
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GodAlter
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 1644
+        width: 299
+        height: 290
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChaosAlter
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1634
+        width: 224
+        height: 333
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TreasureChest
+      rect:
+        serializedVersion: 2
+        x: 1977
+        y: 1645
+        width: 310
+        height: 207
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TresureChest_Broken
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1645
+        width: 309
+        height: 67
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SuccubusSpring_Explode3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2091
+        width: 281
+        height: 277
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SuccubusSpring_Explode2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 2073
+        width: 276
+        height: 272
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SuccubusSpring_Explode1
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 2074
+        width: 269
+        height: 265
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Snot
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 2463
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
