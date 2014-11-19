@@ -10,46 +10,25 @@ Assets/Ferr/2DTerrain/TerrainMaterials/CaveTerrainMaterial.prefab
 Assets/Ferr/2DTerrain/Examples/Assets/GooPlayer.prefab
 Assets/Ferr/2DTerrain/Examples/Assets/FerrlibLogoSmall.prefab
 Assets/Ferr/2DTerrain/Examples/Assets/Tumbleweed.prefab
-Assets/Art Assests/Characters/Monsters/Draugr/Draugr_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/Vampire/Vampire_Atlas.Tileset.prefab
-Assets/Art Assests/GUI Atlases/Tile Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tutorial/Tutorial_Area2/Materials/TutorialArea2.Tileset.prefab
-Assets/Art Assests/Item_Tiles/Item Atlas in GUI.prefab
-Assets/Art Assests/GameObjects/Objects_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/GraveTiles_.Tileset.prefab
-Assets/Art Assests/Characters/EvilBad/Summons/Ghoul/Ghoul_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area4_.Tileset.prefab
 Assets/Scenes/Levels/Tiles/GreeceTiles_.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area8_.Tileset.prefab
-Assets/Art Assests/Characters/Bosses/Ehecatl/Ehecatl_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/EgyptTiles.Tileset.prefab
 Assets/Scenes/Levels/Tutorial/Tutorial_Area1/Materials/Tutorial Level 1_Layout.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area1_ 3.Tileset.prefab
-Assets/Art Assests/Special Effects/Projectile Hit/ProjectileHit_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/IndiaTiles.Tileset.prefab
-Assets/Art Assests/Title Screen/Title Atlas.prefab
 Assets/Scenes/Levels/Tiles/VolcanoTiles.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/Gullinbursti/Gullinbursti_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/FatAbomination/FatAbomination_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/AztecTiles.Tileset.prefab
-Assets/Art Assests/GUI Atlases/Tile Atlas.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area7_.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area2_ 1.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area3_.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area2_.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/Eel/Eel_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/LivingSpartan/LivingSpartan_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area6.Tileset.prefab
-Assets/Art Assests/Characters/EvilBad/Summons/BustyWarrior/BabeWarrior_Atlas.Tileset.prefab
-Assets/Art Assests/Screen_UI/PC/ScreenUIAtlas.prefab
 Assets/Scenes/Levels/Tiles/NorseTiles.Tileset.prefab
-Assets/Art Assests/Characters/NPCs/Effreet/Effreet_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area1_ 2.Tileset.prefab
-Assets/Art Assests/Characters/Bosses/NoodleMonster/NoodleMonster_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/EvilBad/EvilBad_Atlas/EvilBad_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Bosses/Ra/Ra_Atlas.Tileset.prefab
 Assets/UniTile/Prefabs/UniTileManager.prefab
-Assets/Art Assests/GUI Atlases/GUI Atlas.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area1_.Tileset.prefab
 Assets/Puppet2D/Prefabs/Puppetman_Global_CTRL.prefab
 Assets/Prefabs/GreenFireBall.prefab
@@ -61,6 +40,16 @@ Assets/Prefabs/BossGate.prefab
 Assets/Prefabs/FatAbomination.prefab
 Assets/Prefabs/ThickSuccubus.prefab
 Assets/Art Assests/Textures/BoneGroundMaterial.prefab
+Assets/Prefabs/ChaosAlter.prefab
+Assets/Art Assests/Textures/KeeperLair_Texture.prefab
+Assets/Prefabs/EvilBad.prefab
+Assets/Art Assests/Textures/GreecGoldMaterial.prefab
+Assets/Prefabs/TreasureChest.prefab
+Assets/Prefabs/Gold.prefab
+Assets/Prefabs/LilD.prefab
+Assets/Prefabs/BabeWarrior.prefab
+Assets/Prefabs/Big_LilD.prefab
+Assets/Prefabs/Weapon_Sword.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -73,46 +62,25 @@ Assets/Ferr/2DTerrain/TerrainMaterials/ForegroundTerrainMaterial.prefab
 Assets/Ferr/2DTerrain/Examples/Assets/FerrlibLogoSmall.prefab
 Assets/Ferr/2DTerrain/Examples/Assets/Tumbleweed.prefab
 Assets/Ferr/2DTerrain/TerrainMaterials/SandTerrainMaterial.prefab
-Assets/Art Assests/Characters/Monsters/Draugr/Draugr_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/Vampire/Vampire_Atlas.Tileset.prefab
-Assets/Art Assests/GUI Atlases/Tile Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tutorial/Tutorial_Area2/Materials/TutorialArea2.Tileset.prefab
-Assets/Art Assests/Item_Tiles/Item Atlas in GUI.prefab
-Assets/Art Assests/GameObjects/Objects_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/GraveTiles_.Tileset.prefab
-Assets/Art Assests/Characters/EvilBad/Summons/Ghoul/Ghoul_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area4_.Tileset.prefab
 Assets/Scenes/Levels/Tiles/GreeceTiles_.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area8_.Tileset.prefab
-Assets/Art Assests/Characters/Bosses/Ehecatl/Ehecatl_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/EgyptTiles.Tileset.prefab
 Assets/Scenes/Levels/Tutorial/Tutorial_Area1/Materials/Tutorial Level 1_Layout.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area1_ 3.Tileset.prefab
-Assets/Art Assests/Special Effects/Projectile Hit/ProjectileHit_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/IndiaTiles.Tileset.prefab
-Assets/Art Assests/Title Screen/Title Atlas.prefab
 Assets/Scenes/Levels/Tiles/VolcanoTiles.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/Gullinbursti/Gullinbursti_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/FatAbomination/FatAbomination_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Tiles/AztecTiles.Tileset.prefab
-Assets/Art Assests/GUI Atlases/Tile Atlas.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area7_.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area2_ 1.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area3_.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area2_.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/Eel/Eel_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Monsters/LivingSpartan/LivingSpartan_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area6.Tileset.prefab
-Assets/Art Assests/Characters/EvilBad/Summons/BustyWarrior/BabeWarrior_Atlas.Tileset.prefab
-Assets/Art Assests/Screen_UI/PC/ScreenUIAtlas.prefab
 Assets/Scenes/Levels/Tiles/NorseTiles.Tileset.prefab
-Assets/Art Assests/Characters/NPCs/Effreet/Effreet_Atlas.Tileset.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area1_ 2.Tileset.prefab
-Assets/Art Assests/Characters/Bosses/NoodleMonster/NoodleMonster_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/EvilBad/EvilBad_Atlas/EvilBad_Atlas.Tileset.prefab
-Assets/Art Assests/Characters/Bosses/Ra/Ra_Atlas.Tileset.prefab
 Assets/UniTile/Prefabs/UniTileManager.prefab
-Assets/Art Assests/GUI Atlases/GUI Atlas.prefab
 Assets/Scenes/Levels/Greece/Materials/Greece_Area1_.Tileset.prefab
 Assets/Puppet2D/Prefabs/Puppetman_Global_CTRL.prefab
 Assets/Prefabs/GreenFireBall.prefab
@@ -124,3 +92,13 @@ Assets/Prefabs/BossGate.prefab
 Assets/Prefabs/FatAbomination.prefab
 Assets/Prefabs/ThickSuccubus.prefab
 Assets/Art Assests/Textures/BoneGroundMaterial.prefab
+Assets/Prefabs/ChaosAlter.prefab
+Assets/Art Assests/Textures/KeeperLair_Texture.prefab
+Assets/Prefabs/EvilBad.prefab
+Assets/Art Assests/Textures/GreecGoldMaterial.prefab
+Assets/Prefabs/TreasureChest.prefab
+Assets/Prefabs/Gold.prefab
+Assets/Prefabs/BabeWarrior.prefab
+Assets/Prefabs/LilD.prefab
+Assets/Prefabs/Big_LilD.prefab
+Assets/Prefabs/Weapon_Sword.prefab

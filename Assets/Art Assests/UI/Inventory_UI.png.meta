@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 26e313ecbb58ef84fbc0995e2abaed0c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Inventory_Equipment
+    21300002: Inventory_Stats
+    21300004: Inventory_ItemSlots
+    21300006: Inventory_StatsTab
+    21300008: Inventory_QuestTab
+    21300010: Inventory_InventoryTab
+    21300012: Inventory_InventoryScreen
+    21300014: Inventory_ItemBox1
+    21300016: Inventory_ItemBox2
+    21300018: Inventory_ItemBox3
+    21300020: Inventory_ItemBox4
+    21300022: Inventory_ItemBox5
+    21300024: Inventory_ItemBox6
+    21300026: Inventory_ItemBox7
+    21300028: Inventory_ItemBox8
+    21300030: Inventory_ItemBox9
+    21300032: Inventory_ItemBox10
+    21300034: Inventory_ItemBox11
+    21300036: Inventory_ItemBox12
+    21300038: Inventory_ItemBox13
+    21300040: Inventory_ItemBox14
+    21300042: Inventory_ItemBox15
+    21300044: Inventory_ItemBox16
+    21300046: Inventory_ItemBox17
+    21300048: Inventory_ItemBox18
+    21300050: Inventory_ItemBox19
+    21300052: Inventory_ItemBox20
+    21300054: Inventory_ItemBox21
+    21300056: Inventory_ItemBox22
+    21300058: Inventory_ItemBox23
+    21300060: Inventory_ItemBox24
+    21300062: Inventory_ItemBox25
+    21300064: Inventory_ItemBox26
+    21300066: Inventory_ItemBox27
+    21300068: Inventory_ItemBox28
+    21300070: Inventory_ItemBox29
+    21300072: Inventory_ItemBox30
+    21300074: Inventory_ItemBox31
+    21300076: Inventory_ItemBox32
+    21300078: Inventory_ItemBox33
+    21300080: Inventory_ItemBox34
+    21300082: Inventory_ItemBox35
+    21300084: Inventory_ItemBox36
+    21300086: Inventory_ItemBox37
+    21300088: Inventory_ItemBox38
+    21300090: Inventory_ItemBox39
+    21300092: Inventory_ItemBox40
+    21300094: Inventory_ItemBox41
+    21300096: Inventory_ItemBox42
+    21300098: Inventory_ItemBox43
+    21300100: Inventory_ItemBox44
+    21300102: Inventory_ItemBox45
+    21300104: Inventory_ItemBox46
+    21300106: Inventory_ItemBox47
+    21300108: Inventory_ItemBox48
+    21300110: Inventory_ItemBox49
+    21300112: Inventory_ItemBox50
+    21300114: Inventory_ItemBox51
+    21300116: Inventory_ItemBox52
+    21300118: Inventory_ItemBox53
+    21300120: Inventory_ItemBox54
+    21300122: Inventory_ItemBox55
+    21300124: Inventory_ItemBox56
+    21300126: Inventory_ItemBox57
+    21300128: Inventory_ItemBox58
+    21300130: Inventory_ItemBox59
+    21300132: Inventory_ItemBox60
+    21300134: Inventory_ItemBox61
+    21300136: Inventory_ItemBox62
+    21300138: Inventory_ItemBox63
+    21300140: Inventory_ItemBox64
+    21300142: Inventory_ItemBox65
+    21300144: Inventory_ItemBox66
+    21300146: Inventory_ItemBox67
+    21300148: Inventory_ItemBox68
+    21300150: Inventory_ItemBox69
+    21300152: Inventory_ItemBox70
+    21300154: Inventory_MapTab
+    21300156: Inventory_GodPowersTab
+    21300158: Inventory_ItemBoxSelect
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Inventory_StatsTab
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1715
+        width: 123
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_QuestTab
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1716
+        width: 241
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_InventoryTab
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1710
+        width: 208
+        height: 37
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_InventoryScreen
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 803
+        width: 1235
+        height: 895
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox2
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox3
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox5
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox6
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox7
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox8
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox9
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox10
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox11
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox12
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox13
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox14
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox15
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox16
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox17
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox18
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox19
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox20
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 507
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox21
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox22
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox23
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox24
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox25
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox26
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox27
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox28
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox29
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox30
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 407
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox31
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox32
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox33
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox34
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox35
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox36
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox37
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox38
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox39
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox40
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 307
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox41
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox42
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox43
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox44
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox45
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox46
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox47
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox48
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox49
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox50
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 207
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox51
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox52
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox53
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox54
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox55
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox56
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox57
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox58
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox59
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox60
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 105
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox61
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox62
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox63
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox64
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox65
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox66
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox67
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox68
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 9
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox69
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBox70
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 6
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_MapTab
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1716
+        width: 89
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_GodPowersTab
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1716
+        width: 241
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_ItemBoxSelect
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 609
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -85,7 +85,6 @@
      <None Include="Assets\Puppet2D\Shaders\unlitTransparentDouble.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\LitCommon.cginc" />
      <None Include="Assets\Ferr\Common\Data\cache.txt" />
-     <None Include="Assets\Art Assests\Screen_UI\PC\ScreenUI.txt" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColoredTintTransparent.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\LightmapColoredTransparent.shader" />
      <None Include="Assets\UniTile\ReadMe.txt" />
