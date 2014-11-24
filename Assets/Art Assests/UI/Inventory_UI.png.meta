@@ -82,6 +82,11 @@ TextureImporter:
     21300154: Inventory_MapTab
     21300156: Inventory_GodPowersTab
     21300158: Inventory_ItemBoxSelect
+    21300160: Inventory_InventoryTab_Selected
+    21300162: Inventory_StatsTab_Selected
+    21300164: Inventory_QuestTab_Selected
+    21300166: Inventory_MapTab_Selected
+    21300168: Inventory_GodPowersTab_Selected
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -892,6 +897,56 @@ TextureImporter:
         height: 77
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_InventoryTab_Selected
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1774
+        width: 208
+        height: 37
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_StatsTab_Selected
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1778
+        width: 123
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_QuestTab_Selected
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1780
+        width: 241
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_MapTab_Selected
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1780
+        width: 89
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Inventory_GodPowersTab_Selected
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1780
+        width: 241
+        height: 35
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

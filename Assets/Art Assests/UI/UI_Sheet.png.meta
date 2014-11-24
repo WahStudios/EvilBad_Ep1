@@ -28,6 +28,12 @@ TextureImporter:
     21300046: Default_SumonSquare
     21300048: EnemyHealthBox
     21300050: EnemyNameTemplate
+    21300052: DialogueBox_UI
+    21300054: ID_Ghoul
+    21300056: ID_FatAbomination
+    21300058: ID_BabeWarrior
+    21300060: ID_LilD
+    21300062: ID_EvilBad
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -238,6 +244,66 @@ TextureImporter:
         height: 70
       alignment: 5
       pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DialogueBox_UI
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 2087
+        width: 867
+        height: 347
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ID_Ghoul
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 1983
+        width: 181
+        height: 70
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ID_FatAbomination
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 1887
+        width: 470
+        height: 70
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ID_BabeWarrior
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 1794
+        width: 402
+        height: 69
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ID_LilD
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 1694
+        width: 152
+        height: 69
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ID_EvilBad
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 1601
+        width: 251
+        height: 70
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
