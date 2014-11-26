@@ -34,6 +34,7 @@ TextureImporter:
     21300058: ID_BabeWarrior
     21300060: ID_LilD
     21300062: ID_EvilBad
+    21300064: SelectArrow_Pressed
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -304,6 +305,16 @@ TextureImporter:
         height: 70
       alignment: 4
       pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SelectArrow_Pressed
+      rect:
+        serializedVersion: 2
+        x: 2469
+        y: 2368
+        width: 126
+        height: 145
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
