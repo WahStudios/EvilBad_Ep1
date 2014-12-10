@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ButtonOnDisable.cs" />
      <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_Animator.cs" />
      <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_DynamicMesh.cs" />
      <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_IPath.cs" />
@@ -76,10 +75,6 @@
      <Compile Include="Assets\Ferr\Common\Scripts\Ferr_JSON.cs" />
      <Compile Include="Assets\Ferr\Common\Scripts\Ferr_LambdaComparer.cs" />
      <Compile Include="Assets\Ferr\Common\Scripts\Ferr_LogoLock.cs" />
-     <Compile Include="Assets\ItemOnClickEventLeft.cs" />
-     <Compile Include="Assets\ItemOnClickEventRight.cs" />
-     <Compile Include="Assets\ItemScrollEvent.cs" />
-     <Compile Include="Assets\OnDisableSummonPanel.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_BakeAnimation.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_Bakedmesh.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_EditSkinWeights.cs" />
@@ -180,8 +175,17 @@
      <Compile Include="Assets\Puppet2D\Scripts\Triangulation\Util\FixedBitArray3.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Triangulation\Util\PointGenerator.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Triangulation\Util\PolygonGenerator.cs" />
+     <Compile Include="Assets\Scripts\ButtonOnDisable.cs" />
      <Compile Include="Assets\Scripts\EvilBadControl.cs" />
-     <Compile Include="Assets\Snap.cs" />
+     <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\ItemDatabase.cs" />
+     <Compile Include="Assets\Scripts\ItemOnClickEventLeft.cs" />
+     <Compile Include="Assets\Scripts\ItemOnClickEventRight.cs" />
+     <Compile Include="Assets\Scripts\ItemScrollEvent.cs" />
+     <Compile Include="Assets\Scripts\OnDisableSummonPanel.cs" />
+     <Compile Include="Assets\Scripts\SlotScript.cs" />
+     <Compile Include="Assets\Scripts\Snap.cs" />
      <Compile Include="Assets\UniTile\Scripts\ObjectLayer.cs" />
      <Compile Include="Assets\UniTile\Scripts\TileLayer.cs" />
      <Compile Include="Assets\UniTile\Scripts\TileLayerUtil.cs" />

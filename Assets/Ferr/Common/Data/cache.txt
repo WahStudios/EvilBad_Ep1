@@ -51,6 +51,7 @@ Assets/Prefabs/BabeWarrior.prefab
 Assets/Prefabs/Big_LilD.prefab
 Assets/Prefabs/Weapon_Sword.prefab
 Assets/Art Assests/Textures/MetalWorks.prefab
+Assets/Working Prefabs/Slot.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -104,3 +105,4 @@ Assets/Prefabs/LilD.prefab
 Assets/Prefabs/Big_LilD.prefab
 Assets/Prefabs/Weapon_Sword.prefab
 Assets/Art Assests/Textures/MetalWorks.prefab
+Assets/Working Prefabs/Slot.prefab
