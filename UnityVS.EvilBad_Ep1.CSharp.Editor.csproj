@@ -10,6 +10,7 @@
     <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
@@ -85,13 +86,20 @@
     <Compile Include="Assets\Ferr\Common\Editor\Ferr_ComponentTracker.cs" />
     <Compile Include="Assets\Ferr\Common\Editor\Ferr_EditorTools.cs" />
     <Compile Include="Assets\Ferr\Common\Editor\Ferr_Menu.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_BoneCreation.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_CreateControls.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_CreatePolygonFromSprite.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_EditSkinWeightsEditor.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Editor.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_FFD.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_FFDLineDisplayEditor.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_GlobalControlEditor.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_HiddenBoneEditor.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Selection.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_SkinCluster.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Skinning.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_SortingLayerEditor.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Spline.cs" />
     <Compile Include="Assets\UniTile\Editor\ObjectLayerEditor.cs" />
     <Compile Include="Assets\UniTile\Editor\TileEditorWindow.cs" />
     <Compile Include="Assets\UniTile\Editor\TileLayerEditor.cs" />
@@ -115,7 +123,9 @@
     <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitWavyTransparent.shader" />
     <None Include="Assets\Ferr\Common\Data\cache.txt" />
     <None Include="Assets\Ferr\Docs\Ferr2DTerrainTool - Readme.txt" />
+    <None Include="Assets\Puppet2D\Shaders\BlackAndWhite.shader" />
     <None Include="Assets\Puppet2D\Shaders\unlitTransparentDouble.shader" />
+    <None Include="Assets\Puppet2D\Shaders\VertColor.shader" />
     <None Include="Assets\UniTile\ReadMe.txt" />
     <None Include="Assets\UniTile\Shaders\2D Art for iPhone.shader" />
     <None Include="Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll" />

@@ -26,14 +26,14 @@ public class Puppet2D_VertHandler : MonoBehaviour
         }
     }
     
-    void OnDisable()
-    {
-        GameObject[] handles = GameObject.FindGameObjectsWithTag("handle");
-        foreach(GameObject handle in handles)
-        {
-            DestroyImmediate(handle);    
-        }
-    }
+//    void OnDisable()
+//    {
+//        GameObject[] handles = GameObject.FindGameObjectsWithTag("handle");
+//        foreach(GameObject handle in handles)
+//        {
+//            DestroyImmediate(handle);    
+//        }
+//    }
     
     void Update()
     {

@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 1137b848532eaf24fbeb996d43e4a1c8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BookCase_1
+    21300002: PoolLockers
+    21300004: Clock_Frame
+    21300006: Clock_Back1
+    21300008: Clock_Front
+    21300010: Clock_Pendulum
+    21300012: Clock_BigHand
+    21300014: Clock_Back2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BookCase_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2154
+        width: 513
+        height: 773
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PoolLockers
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 2107
+        width: 505
+        height: 812
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Clock_Frame
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 2122
+        width: 282
+        height: 820
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Clock_Back1
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 2249
+        width: 137
+        height: 404
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Clock_Front
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 2251
+        width: 151
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Clock_Pendulum
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 2267
+        width: 95
+        height: 378
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Clock_BigHand
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 2758
+        width: 12
+        height: 73
+      alignment: 9
+      pivot: {x: .479960114, y: .31548655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Clock_Back2
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 2240
+        width: 162
+        height: 422
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

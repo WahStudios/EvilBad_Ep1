@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a21887e1cf80db49978ff567bcdd66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillMaterial: {fileID: 0}
+  fillMaterial: {fileID: 2100000, guid: 013d1c2b3c69756468bf8bc8e185688e, type: 2}
   edgeMaterial: {fileID: 2100000, guid: 343cdba61adca3049a35c217ecf86050, type: 2}
   descriptors:
   - applyTo: 0

@@ -20,7 +20,7 @@ public class Puppet2D_SortingLayerEditor : Editor {
 	{
 		
 		sortingLayerNames = GetSortingLayerNames(); //First we load the name of our layers
-		var renderer = (target as Puppet2D_SortingLayer).gameObject.renderer;
+		var renderer = (target as Puppet2D_SortingLayer).gameObject.GetComponent<Renderer>();
 		if (!renderer)
 		{
 			return;
@@ -41,7 +41,7 @@ public class Puppet2D_SortingLayerEditor : Editor {
 	public override void OnInspectorGUI()
 		
 	{
-		var renderer = (target as Puppet2D_SortingLayer).gameObject.renderer;
+		var renderer = (target as Puppet2D_SortingLayer).gameObject.GetComponent<Renderer>();
 		
 		// If there is no renderer, we can't do anything
 		if (!renderer)

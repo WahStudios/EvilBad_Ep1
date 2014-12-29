@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-
+[ExecuteInEditMode]
 public class Puppet2D_SkinnedVertices : MonoBehaviour
 
 {
@@ -163,7 +163,7 @@ public class Puppet2D_SkinnedVertices : MonoBehaviour
 
 
 
-                Gizmos.DrawRay(position, normal);
+                //Gizmos.DrawRay(position, normal);
 
             }
 

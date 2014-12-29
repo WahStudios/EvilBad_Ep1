@@ -8,9 +8,9 @@ public class Puppet2D_HiddenBone : MonoBehaviour
 	public Transform boneToAimAt;
 	public bool InEditBoneMode = false;
 	public GameObject[] _newSelection;
-    void Update()
+    void LateUpdate()
     {
-        if (renderer.enabled)
+		if (GetComponent<Renderer>().enabled)
         {
             if ((boneToAimAt) && (transform.parent))
             {

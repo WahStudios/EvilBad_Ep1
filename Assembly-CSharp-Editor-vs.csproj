@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4.6Beta/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4.6Beta/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,13 +60,20 @@
      <Compile Include="Assets\Ferr\Common\Editor\Ferr_ComponentTracker.cs" />
      <Compile Include="Assets\Ferr\Common\Editor\Ferr_EditorTools.cs" />
      <Compile Include="Assets\Ferr\Common\Editor\Ferr_Menu.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_BoneCreation.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_CreateControls.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_CreatePolygonFromSprite.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_EditSkinWeightsEditor.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Editor.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_FFD.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_FFDLineDisplayEditor.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_GlobalControlEditor.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_HiddenBoneEditor.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Selection.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_SkinCluster.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Skinning.cs" />
      <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_SortingLayerEditor.cs" />
+     <Compile Include="Assets\Puppet2D\Scripts\Editor\Puppet2D_Spline.cs" />
      <Compile Include="Assets\UniTile\Editor\ObjectLayerEditor.cs" />
      <Compile Include="Assets\UniTile\Editor\TileEditorWindow.cs" />
      <Compile Include="Assets\UniTile\Editor\TileLayerEditor.cs" />
@@ -81,6 +88,8 @@
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnitColoredTransparent.shader" />
      <None Include="Assets\Ferr\Docs\Ferr2DTerrainTool - Readme.txt" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\LitColored.shader" />
+     <None Include="Assets\Puppet2D\Shaders\BlackAndWhite.shader" />
+     <None Include="Assets\Puppet2D\Shaders\VertColor.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColored.shader" />
      <None Include="Assets\Puppet2D\Shaders\unlitTransparentDouble.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\LitCommon.cginc" />
@@ -94,22 +103,22 @@
      <None Include="Assets\Ferr\2DTerrain\Shaders\LightmapColored.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\LitColoredTransparent.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity4.6Beta/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Program Files (x86)/Unity4.6Beta/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
- <HintPath>C:/Users/mrray_000/Documents/GitHub/EvilBad_Ep1/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ <HintPath>P:/EvilBad/EvilBad_Ep1/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
- <HintPath>C:/Users/mrray_000/Documents/GitHub/EvilBad_Ep1/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ <HintPath>P:/EvilBad/EvilBad_Ep1/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
  </Reference>
  <Reference Include="UnityVS.VersionSpecific">
- <HintPath>C:/Users/mrray_000/Documents/GitHub/EvilBad_Ep1/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
+ <HintPath>P:/EvilBad/EvilBad_Ep1/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity4.6Beta/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

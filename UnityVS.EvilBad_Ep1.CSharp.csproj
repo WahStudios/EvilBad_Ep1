@@ -10,6 +10,7 @@
     <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
@@ -82,12 +83,15 @@
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_BakeAnimation.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_Bakedmesh.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_EditSkinWeights.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_FFDLineDisplay.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_FFDStoreData.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_GlobalControl.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_HiddenBone.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_IKHandle.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_ParentControl.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_SkinnedVertices.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_SortingLayer.cs" />
+    <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_SplineControl.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_VertHandler.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Triangulation\Delaunay\DelaunayTriangle.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Triangulation\Delaunay\Sweep\AdvancingFront.cs" />
@@ -211,7 +215,9 @@
     <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitWavyTransparent.shader" />
     <None Include="Assets\Ferr\Common\Data\cache.txt" />
     <None Include="Assets\Ferr\Docs\Ferr2DTerrainTool - Readme.txt" />
+    <None Include="Assets\Puppet2D\Shaders\BlackAndWhite.shader" />
     <None Include="Assets\Puppet2D\Shaders\unlitTransparentDouble.shader" />
+    <None Include="Assets\Puppet2D\Shaders\VertColor.shader" />
     <None Include="Assets\UniTile\ReadMe.txt" />
     <None Include="Assets\UniTile\Shaders\2D Art for iPhone.shader" />
   </ItemGroup>

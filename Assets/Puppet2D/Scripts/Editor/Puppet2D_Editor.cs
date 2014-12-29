@@ -9,30 +9,74 @@ using System.Text.RegularExpressions;
 public class Puppet2D_Editor : EditorWindow 
 {
 
-    static bool BoneCreation = false;
+	public static bool SkinWeightsPaint = false;
+	public static Mesh currentSelectionMesh;
+	public static GameObject currentSelection;
+	public static Color[] previousVertColors;
+	public static float EditSkinWeightRadius =5f;
+	public static GameObject paintWeightsBone;
+	public static Shader previousShader;
+    public static Vector3 ChangeRadiusStartPosition;
+	public static float ChangeRadiusStartValue =0f;
+	public static bool ChangingRadius = false;
+	public static float paintWeightsStrength =0.25f;
+	public static Color paintControlColor = new Color(.8f,1f,.8f, .5f);
+
+
+    public static bool BoneCreation = false;
 	static bool EditSkinWeights = false;
-    static bool SplineCreation = false;
+    public static bool SplineCreation = false;
+	public static bool FFDCreation = false;
 
     GameObject currentBone;
     GameObject previousBone;
 
     public bool ReverseNormals ;
 
-	static string _boneSortingLayer,_controlSortingLayer;
-	static int _boneSortingIndex,_controlSortingIndex, _triangulationIndex, _numberBonesToSkinToIndex = 1;
+    public static string _boneSortingLayer,_controlSortingLayer;
+	public static int _boneSortingIndex,_controlSortingIndex, _triangulationIndex, _numberBonesToSkinToIndex = 1;
 
-	static Sprite boneNoJointSprite =new Sprite();
-	static Sprite boneSprite  =new Sprite();
-    static Sprite boneHiddenSprite  =new Sprite();
-	static Sprite boneOriginal  =new Sprite();
+	public static Sprite boneNoJointSprite =new Sprite();
+	public static Sprite boneSprite  =new Sprite();
+    public static Sprite boneHiddenSprite  =new Sprite();
+	public static Sprite boneOriginal  =new Sprite();
 
-	GameObject currentActiveBone = null;
+    public static GameObject currentActiveBone = null;
+
+    //public static List<Transform> splineCtrls = new List<Transform>();
+    public static int numberSplineJoints = 4;
+
+	static public List<Transform> FFDCtrls = new List<Transform>();
+	static public List<int> FFDPathNumber = new List<int>();
+	private GameObject FFDSprite;
+    private Mesh FFDMesh;
+    public static GameObject FFDGameObject;
      
-    //static List<GameObject> SkinnedMeshesBeingEditted = new List<GameObject>(); 
 	[SerializeField]
 	static float BoneSize;
 	static float ControlSize;
 	static float VertexHandleSize;
+
+	private string pngSequPath = Application.dataPath, checkPath;
+	bool recordPngSequence = false;
+	private int imageCount =0, resolution = 1;
+	private float recordDelta = 0f;
+    bool ExportPngAlpha;
+
+	public static List<List<string>> selectedControls = new List<List<string>>();
+    public static List<List<string>> selectedControlsData = new List<List<string>>();
+
+    public enum GUIChoice
+    {
+
+        BoneCreation,
+        RigginSetup,
+        Skinning,
+        Animation,
+
+
+    }
+    GUIChoice currentGUIChoice;
 
 	[MenuItem ("GameObject/Puppet2D/Window/Puppet2D")]
 	[MenuItem ("Window/Puppet2D")]
@@ -47,9 +91,17 @@ public class Puppet2D_Editor : EditorWindow
 		ControlSize = EditorPrefs.GetFloat("Puppet2D_EditorControlSize", 0.85f);
 		VertexHandleSize = EditorPrefs.GetFloat("Puppet2D_EditorVertexHandleSize", 0.8f);
         BoneCreation = EditorPrefs.GetBool("Puppet2D_BoneCreation", false);
+
+        _boneSortingIndex = EditorPrefs.GetInt("Puppet2D_BoneLayer", 0);
+        _controlSortingIndex = EditorPrefs.GetInt("Puppet2D_ControlLayer", 0);
+
+                
+        Puppet2D_Selection.GetSelectionString();
+
 	}
-    void OnGUI () 
-    {
+	
+	void OnGUI () 
+	{
         string path = ("Assets/Puppet2D/Textures/GUI/BoneNoJoint.psd");
         string path2 = ("Assets/Puppet2D/Textures/GUI/BoneScaled.psd");
         string path3 = ("Assets/Puppet2D/Textures/GUI/BoneJoint.psd");
@@ -58,267 +110,613 @@ public class Puppet2D_Editor : EditorWindow
         boneSprite =AssetDatabase.LoadAssetAtPath(path2, typeof(Sprite)) as Sprite;
         boneHiddenSprite =AssetDatabase.LoadAssetAtPath(path3, typeof(Sprite)) as Sprite;
 		boneOriginal =AssetDatabase.LoadAssetAtPath(path4, typeof(Sprite)) as Sprite;
+        Texture aTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/GUI_Bones.png", typeof(Texture))as Texture;
+        Texture puppetManTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/GUI_puppetman.png", typeof(Texture))as Texture;
+        Texture rigTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/GUI_Rig.png", typeof(Texture))as Texture;
+        Texture ControlTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/parentControl.psd", typeof(Texture))as Texture;
+        Texture VertexTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/VertexHandle.psd", typeof(Texture))as Texture;
 
-        GUILayout.Label ("Bone Creation", EditorStyles.boldLabel);
-		Texture aTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/GUI_Bones.png",typeof(Texture))as Texture;
-		Texture puppetManTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/GUI_puppetman.png",typeof(Texture))as Texture;
-		Texture rigTexture = AssetDatabase.LoadAssetAtPath("Assets/Puppet2D/Textures/GUI/GUI_Rig.png",typeof(Texture))as Texture;
 
-		GUILayout.Space(15);
-		GUI.DrawTexture(new Rect(0, 20, 64, 128), aTexture, ScaleMode.StretchToFill, true, 10.0F);
-		GUILayout.Space(15);
+        string[] sortingLayers = GetSortingLayerNames();
+        Color bgColor = GUI.backgroundColor;
 
-		Color bgColor = GUI.backgroundColor;
-		if(EditSkinWeights)
-		{
-			GUI.backgroundColor = Color.grey;
-		}
-		if(SplineCreation)
-		{
-			GUI.backgroundColor = Color.grey;
-		}
-		if (BoneCreation)
-		{
-			GUI.backgroundColor=Color.green;
+        if (currentGUIChoice == GUIChoice.BoneCreation)
+            GUI.backgroundColor = Color.green;
 
-		}
-
-		if (GUI.Button(new Rect(80, 30, 150, 30),"Create Bone Tool" ))
-        {  
-            /*SpriteRenderer[] sprs = GameObject.FindObjectsOfType<SpriteRenderer>();
-            foreach (SpriteRenderer spr in sprs)
-            {
-				if(spr.sprite)
-                	if(spr.sprite.name.Contains("Bone"))
-                    	sortOutBoneHierachy(spr.gameObject);
-            }
-            foreach (SpriteRenderer spr in sprs)
-            {
-                if(spr.sprite)
-					if(spr.sprite.name.Contains("Bone"))
-                    	sortOutBoneHierachy(spr.gameObject, true);
-            }  */           
-			BoneCreation = true;
-            EditorPrefs.SetBool("Puppet2D_BoneCreation", BoneCreation);
-			
-        }
-		if(!EditSkinWeights)
-		{
-			GUI.backgroundColor=bgColor;
-		}
-		if(SplineCreation)
-		{
-			GUI.backgroundColor = Color.grey;
-		}
-        
-		if (GUI.Button(new Rect(80, 60, 150, 30),"Finish Bone" ))
+        if (GUI.Button(new Rect(0, 0, 80, 20),"Skeleton" ))
         {
-
-            BoneFinishCreation();
+            currentGUIChoice = GUIChoice.BoneCreation;
         }
 
-		if (BoneCreation)
-		{
-			GUI.backgroundColor=Color.grey;
+        GUI.backgroundColor = bgColor;
+        if (currentGUIChoice == GUIChoice.RigginSetup)
+            GUI.backgroundColor = Color.green;
 
-		}
-		if(EditSkinWeights)
-		{
-			GUI.backgroundColor = Color.grey;
-		}
-
-		BoneSize = EditorGUI.Slider(new Rect(80, 100, 150, 20), BoneSize, 0F, 0.9999F);
-		
-		string[] sortingLayers = GetSortingLayerNames();
-
-		_boneSortingIndex  = EditorGUI.Popup(new Rect(80, 130, 150, 30),_boneSortingIndex, sortingLayers);
-
-		_boneSortingLayer = sortingLayers[_boneSortingIndex];
-
-
-		GUILayout.Space(100);
-          
-        GUILayout.Label ("Rigging Setup", EditorStyles.boldLabel);
-		GUI.DrawTexture(new Rect(0, 180, 64, 128), rigTexture, ScaleMode.StretchToFill, true, 10.0F);
-		if (GUI.Button(new Rect(80, 180, 150, 30),"Create IK Control" ))
-		{
-			IKCreateTool();
-
+        if (GUI.Button(new Rect(80, 0, 80, 20),"Rigging" ))
+        {
+            currentGUIChoice = GUIChoice.RigginSetup;
         }
-		if (GUI.Button(new Rect(80, 210, 150, 30),"Create Parent Control" ))
-		{
-            CreateParentControl();
+        GUI.backgroundColor = bgColor;
+        if (currentGUIChoice == GUIChoice.Skinning)
+            GUI.backgroundColor = Color.green;
 
+        if (GUI.Button(new Rect(160, 0, 80, 20),"Skinning" ))
+        {
+            currentGUIChoice = GUIChoice.Skinning;
         }
-		if (GUI.Button(new Rect(80, 240, 150, 30),"Create Orient Control" ))
-		{        
-            CreateOrientControl();
+        GUI.backgroundColor = bgColor;
+        if (currentGUIChoice == GUIChoice.Animation)
+            GUI.backgroundColor = Color.green;
 
+        if (GUI.Button(new Rect(240, 0, 80, 20),"Animation" ))
+        {
+            currentGUIChoice = GUIChoice.Animation;
         }
+        GUI.backgroundColor = bgColor;
 
-        ControlSize = EditorGUI.Slider(new Rect(80, 280, 150, 20), ControlSize, 0F, .9999F);
+        if (EditSkinWeights || SplineCreation || FFDCreation )
+            GUI.backgroundColor = Color.grey;
 
-        _controlSortingIndex  = EditorGUI.Popup(new Rect(80, 310, 150, 30),_controlSortingIndex, sortingLayers);
 
+        GUI.DrawTexture(new Rect(25, 40, 32, 32), boneSprite.texture, ScaleMode.StretchToFill, true, 10.0F);
+
+        EditorGUI.BeginChangeCheck ();
+        BoneSize = EditorGUI.Slider(new Rect(80, 40, 150, 20), BoneSize, 0F, 0.9999F);
+        if (EditorGUI.EndChangeCheck())
+        {
+            ChangeBoneSize();
+            EditorPrefs.SetFloat("Puppet2D_EditorBoneSize", BoneSize);
+        }
+        EditorGUI.BeginChangeCheck ();
+        _boneSortingIndex = EditorGUI.Popup(new Rect(80, 60, 150, 30), _boneSortingIndex, sortingLayers);
+        if (EditorGUI.EndChangeCheck())
+        {
+            EditorPrefs.SetInt("Puppet2D_BoneLayer", _boneSortingIndex);
+        }
+        if (sortingLayers.Length <= _boneSortingIndex)
+        {
+            _boneSortingIndex = 0;
+            EditorPrefs.SetInt("Puppet2D_BoneLayer", _boneSortingIndex);
+        }
+        _boneSortingLayer = sortingLayers[_boneSortingIndex];
+
+
+        GUI.DrawTexture(new Rect(25, 100, 32, 32), ControlTexture, ScaleMode.StretchToFill, true, 10.0F);
+
+        EditorGUI.BeginChangeCheck ();
+        ControlSize = EditorGUI.Slider(new Rect(80, 100, 150, 20), ControlSize, 0F, .9999F);
+        if (EditorGUI.EndChangeCheck())
+        {
+            ChangeControlSize();
+            EditorPrefs.SetFloat("Puppet2D_EditorControlSize", ControlSize);
+        }
+        EditorGUI.BeginChangeCheck ();
+        _controlSortingIndex = EditorGUI.Popup(new Rect(80, 130, 150, 30), _controlSortingIndex, sortingLayers);
+        if (EditorGUI.EndChangeCheck())
+        {
+            EditorPrefs.SetInt("Puppet2D_ControlLayer", _controlSortingIndex);
+        }
+        if (sortingLayers.Length <= _controlSortingIndex)
+        {
+            _controlSortingIndex = 0;
+            EditorPrefs.SetInt("Puppet2D_ControlLayer", _controlSortingIndex);
+        }
         _controlSortingLayer = sortingLayers[_controlSortingIndex];
 
 
-        GUILayout.Space(160);
+        GUI.DrawTexture(new Rect(15, 160, 275, 5), aTexture, ScaleMode.StretchToFill, true, 10.0F);
 
-        GUILayout.Label ("Skinning", EditorStyles.boldLabel);
-        GUI.DrawTexture(new Rect(0, 360, 64, 128), puppetManTexture, ScaleMode.StretchToFill, true, 10.0F);
+        int offsetControls = 130;
 
-		GUIStyle labelNew = EditorStyles.label;
-		labelNew.alignment = TextAnchor.LowerLeft;
-		labelNew.contentOffset = new Vector2(80,0);
-		GUILayout.Label ("Type of Mesh: ", labelNew);
-		labelNew.contentOffset = new Vector2(0,0);
-		string[] TriangulationTypes = {"0", "1","2", "3"} ;
-		
-		_triangulationIndex  = EditorGUI.Popup(new Rect(180, 360, 50, 30),_triangulationIndex, TriangulationTypes);
-
-
-        if (GUI.Button(new Rect(80, 380, 150, 30),"Convert Sprite To Mesh" ))
+        if (currentGUIChoice == GUIChoice.BoneCreation)
         {
-			ConvertSpriteToMesh(_triangulationIndex);
+            //GUILayout.Label("Bone Creation", EditorStyles.boldLabel);
+
+            GUILayout.Space(15);
+            GUI.DrawTexture(new Rect(0, 60+offsetControls, 64, 128), aTexture, ScaleMode.StretchToFill, true, 10.0F);
+            GUILayout.Space(15);
+         
+         
+            if (BoneCreation)      
+                GUI.backgroundColor = Color.green;
+
+
+            if (GUI.Button(new Rect(80, 60+offsetControls, 150, 30), "Create Bone Tool"))
+            {                      
+                BoneCreation = true;
+                currentActiveBone = null;
+                EditorPrefs.SetBool("Puppet2D_BoneCreation", BoneCreation);
+			
+            }
+            if (BoneCreation)      
+                GUI.backgroundColor = bgColor;
+
+        
+            if (GUI.Button(new Rect(80, 90+offsetControls, 150, 30), "Finish Bone"))
+            {
+                Puppet2D_BoneCreation.BoneFinishCreation();
+            }
+
+            if (BoneCreation)
+                GUI.backgroundColor = Color.grey;
+
+
+
+            if (SplineCreation)
+            {
+                GUI.backgroundColor = Color.green;
+            }
+            if (GUI.Button(new Rect(80, 150+offsetControls, 150, 30), "Create Spline Tool"))
+            {  
+                //Puppet2D_Spline.splineStoreData.FFDCtrls.Clear();
+                //SplineCreation = true; 
+                Puppet2D_Spline.CreateSplineTool();
+            }
+            if (SplineCreation)
+            {
+                GUI.backgroundColor = bgColor;
+            }
+            numberSplineJoints = EditorGUI.IntSlider(new Rect(80, 190+offsetControls, 150, 20), numberSplineJoints, 1, 10);
+
+            if (GUI.Button(new Rect(80, 220+offsetControls, 150, 30), "Finish Spline"))
+            {   
+                Puppet2D_Spline.SplineFinishCreation();            
+
+            }
         }
-        if (GUI.Button(new Rect(80, 410, 150, 30),"Parent Object To Bones" ))
+        if (currentGUIChoice == GUIChoice.RigginSetup)
         {
-            BindRigidSkin();
+           // GUILayout.Label("Rigging Setup", EditorStyles.boldLabel);
 
-        }
-		GUILayout.Space(73);
-		labelNew.alignment = TextAnchor.LowerLeft;
-		labelNew.contentOffset = new Vector2(80,0);
-		GUILayout.Label ("Num Skin Bones: ", labelNew);
-		labelNew.contentOffset = new Vector2(0,0);
-		string[] NumberBonesToSkinTo = {"1", "2"} ;
+            GUI.DrawTexture(new Rect(0, 60+offsetControls, 64, 128), rigTexture, ScaleMode.StretchToFill, true, 10.0F);
+            if (GUI.Button(new Rect(80, 60+offsetControls, 150, 30), "Create IK Control"))
+            {
+                Puppet2D_CreateControls.IKCreateTool();
 
-		_numberBonesToSkinToIndex  = EditorGUI.Popup(new Rect(180, 450, 50, 30),_numberBonesToSkinToIndex, NumberBonesToSkinTo);
+            }
+            if (GUI.Button(new Rect(80, 90+offsetControls, 150, 30), "Create Parent Control"))
+            {
+                Puppet2D_CreateControls.CreateParentControl();
 
-        if (GUI.Button(new Rect(80, 470, 150, 30),"Bind Smooth Skin" ))
-        {
-            BindSmoothSkin();
+            }
+            if (GUI.Button(new Rect(80, 120+offsetControls, 150, 30), "Create Orient Control"))
+            {        
+                Puppet2D_CreateControls.CreateOrientControl();
 
-        }
-        if(EditSkinWeights)
-        {
-            GUI.backgroundColor = Color.green;
-        }
-        if (GUI.Button(new Rect(80, 500, 150, 30),"Edit Skin Weights" ))
-        {
-            EditSkinWeights = EditWeights();
-
-        }
-        if(EditSkinWeights)
-        {
-            GUI.backgroundColor = bgColor;
-        }
-        if (GUI.Button(new Rect(80, 530, 150, 30),"Finish Edit Skin Weights" ))
-        {   
-            EditSkinWeights = false;
-            FinishEditingWeights(); 
-
-        }
-
-        VertexHandleSize = EditorGUI.Slider(new Rect(80, 570, 150, 20), VertexHandleSize, 0F, .9999F);
-
-		GUILayout.Space(120);
-		GUILayout.Label ("Animation", EditorStyles.boldLabel);
-
-		if (GUI.Button(new Rect(80, 620, 150, 30),"Bake Animation" ))
-		{   
-			Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl> ();
-			for (int i = 0; i < globalCtrlScripts.Length; i++) 
+            }
+			/*if (GUI.Button(new Rect(80, 160+offsetControls, 150, 30), "Create Avatar"))
 			{
-				Puppet2D_BakeAnimation BakeAnim = globalCtrlScripts[i].gameObject.AddComponent<Puppet2D_BakeAnimation> ();
-				BakeAnim.Run ();
-				DestroyImmediate (BakeAnim);
-				globalCtrlScripts[i].enabled = false;
-			}
-		}
+                Puppet2D_CreateControls.CreateAvatar();
 
-        if (GUI.changed)
-        {
-            ChangeControlSize();
-            ChangeBoneSize();
-            ChangeVertexHandleSize();
+			}*/
 
-			EditorPrefs.SetFloat("Puppet2D_EditorBoneSize", BoneSize);
-			EditorPrefs.SetFloat("Puppet2D_EditorControlSize", ControlSize);
-			EditorPrefs.SetFloat("Puppet2D_EditorVertexHandleSize", VertexHandleSize);
         }
+        if (currentGUIChoice == GUIChoice.Skinning)
+        {
+            //GUILayout.Label("Skinning", EditorStyles.boldLabel);
+
+            GUI.DrawTexture(new Rect(0, 50+offsetControls, 64, 128), puppetManTexture, ScaleMode.StretchToFill, true, 10.0F);
+
+            GUILayout.Space(55+offsetControls);
+            GUIStyle labelNew = EditorStyles.label;
+            labelNew.alignment = TextAnchor.LowerLeft;
+            labelNew.contentOffset = new Vector2(80, 0);
+            GUILayout.Label("Type of Mesh: ", labelNew);
+            labelNew.contentOffset = new Vector2(0, 0);
+            string[] TriangulationTypes = { "0", "1", "2", "3" };
+
+            _triangulationIndex = EditorGUI.Popup(new Rect(180, 60+offsetControls, 50, 30), _triangulationIndex, TriangulationTypes);
+
+
+            if (GUI.Button(new Rect(80, 80+offsetControls, 150, 30), "Convert Sprite To Mesh"))
+            {
+                Puppet2D_Skinning.ConvertSpriteToMesh(_triangulationIndex);
+            }
+            if (GUI.Button(new Rect(80, 110+offsetControls, 150, 30), "Parent Object To Bones"))
+            {
+                Puppet2D_Skinning.BindRigidSkin();
+
+            }
+            GUILayout.Space(75);
+            labelNew.alignment = TextAnchor.LowerLeft;
+            labelNew.contentOffset = new Vector2(80, 0);
+            GUILayout.Label("Num Skin Bones: ", labelNew);
+            labelNew.contentOffset = new Vector2(0, 0);
+            string[] NumberBonesToSkinTo = { "1", "2", "4 (FFD)" };
+
+            _numberBonesToSkinToIndex = EditorGUI.Popup(new Rect(180, 150+offsetControls, 50, 30), _numberBonesToSkinToIndex, NumberBonesToSkinTo);
+
+            if (GUI.Button(new Rect(80, 170+offsetControls, 150, 30), "Bind Smooth Skin"))
+            {
+                Puppet2D_Skinning.BindSmoothSkin();
+
+            }
+            if (EditSkinWeights ||SkinWeightsPaint )
+            {
+                GUI.backgroundColor = Color.green;
+            }
+            if (SkinWeightsPaint)
+            {   
+                if (GUI.Button(new Rect(80, 200+offsetControls, 150, 30), "Manually Edit Weights"))
+                {
+                    // finish paint weights
+                    Selection.activeGameObject = currentSelection;
+                    if(currentSelection)
+                    {
+                        if(previousShader )
+							currentSelection.GetComponent<Renderer>().sharedMaterial.shader = previousShader;
+                        SkinWeightsPaint = false;
+                        if(previousVertColors != null && previousVertColors.Length >0)
+							currentSelectionMesh.colors = previousVertColors;
+                        currentSelectionMesh = null;
+                        currentSelection = null;
+						previousVertColors=null;
+                    }
+
+                    EditSkinWeights = Puppet2D_Skinning.EditWeights();
+
+                }
+            }
+            if (!SkinWeightsPaint)
+            {
+                if (GUI.Button(new Rect(80, 200 + offsetControls, 150, 30), "Paint Weights"))
+                {   
+                    if (EditSkinWeights)
+                    {
+                        EditSkinWeights = false;
+                        Object[] bakedMeshes = Puppet2D_Skinning.FinishEditingWeights(); 
+
+                        Selection.objects = bakedMeshes;
+                    }
+
+                    if (Selection.activeGameObject && Selection.activeGameObject.GetComponent<SkinnedMeshRenderer>() && Selection.activeGameObject.GetComponent<SkinnedMeshRenderer>().sharedMesh)
+                    {
+                        SkinWeightsPaint = true;
+                        SkinnedMeshRenderer smr = Selection.activeGameObject.GetComponent<SkinnedMeshRenderer>();
+                        currentSelectionMesh = smr.sharedMesh;
+                        currentSelection = Selection.activeGameObject;
+						previousShader = currentSelection.GetComponent<Renderer>().sharedMaterial.shader;
+						currentSelection.GetComponent<Renderer>().sharedMaterial.shader = Shader.Find("Puppet2D/vertColor");
+
+                        if (currentSelectionMesh.colors.Length != currentSelectionMesh.vertices.Length)
+                        {
+                            currentSelectionMesh.colors = new Color[currentSelectionMesh.vertices.Length];
+                            EditorUtility.SetDirty(currentSelection);
+                            EditorUtility.SetDirty(currentSelectionMesh);
+                            AssetDatabase.SaveAssets();
+                            EditorApplication.SaveAssets();
+                        }
+						else
+							previousVertColors = currentSelectionMesh.colors;
+                        Selection.activeGameObject = smr.bones[0].gameObject;
+                    }
+                }
+            }
+
+
+
+            if (EditSkinWeights || SkinWeightsPaint)
+                GUI.backgroundColor = bgColor;
+
+            if (GUI.Button(new Rect(80, 230+offsetControls, 150, 30), "Finish Edit Skin Weights"))
+            {   
+                if (SkinWeightsPaint)
+                {
+                    if (currentSelection)
+                    {
+                        Selection.activeGameObject = currentSelection;
+
+                        if (previousShader)
+							currentSelection.GetComponent<Renderer>().sharedMaterial.shader = previousShader;
+                        SkinWeightsPaint = false;
+                        if(previousVertColors != null && previousVertColors.Length >0)
+							currentSelectionMesh.colors = previousVertColors;
+						currentSelectionMesh = null;
+						currentSelection = null;
+						previousVertColors=null;
+
+                        Puppet2D_HiddenBone[] hiddenBones = Transform.FindObjectsOfType<Puppet2D_HiddenBone>();
+                        foreach (Puppet2D_HiddenBone hiddenBone in hiddenBones)
+                        {
+                            hiddenBone.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                            if (hiddenBone.transform.parent != null)
+                                hiddenBone.transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
+
+                        }
+
+					}
+                    else
+                        SkinWeightsPaint = false;
+				}
+				else
+				{
+					EditSkinWeights = false;
+                    Puppet2D_Skinning.FinishEditingWeights(); 
+                }
+
+            }
+            float SkinWeightsPaintOffset = -80;
+
+            if (EditSkinWeights)
+            {
+                SkinWeightsPaintOffset = -40;
+                GUI.DrawTexture(new Rect(25, 260 + offsetControls, 32, 32), VertexTexture, ScaleMode.StretchToFill, true, 10.0F);
+                EditorGUI.BeginChangeCheck();
+                VertexHandleSize = EditorGUI.Slider(new Rect(80, 270 + offsetControls, 150, 20), VertexHandleSize, 0F, .9999F);
+                if (EditorGUI.EndChangeCheck())
+                {
+                    ChangeVertexHandleSize();
+                    EditorPrefs.SetFloat("Puppet2D_EditorVertexHandleSize", VertexHandleSize);
+                }
+            }
+            if (SkinWeightsPaint)
+            {
+                SkinWeightsPaintOffset = -20;
+
+                GUILayout.Space(offsetControls - 20);
+                GUILayout.Label(" Brush Size", EditorStyles.boldLabel);
+                EditSkinWeightRadius = EditorGUI.Slider(new Rect(80, 275 + offsetControls, 150, 20), EditSkinWeightRadius, 0F, 100F);
+                GUILayout.Label(" Strength", EditorStyles.boldLabel);
+                paintWeightsStrength = EditorGUI.Slider(new Rect(80, 295 + offsetControls, 150, 20), paintWeightsStrength, 0F, 1F);
+            }
+
+            if (EditSkinWeights ||SkinWeightsPaint )
+                GUI.backgroundColor = Color.grey;
+
+            if (FFDCreation)
+                GUI.backgroundColor = Color.green;
+
+            if (GUI.Button(new Rect(80, 360+offsetControls+SkinWeightsPaintOffset, 150, 30), "Create FFD Tool"))
+            {   
+				if (!FFDCreation)
+				{
+					FFDCreation = true;
+					if (Selection.activeGameObject && Selection.activeGameObject.GetComponent<SpriteRenderer>() && Selection.activeGameObject.GetComponent<SpriteRenderer>().sprite && !Selection.activeGameObject.GetComponent<SpriteRenderer>().sprite.name.Contains("bone"))
+						FFDGameObject = Selection.activeGameObject;
+					else
+						Debug.LogWarning("Need to select a sprite to make an FFD mesh, will create a dummy mesh instead");
+					Puppet2D_FFD.FFDSetFirstPath();
+				}
+
+            }
+            if (FFDCreation)
+                GUI.backgroundColor = bgColor;
+            if (GUI.Button(new Rect(80, 390+offsetControls+SkinWeightsPaintOffset, 150, 30), "Finish FFD"))
+            {   
+                Puppet2D_FFD.FFDFinishCreation();
+            }
+
+        }
+        if (currentGUIChoice == GUIChoice.Animation)
+        {
+            //GUILayout.Label("Animation", EditorStyles.boldLabel);
+
+            if (GUI.Button(new Rect(80, 50+offsetControls, 150, 30), "Bake Animation"))
+            {   
+                Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl>();
+                for (int i = 0; i < globalCtrlScripts.Length; i++)
+                {
+                    Puppet2D_BakeAnimation BakeAnim = globalCtrlScripts[i].gameObject.AddComponent<Puppet2D_BakeAnimation>();
+                    BakeAnim.Run();
+                    DestroyImmediate(BakeAnim);
+                    globalCtrlScripts[i].enabled = false;
+                }
+            }
+			if(recordPngSequence && !ExportPngAlpha)
+				GUI.backgroundColor = Color.green;
+            if (GUI.Button(new Rect(80, 100+offsetControls, 150, 30), "Render Animation"))
+			{
+				checkPath = EditorUtility.SaveFilePanel("Choose Directory", pngSequPath, "exportedAnim", "");
+				if(checkPath != "")
+				{
+					pngSequPath = checkPath;
+					recordPngSequence = true;
+					EditorApplication.ExecuteMenuItem("Edit/Play");
+				}
+            }
+            GUI.backgroundColor = bgColor;
+			if(ExportPngAlpha )
+				GUI.backgroundColor = Color.green;
+            if (GUI.Button(new Rect(80, 130+offsetControls, 150, 30), "Render Alpha"))
+            {
+                checkPath = EditorUtility.SaveFilePanel("Choose Directory", pngSequPath, "exportedAnim", "");
+                if(checkPath != "")
+                {
+                    pngSequPath = checkPath;
+                    recordPngSequence = true;
+                    ExportPngAlpha = true;
+                    EditorApplication.ExecuteMenuItem("Edit/Play");
+                }
+            }
+			if (ExportPngAlpha || recordPngSequence)
+				GUI.backgroundColor = bgColor;
+            if(GUI.Button(new Rect(80, 200 + offsetControls, 150, 30), "Save Selection"))
+            {
+                selectedControls.Add(new List<string>());
+                selectedControlsData.Add(new List<string>());
+
+                foreach (GameObject go in Selection.gameObjects)
+                {
+                    selectedControls[selectedControls.Count-1].Add(Puppet2D_Selection.GetGameObjectPath(go));
+                    selectedControlsData[selectedControlsData.Count-1].Add(go.transform.localPosition.x + " " + go.transform.localPosition.y + " "+ go.transform.localPosition.z + " "+ go.transform.localRotation.x + " "+ go.transform.localRotation.y + " "+ go.transform.localRotation.z + " "+ go.transform.localRotation.w + " "+ go.transform.localScale.x + " "+ go.transform.localScale.y + " "+ go.transform.localScale.z + " ");
+
+                }
+                Puppet2D_Selection.SetSelectionString();
+            }
+            if (GUI.Button(new Rect(80, 230 + offsetControls, 150, 30), "Clear Selections"))
+            {
+                selectedControls.Clear();
+                selectedControlsData.Clear();
+                Puppet2D_Selection.SetSelectionString();
+            }
+
+
+            for(int i=0;i< selectedControls.Count;i++)
+            {
+                int column = i%3;
+                int row = 0;
+
+                row = i / 3;
+                Rect newLoadButtonPosition = new Rect(80 + (50 * column), 265 + offsetControls + row * 30, 50, 30);
+
+                if(Event.current.type== EventType.ContextClick)
+                {   
+                    Vector2 mousePos = Event.current.mousePosition;
+                    if ((Event.current.button == 1)&&newLoadButtonPosition.Contains(mousePos ))
+                    {
+                        GenericMenu menu = new GenericMenu ();
+
+                        menu.AddItem (new GUIContent ("Select Objects"), false, Puppet2D_Selection.SaveSelectionLoad, i);
+                        menu.AddItem (new GUIContent ("Remove Selection"), false, Puppet2D_Selection.SaveSelectionRemove, i);
+                        menu.AddItem (new GUIContent ("Append Selection"), false, Puppet2D_Selection.SaveSelectionAppend, i);
+                        menu.AddItem (new GUIContent ("Store Pose"), false, Puppet2D_Selection.StorePose, i);
+                        menu.AddItem (new GUIContent ("Load Pose"), false, Puppet2D_Selection.LoadPose, i);
+
+
+
+                        menu.ShowAsContext ();
+                        Event.current.Use();
+
+                    }
+
+                }
+                GUI.Box(newLoadButtonPosition, "Load");
+                /*if (GUI.Button(newLoadButtonPosition, "Load"))
+                {
+                    Selection.objects = selectedControls[i].ToArray();
+                }*/
+            }
+
+
+        }
+
 
     }
 	void OnFocus() {
-		
-		
-		// Remove delegate listener if it has previously
-		// been assigned.
+
 		SceneView.onSceneGUIDelegate -= this.OnSceneGUI;
 		
-		// Add (or re-add) the delegate.
 		SceneView.onSceneGUIDelegate += this.OnSceneGUI;
 	}
 	
 	void OnDestroy() {
-		// When the window is destroyed, remove the delegate
-		// so that it will no longer do any drawing.
+
 		SceneView.onSceneGUIDelegate -= this.OnSceneGUI;
 
 		EditorPrefs.SetFloat("Puppet2D_EditorBoneSize", BoneSize);
 		EditorPrefs.SetFloat("Puppet2D_EditorControlSize", ControlSize);
 		EditorPrefs.SetFloat("Puppet2D_EditorVertexHandleSize", VertexHandleSize);
+
+		Puppet2D_Selection.SetSelectionString();
 	}
 	
 	void OnSceneGUI(SceneView sceneView) 
 	{
 		Event e = Event.current;
-        //int controlID = GUIUtility.GetControlID(FocusType.Passive);
-        //HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
-		
+
 		switch (e.type)
 		{
 		case EventType.keyDown:
 		{
 			if (Event.current.keyCode == (KeyCode.Return))
 			{
-				BoneFinishCreation();
-				//SplineFinishCreation();
+				if(BoneCreation)
+					Puppet2D_BoneCreation.BoneFinishCreation();
+				if(SplineCreation)
+					Puppet2D_Spline.SplineFinishCreation();
+                if (FFDCreation)
+                {
+                    FFDCreation = false;
+                    Puppet2D_FFD.FFDFinishCreation();
+                }
+                Repaint();
 				
+			}
+			if (Event.current.keyCode == (KeyCode.KeypadPlus) && SkinWeightsPaint)
+			{
+				EditSkinWeightRadius +=0.2f;
+
+			}
+			if (Event.current.keyCode == (KeyCode.KeypadMinus) && SkinWeightsPaint)
+			{
+				EditSkinWeightRadius -=0.2f;
 			}
 			if (BoneCreation)
 			{
 				if (Event.current.keyCode == (KeyCode.Backspace))
 				{
-					BoneDeleteMode();
+                    Puppet2D_BoneCreation.BoneDeleteMode();
+				}
+			}
+			if (SkinWeightsPaint)
+			{
+	            
+				if (Event.current.keyCode == (KeyCode.N))
+				{
+
+					Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+					
+					if(!ChangingRadius)
+					{
+						ChangeRadiusStartPosition = worldRay.GetPoint(0);
+						ChangeRadiusStartValue = paintWeightsStrength;
+					}
+					
+					Puppet2D_Skinning.ChangePaintStrength(worldRay.GetPoint(0));
+					ChangingRadius = true;
+
+				}
+				if (Event.current.keyCode == (KeyCode.B))
+				{
+					
+					Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+					
+					if(!ChangingRadius)
+					{
+						ChangeRadiusStartPosition = worldRay.GetPoint(0);
+						ChangeRadiusStartValue = EditSkinWeightRadius;
+					}
+					
+					Puppet2D_Skinning.ChangePaintRadius(worldRay.GetPoint(0));
+					ChangingRadius = true;
+					
+					
 				}
 			}
 			break;
 		}
-		case EventType.mouseMove:
-		{
-			if (Event.current.button == 0)
-			{
-				
-				if (BoneCreation)
-				{
-					Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+        case EventType.mouseMove:
+        {
+            if (Event.current.button == 0)
+            {
 
-					if(Event.current.control == true)
-					{
-						BoneMoveMode(worldRay.GetPoint(0));
-					}
-					if(Event.current.shift == true)
-					{
-						BoneMoveIndividualMode(worldRay.GetPoint(0));
-					}
-					
-				}  
-				
-			}
-			break;
-		}
+                if (BoneCreation)
+                {
+                    Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+
+                    if(Event.current.control == true)
+                    {
+                        Puppet2D_BoneCreation.BoneMoveMode(worldRay.GetPoint(0));
+                    }
+                    if(Event.current.shift == true)
+                    {
+                        Puppet2D_BoneCreation.BoneMoveIndividualMode(worldRay.GetPoint(0));
+                    }
+
+                }  
+                if (FFDCreation || SplineCreation )
+                {
+                    Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+
+                    if((Event.current.control == true)||(Event.current.shift == true))
+                    {
+                        MoveControl(worldRay.GetPoint(0));
+                    }
+                }  
+
+            }
+            break;
+        }
 		case EventType.MouseDown:
 		{
 			
@@ -328,7 +726,6 @@ public class Puppet2D_Editor : EditorWindow
 				if (BoneCreation)
 				{
 					Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-                       // HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
                         int controlID = GUIUtility.GetControlID(FocusType.Passive);
                         HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
                     GameObject c = HandleUtility.PickGameObject(Event.current.mousePosition, true);
@@ -339,49 +736,125 @@ public class Puppet2D_Editor : EditorWindow
                     else
                     {
     					if (Event.current.alt)                        		
-    						BoneAddMode(worldRay.GetPoint(0));
+                            Puppet2D_BoneCreation.BoneAddMode(worldRay.GetPoint(0));
     					else
-    						BoneCreationMode(worldRay.GetPoint(0));
+                            Puppet2D_BoneCreation.BoneCreationMode(worldRay.GetPoint(0));
                     }
                         HandleUtility.AddDefaultControl(controlID);
 
 						
 					
-				}  
-				//                    else if(SplineCreation)
-				//                    {
-				//                        Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-				//
-				//                        SplineCreationMode(worldRay.GetPoint(0));
-				//                    }
+				}                      
+                else if(SplineCreation)
+                {
+                    Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+
+                    Puppet2D_Spline.SplineCreationMode(worldRay.GetPoint(0));
+                }
+				else if(FFDCreation)
+				{
+					Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                    
+					Puppet2D_FFD.FFDCreationMode(worldRay.GetPoint(0));
+				}
+				else if(SkinWeightsPaint)
+				{					
+
+					GameObject c = HandleUtility.PickGameObject(Event.current.mousePosition, true);
+					if (c && c.GetComponent<SpriteRenderer>() && c.GetComponent<SpriteRenderer>().sprite && c.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
+					{
+						Selection.activeGameObject = c;
+					}
+				}
+                
+
 			}
-			/*else if (Event.current.button == 2)
-    			{
-    				if (BoneCreation)
-    				{
-    					Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-    					
-    					BoneMoveMode(worldRay.GetPoint(0));
-    					
-    				} 
-    			}*/
+
 			else if (Event.current.button == 1)
 			{
 				if (BoneCreation)
 				{                       
-					BoneFinishCreation();
+					Puppet2D_BoneCreation.BoneFinishCreation();
 					Selection.activeObject = null;
 					currentActiveBone = null;
 					BoneCreation = true;
                    
 				} 
+				else if(FFDCreation)
+				{
+					Puppet2D_FFD.CloseFFDPath ();
+				}
 			}
 			break;
 			
 		}
-			
+        case EventType.keyUp:
+        {
+			if (Event.current.keyCode == (KeyCode.B) || Event.current.keyCode == (KeyCode.N))
+            {
+                if (SkinWeightsPaint)
+                {
+					ChangingRadius = false;
+                    
+                }
+            }
+            break;
+        }
+		case EventType.mouseDrag:
+		{
+            paintControlColor = new Color(.8f,1f,.8f,.5f);
+
+
+				
+			if(SkinWeightsPaint)
+			{
+
+				Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+				if(Event.current.control == true)
+				{
+                    paintControlColor = new Color(1f,.8f,.8f,.5f);
+					if (Event.current.button == 0)
+						Puppet2D_Skinning.PaintWeights(worldRay.GetPoint(0), -1);
+				}
+				else if(Event.current.shift == true)
+				{                    
+                    paintControlColor = new Color(.8f,.8f,1f,.5f);
+					if (Event.current.button == 0)
+						Puppet2D_Skinning.PaintSmoothWeights(worldRay.GetPoint(0));
+
+				}
+				else
+				{
+					paintControlColor = new Color(.8f,1f,.8f,.5f);
+					if (Event.current.button == 0)
+						Puppet2D_Skinning.PaintWeights(worldRay.GetPoint(0), 1);
+				}
+
+				}
+
+
+			break;
 		}
-		
+		}
+		if(SkinWeightsPaint)
+		{
+			Ray worldRay = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+			if(ChangingRadius)
+				Puppet2D_Skinning.DrawHandle(ChangeRadiusStartPosition);
+			else
+				Puppet2D_Skinning.DrawHandle(worldRay.GetPoint(0));
+            Repaint();
+			SceneView.RepaintAll();
+
+			int controlID = GUIUtility.GetControlID(FocusType.Passive);
+			HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+
+
+
+			HandleUtility.AddDefaultControl(controlID);
+
+
+		}
 		// Do your drawing here using Handles.
 		
 		GameObject[] selection = Selection.gameObjects;
@@ -403,1711 +876,29 @@ public class Puppet2D_Editor : EditorWindow
 			}
 			
 		}
+		if(SkinWeightsPaint)
+		{
+			Handles.color = Color.blue;
+			Handles.Label(new Vector3(20,-40,0),
+			              "Select Bones to paint their Weights\n" +
+			              "Left Click Adds Weights\n" +
+			              "Left Click & Ctrl Removes Weights\n" +
+			              "Left Click & Shift Smooths Weights\n"+			             
+			              "Hold B to Change Brush Size\n" +
+			              "Hold N to Change Strength" );
+
+		}
 		// Do your drawing here using GUI.
 		Handles.EndGUI();   
 
-        //HandleUtility.AddDefaultControl(controlID);
 	}
 	
 
-    void BoneFinishCreation()
-    {
-		/*
-        SpriteRenderer[] sprs = GameObject.FindObjectsOfType<SpriteRenderer>();
-        foreach (SpriteRenderer spr in sprs)
-        {
-			if(spr.sprite)
-				if(spr.sprite.name.Contains("Bone"))
-                	sortOutBoneHierachy(spr.gameObject);
-        }
-        foreach (SpriteRenderer spr in sprs)
-        {
-            if(spr.sprite)
-				if(spr.sprite.name.Contains("Bone"))
-               		sortOutBoneHierachy(spr.gameObject, true);
-        }  */
-        Repaint();
-        BoneCreation = false;
-        EditorPrefs.SetBool("Puppet2D_BoneCreation", false);
 
+ 
 
-    }
-	[MenuItem ("GameObject/Puppet2D/Skeleton/Create Bone Tool")]
-    static void CreateBoneTool()
-    {    
-        BoneCreation = true;
-        EditorPrefs.SetBool("Puppet2D_BoneCreation", true);
-
-    }
-
-
-	static void sortOutBoneHierachy(GameObject changedBone, bool move = false)
-	{
-
-
-        SpriteRenderer spriteRenderer = changedBone.GetComponent<SpriteRenderer>();
-		if(spriteRenderer)	
-			if(spriteRenderer.sprite)
-				if(!spriteRenderer.sprite.name.Contains("Bone"))
-					return;
-
-        // UNPARENT CHILDREN
-		List<Transform> children = new List<Transform>();
-
-		foreach (Transform child in changedBone.transform)
-		{	
-            if (child.GetComponent<Puppet2D_HiddenBone>() == null)    						
-			    children.Add(child);
-		}
-        foreach (Transform child in children)
-        {
-            if (!move)   
-                child.transform.parent = null;
-        }
-        Transform changedBonesParent = null;
-        Transform changedBonesParentsParent = null;
-        if (changedBone.transform.parent)
-        {
-			changedBonesParent = changedBone.transform.parent.transform;
-            Undo.RecordObject(changedBonesParent, "bone parent");
-		            
-            if (changedBone.transform.parent.transform.parent)
-            {
-                changedBonesParentsParent = changedBone.transform.parent.transform.parent.transform;
-
-                changedBone.transform.parent.transform.parent = null;
-            }
-
-        }
-        if (!move)   
-		    changedBone.transform.parent = null;
-
-        List<Transform> parentsChildren = new List<Transform>();
-
-        // ORIENT & SCALE PARENT
-
-        if (changedBonesParent)
-        {
-            foreach (Transform child in changedBonesParent.transform)
-            {
-                if (child.GetComponent<Puppet2D_HiddenBone>() == null)
-                {              
-                    parentsChildren.Add(child);
-                }
-
-            }
-            foreach (Transform child in parentsChildren)
-            {
-                Undo.RecordObject(child, "parents child");
-                child.transform.parent = null;
-            }
-			SpriteRenderer sprParent = changedBonesParent.GetComponent<SpriteRenderer>();
-			if(sprParent)			
-				if(sprParent.sprite)
-					if(sprParent.sprite.name.Contains("Bone"))
-					{
-                        float dist = Vector3.Distance(changedBonesParent.position, changedBone.transform.position);
-                        if (dist > 0)
-			                changedBonesParent.rotation = Quaternion.LookRotation(changedBone.transform.position - changedBonesParent.position, Vector3.forward) * Quaternion.AngleAxis(90, Vector3.right);
-			            float length = (changedBonesParent.position - changedBone.transform.position).magnitude;
-                        
-			            changedBonesParent.localScale = new Vector3(length, length, length);   
-					}
-
-
-        }
-        if (!move)  
-            changedBone.transform.localScale = Vector3.one;
-
-        // REPARENT CHILDREN
-
-        if (children.Count > 0)
-        {	
-            foreach (Transform child in children)
-            {
-                SpriteRenderer spr = child.GetComponent<SpriteRenderer>();
-                if (spr)
-                    if (spr.sprite)
-                        if (spr.sprite.name.Contains("Bone"))
-                        {
-                            Undo.RecordObject(child, "parents child");
-                            child.transform.parent = changedBone.transform;
-                        }
-            }
-        }
-        else
-        {
-            Undo.RecordObject(spriteRenderer,"sprite change");
-            spriteRenderer.sprite = boneNoJointSprite;   
-        }         	
-    
-        if (changedBonesParent)
-        {
-            changedBone.transform.parent = changedBonesParent;
-            if (changedBonesParentsParent)
-                changedBone.transform.parent.transform.parent = changedBonesParentsParent;
-        		
-            foreach (Transform child in parentsChildren)
-            {
-                Undo.RecordObject(child, "parents child");
-                child.transform.parent = changedBonesParent;
-            }
-			SpriteRenderer spr = changedBonesParent.GetComponent<SpriteRenderer>();
-            if (spr)
-            {		
-                if (spr.sprite)
-                {
-                    if (spr.sprite.name.Contains("Bone"))
-                    {
-                        Undo.RecordObject(spr, "sprite change");
-                        spr.sprite = boneSprite;
-                    }
-                }
-            }
-   
-       
-
-        }
-        
-        // SET CORRECT SPRITE
-        if (!move)
-        {
-            if (children.Count > 0)
-                changedBone.GetComponent<SpriteRenderer>().sprite = boneSprite;
-            else
-                changedBone.GetComponent<SpriteRenderer>().sprite = boneNoJointSprite;
-
-        }
-
-        children.Clear();
-        parentsChildren.Clear();
-
-	}
-    GameObject BoneCreationMode(Vector3 mousePos)
-	{
-		if(Selection.activeGameObject == null)
-			if(currentActiveBone)
-				Selection.activeGameObject = currentActiveBone;
-        if (Selection.activeGameObject)
-		{
-            if (Selection.activeGameObject.GetComponent<Puppet2D_HiddenBone>())
-                Selection.activeGameObject = Selection.activeGameObject.transform.parent.gameObject;
-
-			if(Selection.activeGameObject.GetComponent<SpriteRenderer>())
-			{
-				if(Selection.activeGameObject.GetComponent<SpriteRenderer>().sprite)
-				{
-					if(Selection.activeGameObject.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-					{
-						// MAKE SURE SELECTION IS NOT AN IK OR PARENT
-						
-						Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl> ();
-						for (int i = 0; i < globalCtrlScripts.Length; i++) 
-						{
-							foreach(Puppet2D_IKHandle Ik in globalCtrlScripts[i]._Ikhandles)
-							{
-								if((Ik.topJointTransform == Selection.activeGameObject.transform)||(Ik.bottomJointTransform == Selection.activeGameObject.transform)||(Ik.middleJointTransform == Selection.activeGameObject.transform))
-								{
-									Debug.LogWarning("Cannot parent bone, as this one has an IK handle");
-									Selection.activeGameObject = null;
-								}
-							}
-						}
-					}
-					else
-						return null;
-				}
-				else
-					return null;
-			}
-			else
-				return null;
-		}
-
-
-
-
-        GameObject newBone = new GameObject(GetUniqueBoneName("bone"));
-        Undo.RegisterCreatedObjectUndo (newBone, "Created newBone");
-        newBone.transform.position = mousePos;
-        newBone.transform.position = new Vector3(newBone.transform.position.x, newBone.transform.position.y, 0);
-       
-        if( Selection.activeGameObject)
-		{
-            newBone.transform.parent = Selection.activeGameObject.transform;
-
-            GameObject newInvisibleBone = new GameObject(GetUniqueBoneName("hiddenBone"));
-            Undo.RegisterCreatedObjectUndo(newInvisibleBone, "Created new invisible Bone");
-
-            SpriteRenderer spriteRendererInvisbile = newInvisibleBone.AddComponent<SpriteRenderer>();
-            newInvisibleBone.transform.position = new Vector3(10000, 10000, 10000);
-            spriteRendererInvisbile.sortingLayerName = _boneSortingLayer;
-            spriteRendererInvisbile.sprite = boneHiddenSprite;
-            newInvisibleBone.transform.parent = Selection.activeGameObject.transform;
-            Puppet2D_HiddenBone hiddenBoneComp = newInvisibleBone.AddComponent<Puppet2D_HiddenBone>();
-            hiddenBoneComp.boneToAimAt = newBone.transform;
-            hiddenBoneComp.Refresh();
-       
-		}
-
-        SpriteRenderer spriteRenderer = newBone.AddComponent<SpriteRenderer>();
-        spriteRenderer.sortingLayerName = _boneSortingLayer;
-
-        sortOutBoneHierachy(newBone);
-
-		Selection.activeGameObject = newBone;
-
-		currentActiveBone = newBone;
-
-        return newBone;
-
-    }
-    void BoneMoveMode(Vector3 mousePos)
-    {
-        GameObject selectedGO = Selection.activeGameObject;
-
-        if(selectedGO)
-        {         
-            if (selectedGO.GetComponent<Puppet2D_HiddenBone>())
-            {
-                selectedGO = Selection.activeGameObject.transform.parent.gameObject;
-                Selection.activeGameObject = selectedGO;
-            }
-
-			if(selectedGO.GetComponent<SpriteRenderer>())
-			{
-				if(selectedGO.GetComponent<SpriteRenderer>().sprite)
-				{
-					if(selectedGO.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-					{
-						// MAKE SURE SELECTION IS NOT AN IK OR PARENT
-						
-						Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl> ();
-						for (int i = 0; i < globalCtrlScripts.Length; i++) 
-						{
-							foreach(Puppet2D_IKHandle Ik in globalCtrlScripts[i]._Ikhandles)
-							{
-								if((Ik.topJointTransform == selectedGO.transform)||(Ik.bottomJointTransform == selectedGO.transform)||(Ik.middleJointTransform == selectedGO.transform))
-								{
-									Debug.LogWarning("Cannot move bone, as this one has an IK handle");
-									return;
-								}
-							}
-						}
-					}
-					else
-						return;
-				}
-				else
-					return;
-			}
-			else
-				return;
-
-
-            selectedGO.transform.position = mousePos;
-            selectedGO.transform.position = new Vector3(Selection.activeGameObject.transform.position.x, Selection.activeGameObject.transform.position.y, 0);
-            sortOutBoneHierachy(selectedGO, true);
-                            
-        }
-
-    }
-    void BoneMoveIndividualMode(Vector3 mousePos)
-    {
-        GameObject selectedGO = Selection.activeGameObject;
-        if(selectedGO)
-        {
-            if (selectedGO.GetComponent<Puppet2D_HiddenBone>())
-            {
-                selectedGO = Selection.activeGameObject.transform.parent.gameObject;
-                Selection.activeGameObject = selectedGO;
-            }
-			if(selectedGO.GetComponent<SpriteRenderer>())
-			{
-				if(selectedGO.GetComponent<SpriteRenderer>().sprite)
-				{
-					if(selectedGO.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-					{
-						// MAKE SURE SELECTION IS NOT AN IK OR PARENT
-						
-						Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl> ();
-						for (int i = 0; i < globalCtrlScripts.Length; i++) 
-						{
-							foreach(Puppet2D_IKHandle Ik in globalCtrlScripts[i]._Ikhandles)
-							{
-								if((Ik.topJointTransform == selectedGO.transform)||(Ik.bottomJointTransform == selectedGO.transform)||(Ik.middleJointTransform == selectedGO.transform))
-								{
-									Debug.LogWarning("Cannot move bone, as this one has an IK handle");
-									return;
-								}
-							}
-						}
-					}
-					else
-						return;
-				}
-				else
-					return;
-			}
-			else
-				return;
-
-
-            List<Transform> children = new List<Transform>();
-            foreach (Transform child in selectedGO.transform)
-            {
-                if (child.GetComponent<Puppet2D_HiddenBone>()==null)
-                    children.Add(child);
-            }
-            foreach (Transform child in children)
-                child.parent = null;
-
-            selectedGO.transform.position = mousePos;
-            selectedGO.transform.position = new Vector3(Selection.activeGameObject.transform.position.x, Selection.activeGameObject.transform.position.y, 0);
-            sortOutBoneHierachy(selectedGO, true);
-
-            foreach (Transform child in children)
-            {
-                child.parent = selectedGO.transform;
-                sortOutBoneHierachy(child.gameObject, true);
-            }
-            children.Clear();
-
-        }
-
-    }
-    void BoneDeleteMode()
-    {
-        GameObject selectedGO = Selection.activeGameObject;
-        if(selectedGO)
-        {
-            if (selectedGO.GetComponent<Puppet2D_HiddenBone>())
-            {
-                GameObject hiddenBone = selectedGO;
-                selectedGO = selectedGO.transform.parent.gameObject;
-                DestroyImmediate(hiddenBone);
-
-                Selection.activeGameObject = selectedGO;
-
-            }
-			if(selectedGO.GetComponent<SpriteRenderer>())
-			{
-				if(selectedGO.GetComponent<SpriteRenderer>().sprite)
-				{
-					if(selectedGO.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-					{
-						// MAKE SURE SELECTION IS NOT AN IK OR PARENT
-						
-						Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl> ();
-						for (int i = 0; i < globalCtrlScripts.Length; i++) 
-						{
-							foreach(Puppet2D_IKHandle Ik in globalCtrlScripts[i]._Ikhandles)
-							{
-								if((Ik.topJointTransform == selectedGO.transform)||(Ik.bottomJointTransform == selectedGO.transform)||(Ik.middleJointTransform == selectedGO.transform))
-								{
-									Debug.LogWarning("Cannot move bone, as this one has an IK handle");
-									return;
-								}
-							}
-						}
-					}
-					else
-						return;
-				}
-				else
-					return;
-			}
-			else
-				return;
-
-            if (selectedGO.transform.parent)
-            {
-                GameObject parentGO = selectedGO.transform.parent.gameObject;
-                DestroyImmediate(selectedGO);
-                sortOutBoneHierachy(parentGO);
-                Selection.activeGameObject = parentGO;
-                foreach (Transform child in parentGO.transform)
-                {
-                    if(child.GetComponent<Puppet2D_HiddenBone>() == null)
-                        sortOutBoneHierachy(child.gameObject, true);
-                }
-            }
-            else
-            {
-                DestroyImmediate(selectedGO);
-            }
-
-        }
-
-    }
-    void BoneAddMode(Vector3 mousePos)
-    {
-        GameObject selectedGO = Selection.activeGameObject;
-
-        if(selectedGO)
-        {
-            if (selectedGO.GetComponent<Puppet2D_HiddenBone>())
-            {                 
-                selectedGO = Selection.activeGameObject.transform.parent.gameObject;
-                Selection.activeGameObject = selectedGO;
-            }
-			if(selectedGO.GetComponent<SpriteRenderer>())
-			{
-				if(selectedGO.GetComponent<SpriteRenderer>().sprite)
-				{
-					if(selectedGO.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-					{
-						// MAKE SURE SELECTION IS NOT AN IK OR PARENT
-						
-						Puppet2D_GlobalControl[] globalCtrlScripts = Transform.FindObjectsOfType<Puppet2D_GlobalControl> ();
-						for (int i = 0; i < globalCtrlScripts.Length; i++) 
-						{
-							foreach(Puppet2D_IKHandle Ik in globalCtrlScripts[i]._Ikhandles)
-							{
-								if((Ik.topJointTransform == selectedGO.transform)||(Ik.bottomJointTransform == selectedGO.transform)||(Ik.middleJointTransform == selectedGO.transform))
-								{
-									Debug.LogWarning("Cannot add bone, as this one has an IK handle");
-									return;
-								}
-							}
-						}
-					}
-					else
-						return;
-				}
-				else
-					return;
-			}
-			else
-				return;
-
-
-            List<Transform> children = new List<Transform>();
-            foreach (Transform child in selectedGO.transform)
-                children.Add(child);
-            foreach (Transform child in children)
-                child.parent = null;
-
-            GameObject newBone = BoneCreationMode(mousePos);
-
-            foreach (Transform child in children)
-            {
-
-                child.parent = newBone.transform;
-                if (child.GetComponent<Puppet2D_HiddenBone>() == null)
-                {
-                    sortOutBoneHierachy(child.gameObject, true);
-                }
-                else
-                    child.GetComponent<Puppet2D_HiddenBone>().Refresh(); 
-
-            }
-            Selection.activeGameObject = newBone;
-            children.Clear();
-
-        }
-
-    }
-    
-	string GetUniqueBoneName (string name)
-	{
-		string nameToAdd = name;
-        int nameToAddLength = nameToAdd.Length +1;
-		int index =0;
-		foreach(GameObject go in GameObject.FindObjectsOfType(typeof(GameObject)))
-		{
-			if(go.name.StartsWith(nameToAdd))
-			{
-                string endOfName = go.name.Substring(nameToAddLength,go.name.Length-nameToAddLength);
-								
-				int indexTest = 0;
-				if(int.TryParse(endOfName,out indexTest))
-				{
-					if(int.Parse(endOfName)>index)
-					{
-						index =int.Parse(endOfName);
-					}
-				}
-
-
-			}
-		}
-		index++;
-        return (name+"_"+index);
-
-	}/*
-	void BoneMoveMode(Vector3 mousePos)
-	{
-
-		if(Selection.activeGameObject)
-		{
-			Selection.activeGameObject.transform.position = mousePos;
-			Selection.activeGameObject.transform.position = new Vector3(Selection.activeGameObject.transform.position.x, Selection.activeGameObject.transform.position.y, 0);
-		}
-		BoneCreationModeUpdate(new Bone(Selection.activeGameObject));
-	}
-
-
-    void BoneMoveMode(Vector3 mousePos)
-    {
-		if(currentBone)
-		{ 
-			currentBone.transform.position = mousePos;
-			currentBone.transform.position = new Vector3(currentBone.transform.position.x, currentBone.transform.position.y, 0);
-			//currentBone.transform.localScale = new Vector3(1, 1 , 1 );
-
-			if (previousBone != null)
-			{
-				//previousBone.transform.localScale = new Vector3(1, 1 , 1 );
-				previousBone.transform.eulerAngles = new Vector3(0, 0 , 0 );
-				previousBone.transform.rotation = Quaternion.LookRotation(currentBone.transform.position - previousBone.transform.position, Vector3.forward) * Quaternion.AngleAxis(90, Vector3.right);
-				float length = (previousBone.transform.position - currentBone.transform.position).magnitude;
-				Transform parent = previousBone.transform.parent;
-
-				previousBone.transform.parent = null;
-				previousBone.transform.localScale = new Vector3(length, length , length );
-				if(parent)
-					previousBone.transform.parent = parent;
-			}
-		}
-		else
-		{
-			GameObject selection = Selection.activeObject as GameObject;
-			if(selection)
-			{
-				if(selection.GetComponent<SpriteRenderer>())
-				{ 
-					if(selection.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-					{ 
-
-						Transform parent = null;
-						Transform parentparent = null;
-						List<Transform> fellowChildren= new List<Transform>();
-
-
-
-						if(selection.transform.parent)
-						{
-							parent = selection.transform.parent;
-
-                            for(int i = 0; i < parent.childCount; i++)
-                            {
-                               // Debug.Log(parent.GetChild(i));
-                                if (parent.GetChild(i) != selection.transform)
-                                {
-                                    fellowChildren.Add(parent.GetChild(i));
-                                   // Debug.Log("unparenting " + parent.GetChild(i).name);
-                                    //parent.GetChild(i).parent = null;
-                                   
-                                }
-
-                            }
-                            foreach(Transform child in fellowChildren)
-                                child.parent = null;
-
-							if(parent.parent)
-							{
-								parentparent = parent.parent;
-
-								parent.parent = null;
-
-							}
-
-
-						}
-						selection.transform.parent = null;
-						selection.transform.position = mousePos;
-						selection.transform.position = new Vector3(selection.transform.position.x, selection.transform.position.y, 0);
-						//currentBone.transform.localScale = new Vector3(1, 1 , 1 );
-
-						if(parent)
-						{
-							if (parent.GetComponent<SpriteRenderer>())
-							{
-								if (parent.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-								{
-									//previousBone.transform.localScale = new Vector3(1, 1 , 1 );
-									parent.eulerAngles = new Vector3(0, 0 , 0 );
-									parent.rotation = Quaternion.LookRotation(selection.transform.position - parent.position, Vector3.forward) * Quaternion.AngleAxis(90, Vector3.right);
-									float length = (parent.position - selection.transform.position).magnitude;
-
-									parent.localScale = new Vector3(length, length , length );
-
-								}
-							}
-						}
-						selection.transform.parent = parent;
-                        if (parentparent)
-                        {
-                            parent.parent = parentparent;
-                        }
-                        if (parent)
-                        {
-                            foreach (Transform child in fellowChildren)
-                            {
-                                child.parent = parent;
-                                
-                            }
-                        }
-
-                        fellowChildren.Clear();
-					}
-				}
-			}
-
-		}
-
-    }
-    */
-	[MenuItem ("GameObject/Puppet2D/Rig/Create IK Control")]
-    static void IKCreateTool()
-    {
-
-        GameObject bone = Selection.activeObject as GameObject;
-		if(bone)
-		{
-			if(bone.GetComponent<SpriteRenderer>())
-			{
-				if(!bone.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-				{
-					Debug.LogWarning("This is not a Puppet2D Bone");
-					return;
-				}
-			}
-			else
-			{
-				Debug.LogWarning("This is not a Puppet2D Bone");
-				return;
-			}
-		}
-		else
-		{
-			Debug.LogWarning("This is not a Puppet2D Bone");
-			return;
-		}
-		GameObject globalCtrl = CreateGlobalControl();
-		foreach(Puppet2D_ParentControl parentControl in globalCtrl.GetComponent<Puppet2D_GlobalControl>()._ParentControls)
-		{
-			if((parentControl.bone.transform == bone.transform)||(parentControl.bone.transform == bone.transform.parent.transform))
-			{
-				Debug.LogWarning("Can't create a IK Control on Bone; it alreay has an Parent Control");
-				return;
-			}
-		}
-		foreach(Puppet2D_IKHandle ikhandle in globalCtrl.GetComponent<Puppet2D_GlobalControl>()._Ikhandles)
-		{
-			if((ikhandle.bottomJointTransform == bone.transform)||(ikhandle.middleJointTransform == bone.transform)||(ikhandle.topJointTransform == bone.transform))
-			{
-				Debug.LogWarning("Can't create a IK Control on Bone; it alreay has an IK handle");
-				return;
-			}
-		}
-
-		GameObject IKRoot = null;
-		if(bone.transform.parent)
-			if(bone.transform.parent.transform.parent)
-        		IKRoot = bone.transform.parent.transform.parent.gameObject;
-		if(IKRoot==null)
-		{
-			Debug.LogWarning("You need to select the end of a chain of three bones");
-			return;
-		}
-		// CHECK IF TOP BONE HAS AN IK ATTACHED
-
-		Puppet2D_GlobalControl[] globalCtrls = GameObject.FindObjectsOfType<Puppet2D_GlobalControl>();
-		foreach(Puppet2D_GlobalControl glblCtrl in globalCtrls)
-		{
-			foreach(Puppet2D_IKHandle ik in glblCtrl._Ikhandles)
-			{
-				if(ik.topJointTransform == bone.transform.parent.transform.parent)
-				{
-					Debug.LogWarning( bone.transform.parent.transform.parent.name + " already has an IK control");
-					return;
-				}
-			}
-		}
-
-
-		// CHECK TO SEE IF THE BOTTOM BONE IS POINTING AT THE MIDDLE BONE
-		if (bone.transform.parent.transform.parent.rotation != Quaternion.LookRotation (bone.transform.parent.transform.position - bone.transform.parent.transform.parent.position, Vector3.forward) * Quaternion.AngleAxis (90, Vector3.right)) 
-		{			//if(bone.transform.parent.transform.parent);
-
-			sortOutBoneHierachy(bone.transform.parent.gameObject, true);
-		}
-        if (bone.transform.parent.rotation != Quaternion.LookRotation (bone.transform.position - bone.transform.parent.position, Vector3.forward) * Quaternion.AngleAxis (90, Vector3.right)) 
-        {           //if(bone.transform.parent.transform.parent);
-
-            sortOutBoneHierachy(bone, true);
-        }
-       /*
-        GameObject selectedGO = null;
-
-        if (bone.transform.parent.rotation != Quaternion.LookRotation(bone.transform.position - bone.transform.parent.transform.position, Vector3.forward) * Quaternion.AngleAxis(90, Vector3.right))
-        {
-            selectedGO = bone.transform.parent.gameObject;
-
-            List<Transform> children = new List<Transform>();
-            foreach (Transform child in selectedGO.transform)
-            {
-                if (child.GetComponent<Puppet2D_HiddenBone>()==null)
-                    children.Add(child);
-            }
-            foreach (Transform child in children)
-                child.parent = null;
-
-            sortOutBoneHierachy(selectedGO, true);
-
-            foreach (Transform child in children)
-            {
-                child.parent = selectedGO.transform;
-                sortOutBoneHierachy(child.gameObject, true);
-            }
-            children.Clear();
-
-        }
-
-        if (bone.transform.parent.transform.parent.rotation != Quaternion.LookRotation(bone.transform.parent.transform.position - bone.transform.parent.transform.parent.position, Vector3.forward) * Quaternion.AngleAxis(90, Vector3.right))
-        {
-            selectedGO = bone.transform.parent.transform.parent.gameObject;
-
-            List<Transform> children = new List<Transform>();
-            foreach (Transform child in selectedGO.transform)
-            {
-                if (child.GetComponent<Puppet2D_HiddenBone>()==null)
-                    children.Add(child);
-            }
-            foreach (Transform child in children)
-                child.parent = null;
-
-            sortOutBoneHierachy(selectedGO, true);
-
-            foreach (Transform child in children)
-            {
-                child.parent = selectedGO.transform;
-                sortOutBoneHierachy(child.gameObject, true);
-            }
-            children.Clear();
-
-            //sortOutBoneHierachy(bone.transform.parent.gameObject, true);
-        }*/
-
-        GameObject control = new GameObject();
-		Undo.RegisterCreatedObjectUndo (control, "Created control");
-        control.name = (bone.name+"_CTRL");
-        GameObject controlGroup = new GameObject();
-        controlGroup.name = (bone.name+"_CTRL_GRP");
-		Undo.RegisterCreatedObjectUndo (controlGroup, "Created controlgrp");
-
-		control.transform.parent = controlGroup.transform;
-        controlGroup.transform.position = bone.transform.position;
-        controlGroup.transform.rotation = bone.transform.rotation;
-
-        GameObject poleVector = new GameObject();
-		Undo.RegisterCreatedObjectUndo (poleVector, "Created polevector");
-        poleVector.name = (bone.name+"_POLE");
-
-        SpriteRenderer spriteRenderer = control.AddComponent<SpriteRenderer>();
-        string path = ("Assets/Puppet2D/Textures/GUI/IKControl.psd");
-        Sprite sprite =AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
-        spriteRenderer.sprite = sprite;
-        spriteRenderer.sortingLayerName = _controlSortingLayer;
-
-		// store middle bone position to check if it needs flipping
-
-        Vector3 middleBonePos = bone.transform.parent.transform.position;
-
-        Puppet2D_IKHandle ikHandle = control.AddComponent<Puppet2D_IKHandle>();
-        ikHandle.topJointTransform = IKRoot.transform;
-		ikHandle.middleJointTransform = bone.transform.parent.transform;
-		ikHandle.bottomJointTransform = bone.transform;
-        ikHandle.poleVector = poleVector.transform;
-        ikHandle.scaleStart[0] = IKRoot.transform.localScale;
-        ikHandle.scaleStart[1] = IKRoot.transform.GetChild(0).localScale;
-		ikHandle.OffsetScale = bone.transform.localScale;
-
-        if(bone.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-        {
-            ikHandle.AimDirection = Vector3.forward;
-            ikHandle.UpDirection = Vector3.right;
-        }
-        else
-        {
-			Debug.LogWarning("This is not a Puppet2D Bone");
-            ikHandle.AimDirection = Vector3.right;
-            ikHandle.UpDirection = Vector3.up;
-        }
-
-
-        //if (bone.transform.parent.transform.position.x < IKRoot.transform.position.x)
-
-        Selection.activeObject = ikHandle;
-
-        controlGroup.transform.parent = globalCtrl.transform;
-        poleVector.transform.parent = globalCtrl.transform;
-        if (globalCtrl.GetComponent<Puppet2D_GlobalControl>().AutoRefresh)
-            globalCtrl.GetComponent<Puppet2D_GlobalControl>().Init();
-        else
-            globalCtrl.GetComponent<Puppet2D_GlobalControl>()._Ikhandles.Add(ikHandle);
-        globalCtrl.GetComponent<Puppet2D_GlobalControl>().Run();
-        if ((Vector3.Distance(bone.transform.parent.transform.position, middleBonePos) > 0.0001f))
-        {
-            ikHandle.Flip = true;
-        }
-
-    }
-	[MenuItem ("GameObject/Puppet2D/Rig/Create Parent Control")]
-    static void CreateParentControl()
-    {
-        GameObject bone = Selection.activeObject as GameObject;
-		if(bone)
-		{
-			if(bone.GetComponent<SpriteRenderer>())
-			{
-				if(!bone.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-				{
-					Debug.LogWarning("This is not a Puppet2D Bone");
-					return;
-				}
-			}
-			else
-			{
-				Debug.LogWarning("This is not a Puppet2D Bone");
-				return;
-			}
-		}
-		else
-		{
-			Debug.LogWarning("This is not a Puppet2D Bone");
-			return;
-		}
-		GameObject globalCtrl = CreateGlobalControl();
-		foreach(Puppet2D_IKHandle ikhandle in globalCtrl.GetComponent<Puppet2D_GlobalControl>()._Ikhandles)
-		{
-			if((ikhandle.bottomJointTransform == bone.transform)||(ikhandle.middleJointTransform == bone.transform))
-			{
-				Debug.LogWarning("Can't create a parent Control on Bone; it alreay has an IK handle");
-				return;
-			}
-		}
-		foreach(Puppet2D_ParentControl parentControl in globalCtrl.GetComponent<Puppet2D_GlobalControl>()._ParentControls)
-		{
-			if((parentControl.bone.transform == bone.transform))
-			{
-				Debug.LogWarning("Can't create a Parent Control on Bone; it alreay has an Parent Control");
-				return;
-			}
-		}
-        GameObject control = new GameObject();
-		Undo.RegisterCreatedObjectUndo (control, "Created control");
-        control.name = (bone.name+"_CTRL");
-        GameObject controlGroup = new GameObject();
-		Undo.RegisterCreatedObjectUndo (controlGroup, "Created controlgrp");
-        controlGroup.name = (bone.name+"_CTRL_GRP");
-       control.transform.parent = controlGroup.transform;
-        controlGroup.transform.position = bone.transform.position;
-        controlGroup.transform.rotation = bone.transform.rotation;
-
-        SpriteRenderer spriteRenderer = control.AddComponent<SpriteRenderer>();
-        string path = ("Assets/Puppet2D/Textures/GUI/ParentControl.psd");
-        Sprite sprite =AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
-        spriteRenderer.sprite = sprite;
-		spriteRenderer.sortingLayerName = _controlSortingLayer;
-        Puppet2D_ParentControl parentConstraint = control.AddComponent<Puppet2D_ParentControl>();
-        parentConstraint.IsEnabled = true;
-        parentConstraint.Orient = true;
-        parentConstraint.Point = true;
-        parentConstraint.bone = bone;
-		parentConstraint.OffsetScale = bone.transform.localScale;
-        Selection.activeObject = control;
-
-        
-        controlGroup.transform.parent = globalCtrl.transform;
-
-        if (globalCtrl.GetComponent<Puppet2D_GlobalControl>().AutoRefresh)
-            globalCtrl.GetComponent<Puppet2D_GlobalControl>().Init();
-        else
-            globalCtrl.GetComponent<Puppet2D_GlobalControl>()._ParentControls.Add(parentConstraint);
-
-
-    }
-    static GameObject CreateGlobalControl()
-    {
-        GameObject globalCtrl = GameObject.Find("Global_CTRL");
-		//GameObject globalCtrl = GameObject.FindObjectOfType<Puppet2D_GlobalControl>().gameObject;
-
-        if (globalCtrl)
-        {
-            return globalCtrl;
-        }
-        else
-        {
-            globalCtrl = new GameObject("Global_CTRL");
-			Undo.RegisterCreatedObjectUndo (globalCtrl, "Created globalCTRL");
-
-			globalCtrl.AddComponent<Puppet2D_GlobalControl>();
-			//Puppet2D_GlobalControl globalCtrlScript = globalCtrl.AddComponent<Puppet2D_GlobalControl>();
-			//globalCtrlScript.boneSize = BoneSize;
-
-            return globalCtrl ;
-        }
-
-    }
-	[MenuItem ("GameObject/Puppet2D/Rig/Create Orient Control")]
-    static void CreateOrientControl()
-    {
-        GameObject bone = Selection.activeObject as GameObject;
-		if(bone)
-		{
-			if(bone.GetComponent<SpriteRenderer>())
-			{
-				if(!bone.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-				{
-					Debug.LogWarning("This is not a Puppet2D Bone");
-					return;
-				}
-			}
-			else
-			{
-				Debug.LogWarning("This is not a Puppet2D Bone");
-				return;
-			}
-		}
-		else
-		{
-			Debug.LogWarning("This is not a Puppet2D Bone");
-			return;
-		}
-		GameObject globalCtrl = CreateGlobalControl();
-		foreach(Puppet2D_IKHandle ikhandle in globalCtrl.GetComponent<Puppet2D_GlobalControl>()._Ikhandles)
-		{
-			if((ikhandle.bottomJointTransform == bone.transform)||(ikhandle.middleJointTransform == bone.transform))
-			{
-				Debug.LogWarning("Can't create a orient Control on Bone; it alreay has an IK handle");
-				return;
-			}
-		}
-		foreach(Puppet2D_ParentControl parentControl in globalCtrl.GetComponent<Puppet2D_GlobalControl>()._ParentControls)
-		{
-			if((parentControl.bone.transform == bone.transform))
-			{
-				Debug.LogWarning("Can't create a Parent Control on Bone; it alreay has an Parent Control");
-				return;
-			}
-		}
-
-
-        GameObject control = new GameObject();
-		Undo.RegisterCreatedObjectUndo (control, "Created control");
-        control.name = (bone.name+"_CTRL");
-        GameObject controlGroup = new GameObject();
-		Undo.RegisterCreatedObjectUndo (controlGroup, "Created controlGroup");
-        controlGroup.name = (bone.name+"_CTRL_GRP");
-        control.transform.parent = controlGroup.transform;
-        controlGroup.transform.position = bone.transform.position;
-        controlGroup.transform.rotation = bone.transform.rotation;
-        SpriteRenderer spriteRenderer = control.AddComponent<SpriteRenderer>();
-        string path = ("Assets/Puppet2D/Textures/GUI/OrientControl.psd");
-        Sprite sprite =AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
-        spriteRenderer.sprite = sprite;
-		spriteRenderer.sortingLayerName = _controlSortingLayer;
-        Puppet2D_ParentControl parentConstraint = control.AddComponent<Puppet2D_ParentControl>();
-        parentConstraint.IsEnabled = true;
-        parentConstraint.Orient = true;
-        parentConstraint.Point = false;
-        //parentConstraint.ConstrianedPosition = true;
-        parentConstraint.bone = bone;
-        Selection.activeObject = control;
-		parentConstraint.OffsetScale = bone.transform.localScale;
-
-        controlGroup.transform.parent = globalCtrl.transform;
-    
-        if (globalCtrl.GetComponent<Puppet2D_GlobalControl>().AutoRefresh)
-            globalCtrl.GetComponent<Puppet2D_GlobalControl>().Init();
-        else
-            globalCtrl.GetComponent<Puppet2D_GlobalControl>()._ParentControls.Add(parentConstraint);
-    }
-
-    
-    
-
-	[MenuItem ("GameObject/Puppet2D/Skin/ConvertSpriteToMesh")]
-    static void ConvertSpriteToMesh(int triIndex)
-    {
-        GameObject[] selection = Selection.gameObjects;
-        foreach(GameObject spriteGO in selection)
-        {
-			if(spriteGO.GetComponent<SpriteRenderer>())
-			{
-				string spriteName = spriteGO.GetComponent<SpriteRenderer>().sprite.name;
-				if(spriteName.Contains("Bone"))
-				{
-					Debug.LogWarning("You can't convert Bones to Mesh");
-					return;
-				}
-				if((spriteName=="orientControl")||(spriteName=="parentControl")||(spriteName=="VertexHandleControl")||(spriteName=="IKControl"))
-				{
-					Debug.LogWarning("You can't convert Controls to Mesh");
-					return;
-				}
-	            PolygonCollider2D polyCol;
-	            GameObject MeshedSprite;
-	            Quaternion rot = spriteGO.transform.rotation;
-	            spriteGO.transform.eulerAngles = Vector3.zero;
-				int layer = spriteGO.layer;
-				string sortingLayer = spriteGO.renderer.sortingLayerName;
-				int sortingOrder = spriteGO.renderer.sortingOrder;
-
-    	
-				if(spriteGO.GetComponent<PolygonCollider2D>()==null)
-	            {
-	                polyCol = Undo.AddComponent<PolygonCollider2D> (spriteGO);
-					//Puppet2D_CreatePolygonFromSprite polyFromSprite = Undo.AddComponent<Puppet2D_CreatePolygonFromSprite> (spriteGO);
-					Puppet2D_CreatePolygonFromSprite polyFromSprite = ScriptableObject.CreateInstance("Puppet2D_CreatePolygonFromSprite") as Puppet2D_CreatePolygonFromSprite;
-					MeshedSprite = polyFromSprite.Run(spriteGO.transform, true,triIndex);
-
-					//polyFromSprite.ReverseNormals = true;
-	                //MeshedSprite =polyFromSprite.Run();
-	                MeshedSprite.name = (spriteGO.name+"_GEO");
-	                DestroyImmediate(polyFromSprite);
-	                Undo.DestroyObjectImmediate(polyCol);
-
-
-	                
-	            }
-	            else
-	            {
-	                polyCol = spriteGO.GetComponent<PolygonCollider2D>();
-
-					//Puppet2D_CreatePolygonFromSprite polyFromSprite = Undo.AddComponent<Puppet2D_CreatePolygonFromSprite> (spriteGO);
-					Puppet2D_CreatePolygonFromSprite polyFromSprite = ScriptableObject.CreateInstance("Puppet2D_CreatePolygonFromSprite") as Puppet2D_CreatePolygonFromSprite;
-					MeshedSprite = polyFromSprite.Run(spriteGO.transform, true,triIndex);
-
-
-					//polyFromSprite.ReverseNormals = true;
-	                //MeshedSprite = polyFromSprite.Run();
-					MeshedSprite.name = (spriteGO.name+"_GEO");
-
-	                DestroyImmediate(polyFromSprite); 
-					Undo.DestroyObjectImmediate(polyCol);
-
-				}
-				MeshedSprite.layer = layer;
-				MeshedSprite.renderer.sortingLayerName = sortingLayer;
-				MeshedSprite.renderer.sortingOrder = sortingOrder;
-				MeshedSprite.AddComponent<Puppet2D_SortingLayer>();
-           
-				
-				MeshedSprite.transform.position = spriteGO.transform.position;
-	            MeshedSprite.transform.rotation = rot;
-	            
-	            Sprite spriteInfo = spriteGO.GetComponent<SpriteRenderer>().sprite;
-	            
-	            TextureImporter textureImporter = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(spriteInfo)) as TextureImporter;
-	            
-	            //textureImporter.textureType = TextureImporterType.Image;
-	            
-	            MeshedSprite.renderer.sharedMaterial.shader = Shader.Find("Unlit/Transparent");
-	            
-	            MeshedSprite.renderer.sharedMaterial.SetTexture("_MainTex", spriteInfo.texture);
-	            
-	            textureImporter.textureType = TextureImporterType.Sprite;
-	            
-	            DestroyImmediate(spriteGO);
-	            
-	            Selection.activeGameObject = MeshedSprite;
-	            
-			}
-			else
-			{
-				Debug.LogWarning("Object is not a sprite");
-				return;
-			}
-        }
-    }
-	[MenuItem ("GameObject/Puppet2D/Skin/Parent Mesh To Bones")]
-    static void BindRigidSkin()
-    {
-        GameObject[] selection = Selection.gameObjects;
-        List<GameObject> selectedBones = new List<GameObject>();
-        List<GameObject> selectedMeshes= new List<GameObject>();
-        
-        //GameObject bone;
-        //GameObject control;
-        foreach (GameObject Obj in selection)
-        {
-			if(Obj.GetComponent<SpriteRenderer>())
-			{
-				if (Obj.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-	            {
-                    if (Obj.transform.childCount > 0)
-                    {
-                        foreach (Transform child in Obj.transform)
-                        {
-                            if (child.GetComponent<Puppet2D_HiddenBone>())
-                            {
-                                selectedBones.Add(child.gameObject);
-                            }
-                        }
-                    }
-                    else
-                        selectedBones.Add(Obj);
-
-				}
-				else
-				{
-					selectedMeshes.Add(Obj);
-				}
-			}
-            else
-            {
-                selectedMeshes.Add(Obj);
-            }
-        }
-
-		if((selectedBones.Count == 0)||(selectedMeshes.Count==0))
-		{
-			Debug.LogWarning("You need to select at least one bone and one other object");
-			return;
-		}
-        foreach (GameObject mesh in selectedMeshes)
-        {
-            float testdist = 1000000;
-            GameObject closestBone =  null;
-            foreach (GameObject bone in selectedBones)
-            {
-                float dist = Vector2.Distance(new Vector2(bone.renderer.bounds.center.x,bone.renderer.bounds.center.y), new Vector2(mesh.transform.position.x,mesh.transform.position.y));
-                if (dist < testdist)
-                {
-                    testdist = dist;
-                    //Debug.Log("closest bone to " + mesh.name + " is " + bone.name + " distance " + dist);
-                    if(bone.GetComponent<Puppet2D_HiddenBone>())
-                        closestBone = bone.transform.parent.gameObject;
-                    else
-                        closestBone = bone;
-
-                }
-                
-            }
-            //mesh.transform.parent = closestBone.transform;
-			Undo.SetTransformParent (mesh.transform, closestBone.transform, "parent bone");
-
-            /*
-            ParentControl parentConstraint = closestBone.AddComponent<ParentControl>();
-            parentConstraint.IsEnabled = true;
-            parentConstraint.Orient = true;
-            parentConstraint.Point = true;
-            parentConstraint.MaintainOffset = true;
-   
-            parentConstraint.OffsetPos = closestBone.transform.InverseTransformPoint(mesh.transform.position);
-            parentConstraint.OffsetOrient = closestBone.transform.rotation * mesh.transform.rotation ;
-            parentConstraint.bone = mesh;
-            */
-        }
-        
-    }
-	[MenuItem ("GameObject/Puppet2D/Skin/Bind Smooth Skin")]
-    static void BindSmoothSkin()
-    {
-        GameObject[] selection = Selection.gameObjects;
-        List<Transform> selectedBones = new List<Transform>();
-        List<GameObject> selectedMeshes= new List<GameObject>();
-        foreach (GameObject Obj in selection)
-        {
-            if (Obj.GetComponent<SpriteRenderer>()== null)
-            {
-				if ((Obj.GetComponent<MeshRenderer>())||(Obj.GetComponent<SkinnedMeshRenderer>()))
-				{
-					selectedMeshes.Add(Obj);
-                }
-                else
-                {
-                    Debug.LogWarning("Please select a mesh with a MeshRenderer, and some bones");
-                    return;
-                }
-               
-            }
-			else if (Obj.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-            {
-				selectedBones.Add(Obj.transform);
-				if (Obj.GetComponent<SpriteRenderer> ().sprite.name.Contains ("BoneScaled"))
-					Obj.GetComponent<SpriteRenderer> ().sprite = boneOriginal;
-
-            }
-			else
-            {
-                Debug.LogWarning("Please select a mesh with a MeshRenderer, not a sprite");
-                return;
-            }
-        }
-        if (selectedBones.Count == 0)
-        {
-            if (selectedMeshes.Count > 0)
-            {
-                if(EditorUtility.DisplayDialog("Detatch Skin?","Do you want to detatch the Skin From the bones?", "Detach", "Do Not Detach")) 
-                {
-                    //EditWeights();
-                    foreach (GameObject mesh in selectedMeshes)
-                    {
-                        SkinnedMeshRenderer smr = mesh.GetComponent<SkinnedMeshRenderer>();
-                        if (smr)
-                        {
-                            Material mat = smr.sharedMaterial;
-                            //DestroyImmediate(mesh.GetComponent<Puppet2D_Bakedmesh>());
-                            DestroyImmediate(smr);
-                            MeshRenderer mr = mesh.AddComponent<MeshRenderer>();
-                            mr.sharedMaterial = mat;
-                        }
-                    }
-                    return;
-                }
-
-
-
-            }
-            //Debug.LogWarning("Please select some bones, along with a mesh");
-            return;
-        }
-        foreach (GameObject mesh in selectedMeshes)
-        {
-            Material mat = null;
-			string sortingLayer = "";
-			int sortingOrder = 0;
-            if(mesh.GetComponent<MeshRenderer>()!=null)
-            {
-                mat = mesh.GetComponent<MeshRenderer>().sharedMaterial;
-
-				sortingLayer = mesh.renderer.sortingLayerName;
-				sortingOrder = mesh.renderer.sortingOrder;
-
-                Undo.DestroyObjectImmediate(mesh.GetComponent<MeshRenderer>());
-            }
-
-            SkinnedMeshRenderer renderer = mesh.GetComponent<SkinnedMeshRenderer>();
-            if(renderer == null)
-                renderer = Undo.AddComponent<SkinnedMeshRenderer>(mesh);
-
-
-
-			Puppet2D_SortingLayer puppet2D_SortingLayer = mesh.GetComponent<Puppet2D_SortingLayer>();
-			if(puppet2D_SortingLayer != null)
-				Undo.DestroyObjectImmediate(puppet2D_SortingLayer);
-
-
-            Mesh sharedMesh = mesh.transform.GetComponent<MeshFilter>().sharedMesh;
-            Vector3[] verts = sharedMesh.vertices;
-
-
-            Matrix4x4[] bindPoses = new Matrix4x4[selectedBones.Count];
-
-
-            List<Transform> closestBones =  new List<Transform>();
-            closestBones.Clear();
-            //Debug.Log(verts.Length);
-            BoneWeight[] weights = new BoneWeight[verts.Length];
-            int index = 0;
-			int index2 = 0;
-
-            for (int j = 0; j < weights.Length; j++)
-            {
-                float testdist = 1000000;
-				float testdist2 = 1000000;
-                //closestBones.Add(selectedBones[0].transform);
-                for (int i = 0; i < selectedBones.Count; i++)
-                {
-
-                    Vector3 worldPt = mesh.transform.TransformPoint(verts[j]);
-
-					float dist = Vector2.Distance(new Vector2(selectedBones[i].renderer.bounds.center.x,selectedBones[i].renderer.bounds.center.y), new Vector2(worldPt.x,worldPt.y));
-                    
-					if (dist < testdist)
-                    {
-                        testdist = dist;
-                        index = selectedBones.IndexOf(selectedBones[i]);
-
-                    }
-                    
-                    
-                    Transform bone = selectedBones[i];
-                    bindPoses[i] = bone.worldToLocalMatrix * mesh.transform.localToWorldMatrix;
-                }
-				for (int i = 0; i < selectedBones.Count; i++)
-				{
-					if(!(index==(selectedBones.IndexOf(selectedBones[i]))))
-					{
-					Vector3 worldPt = mesh.transform.TransformPoint(verts[j]);
-					//float dist = Vector2.Distance(new Vector2(selectedBones[i].position.x,selectedBones[i].position.y), new Vector2(worldPt.x,worldPt.y));
-					float dist = Vector2.Distance(new Vector2(selectedBones[i].renderer.bounds.center.x,selectedBones[i].renderer.bounds.center.y), new Vector2(worldPt.x,worldPt.y));
-
-					if (dist < testdist2)
-					{
-						testdist2 = dist;
-						index2 = selectedBones.IndexOf(selectedBones[i]);
-						/*if(selectedBones[i].parent)
-							if(selectedBones.IndexOf(selectedBones[i].parent.transform) != index)
-								if(selectedBones[i].parent.GetComponent<SpriteRenderer>())
-									if(selectedBones[i].parent.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
-									{
-										index2 = selectedBones.IndexOf(selectedBones[i].parent.transform);
-										testdist2 = Vector2.Distance(new Vector2(selectedBones[i].parent.transform.renderer.bounds.center.x,selectedBones[i].parent.transform.renderer.bounds.center.y), new Vector2(worldPt.x,worldPt.y));
-
-									}
-						*/
-
-
-					}
-					}
-
-				}
-
-				float combinedDistance = testdist+testdist2;
-				float weight1 = (testdist/combinedDistance);
-				float weight2 =  (testdist2/combinedDistance);
-				weight1 = Mathf.Lerp(1, 0, weight1);
-				weight2 = Mathf.Lerp(1, 0, weight2);
-
-				weight1= Mathf.Clamp01((weight1+0.5f)*(weight1+0.5f)*(weight1+0.5f) - 0.5f);
-				weight2= Mathf.Clamp01((weight2+0.5f)*(weight2+0.5f)*(weight2+0.5f) - 0.5f);
-
-				if (_numberBonesToSkinToIndex == 1)
-				{
-					weights [j].boneIndex0 = index;
-					weights [j].weight0 = weight1;
-					weights [j].boneIndex1 = index2;
-					weights [j].weight1 = weight2;
-				} 
-				else 
-				{
-					weights [j].boneIndex0 = index;
-					weights [j].weight0 = 1;
-				}
-
-                //Debug.Log("Skinning " + j + " closest bone is " + selectedBones[index].name + " index is " + index);
-            }
-
-            sharedMesh.boneWeights = weights;
-
-            sharedMesh.bindposes = bindPoses;
-
-            renderer.bones = selectedBones.ToArray();
-
-            //sharedMesh = SmoothSkinWeights(sharedMesh);
-           	renderer.sharedMesh = sharedMesh;
-            if(mat)
-            renderer.sharedMaterial = mat;
-
-			renderer.sortingLayerName = sortingLayer;
-			renderer.sortingOrder = sortingOrder;
-			mesh.AddComponent<Puppet2D_SortingLayer>();
-
-
-           
-        }
-		foreach (Transform bone in selectedBones) 
-		{
-			if (bone.GetComponent<SpriteRenderer> ().sprite.name=="Bone")
-				bone.GetComponent<SpriteRenderer> ().sprite = boneSprite;
-		}
-
-    }
-	[MenuItem ("GameObject/Puppet2D/Skin/Edit Skin Weights")]
-    static bool EditWeights()
-    {
-        GameObject[] selection = Selection.gameObjects;
-
-        foreach(GameObject sel in selection)
-        {
-            if ((sel.GetComponent<Puppet2D_Bakedmesh>() != null))
-            {
-                Debug.LogWarning("Already in edit mode");
-                return false;
-            }
-            if ((sel.GetComponent<SkinnedMeshRenderer>()))
-            {
-                SkinnedMeshRenderer renderer = sel.GetComponent<SkinnedMeshRenderer>();
-                Undo.RecordObject(sel, "add mesh to meshes being editted");
-                Undo.AddComponent<Puppet2D_Bakedmesh>(sel);
-                Mesh mesh = sel.GetComponent<MeshFilter>().sharedMesh;
-	            
-
-                Vector3[] verts = mesh.vertices;
-                BoneWeight[] boneWeights = mesh.boneWeights;
-
-                for (int i = 0; i < verts.Length; i++)
-                {
-                    Vector3 vert = verts[i];
-                    Vector3 vertPos = sel.transform.TransformPoint(vert);
-                    GameObject handle = new GameObject("vertex" + i);
-                    Undo.RegisterCreatedObjectUndo (handle, "vertex created");
-                    handle.transform.position = vertPos;
-                    //handle.transform.parent = sel.transform;
-                    Undo.SetTransformParent(handle.transform, sel.transform, "parent handle");
-                    //handle.tag = "handle";
-
-                    SpriteRenderer spriteRenderer = Undo.AddComponent<SpriteRenderer>(handle);
-                    string path = ("Assets/Puppet2D/Textures/GUI/VertexHandle.psd");
-                    Sprite sprite = AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
-                    spriteRenderer.sprite = sprite;
-                    spriteRenderer.sortingLayerName = _controlSortingLayer;
-                    Puppet2D_EditSkinWeights editSkinWeights = Undo.AddComponent<Puppet2D_EditSkinWeights>(handle);
-
-                    editSkinWeights.verts = mesh.vertices;
-
-                    editSkinWeights.Weight0 = boneWeights[i].weight0;
-                    editSkinWeights.Weight1 = boneWeights[i].weight1;
-                    editSkinWeights.Weight2 = boneWeights[i].weight2;
-                    editSkinWeights.Weight3 = boneWeights[i].weight3;
-
-                    if (boneWeights[i].weight0 > 0)
-                    {
-                        editSkinWeights.Bone0 = renderer.bones[boneWeights[i].boneIndex0].gameObject;
-                        editSkinWeights.boneIndex0 = boneWeights[i].boneIndex0;
-                    }
-                    else
-                        editSkinWeights.Bone0 = null;
-
-                    if (boneWeights[i].weight1 > 0)
-                    {
-                        editSkinWeights.Bone1 = renderer.bones[boneWeights[i].boneIndex1].gameObject;
-                        editSkinWeights.boneIndex1 = boneWeights[i].boneIndex1;
-                    }
-                    else
-                    {
-                        editSkinWeights.Bone1 = null;
-                        editSkinWeights.boneIndex1 = renderer.bones.Length;
-                    }
-
-                    if (boneWeights[i].weight2 > 0)
-                    {
-                        editSkinWeights.Bone2 = renderer.bones[boneWeights[i].boneIndex2].gameObject;
-                        editSkinWeights.boneIndex2 = boneWeights[i].boneIndex2;
-                    }
-                    else
-                    {
-                        editSkinWeights.Bone2 = null;
-                        editSkinWeights.boneIndex2 = renderer.bones.Length;
-                    }
-
-                    if (boneWeights[i].weight3 > 0)
-                    {
-                        editSkinWeights.Bone3 = renderer.bones[boneWeights[i].boneIndex3].gameObject;
-                        editSkinWeights.boneIndex3 = boneWeights[i].boneIndex3;
-                    }
-                    else
-                    {
-                        editSkinWeights.Bone3 = null;
-                        editSkinWeights.boneIndex3 = renderer.bones.Length;
-                    }
-
-                    editSkinWeights.mesh = mesh;
-                    editSkinWeights.meshRenderer = renderer;
-                    editSkinWeights.vertNumber = i;
-                }
-
-            }
-            else
-            {
-                Debug.LogWarning("Selection does not have a meshRenderer");
-                return false;
-            }
-
-
-        }
-		return true;
-    }
-
-	[MenuItem ("GameObject/Puppet2D/Skin/Finish Editting Skin Weights")]
-    static void FinishEditingWeights()
-    {
-		SpriteRenderer[] sprs = FindObjectsOfType<SpriteRenderer>();
-		Puppet2D_Bakedmesh[] skinnedMeshesBeingEditted = FindObjectsOfType<Puppet2D_Bakedmesh>();
-		foreach(SpriteRenderer spr in sprs)
-		{
-			if(spr.sprite)		
-				if(spr.sprite.name.Contains("Bone"))			
-					spr.gameObject.GetComponent<SpriteRenderer>().color = Color.white;					
-
-		}
-		foreach(Puppet2D_Bakedmesh bakedMesh in skinnedMeshesBeingEditted)
-        {
-			GameObject sel = bakedMesh.gameObject;
-
-			DestroyImmediate(bakedMesh);
-
-            int numberChildren = sel.transform.childCount;
-            List<GameObject> vertsToDestroy = new List<GameObject>();
-            for(int i = 0;i< numberChildren;i++)
-            {
-                vertsToDestroy.Add(sel.transform.GetChild(i).gameObject);
-
-
-            }
-            foreach(GameObject vert in vertsToDestroy)
-                DestroyImmediate(vert);
-        }
-    }
-
-    static Mesh SmoothSkinWeights(Mesh sharedMesh)
-    {
-        Debug.Log("smoothing weights");
-        int[] triangles = sharedMesh.GetTriangles(0);
-        //Vector3[] verts = sharedMesh.vertices;
-        BoneWeight[] boneWeights = sharedMesh.boneWeights;
-
-        for(int i =0;i<triangles.Length;i+=3)
-        {
-            BoneWeight v1 = boneWeights[triangles[i]];
-            BoneWeight v2 = boneWeights[triangles[i+1]];
-            BoneWeight v3 = boneWeights[triangles[i+2]];
-
-            List<int> v1Bones = new List<int>(new int[] {v1.boneIndex0,v1.boneIndex1,v1.boneIndex2,v1.boneIndex3 });
-            List<int> v2Bones = new List<int>(new int[]  {v2.boneIndex0,v2.boneIndex1,v2.boneIndex2,v2.boneIndex3 });
-            List<int> v3Bones = new List<int>(new int[]  {v3.boneIndex0,v3.boneIndex1,v3.boneIndex2,v3.boneIndex3 });
-
-            List<float> v1Weights = new List<float>(new float[] {v1.weight0,v1.weight1,v1.weight2,v1.weight3 });
-            List<float> v2Weights = new List<float>(new float[]  {v2.weight0,v2.weight1,v2.weight2,v2.weight3 });
-            List<float> v3Weights = new List<float>(new float[]  {v3.weight0,v3.weight1,v3.weight2,v3.weight3 });
-
-            //List<int> v1v2Bones = v1Bones.Intersect(v2Bones).ToList();
-            /*for (int j = 0; j < 4; j++)
-            {
-                if (!v2Bones.Contains(v1Bones[j]))
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        //if(v2Bones[k] == null)
-                       // {
-                            v2Bones[1] =v1Bones[j];
-                            v2Weights[1] =0;
-                        //    break;
-                       // }
-                    }
-
-                }
-                if (!v3Bones.Contains(v1Bones[j]))
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        //if(v3Bones[k] == null)
-                        //{
-                            v3Bones[1] =v1Bones[j];
-                            v3Weights[1] =0;
-                        //    break;
-                       // }
-                    }
-                    
-                }
-                if (!v3Bones.Contains(v2Bones[j]))
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        //if(v3Bones[k] == null)
-                        //{
-                            v3Bones[1] =v2Bones[j];
-                            v3Weights[1] =0;
-                         //   break;
-                       // }
-                    }                    
-                }
-                                    
-                if (!v1Bones.Contains(v2Bones[j]))
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        //if(v1Bones[k] == null)
-                        //{
-                            v1Bones[1] =v2Bones[j];
-                            v1Weights[1] =0;
-                        //    break;
-                        //}
-                    }
-                    
-                }
-                if (!v1Bones.Contains(v3Bones[j]))
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        //if(v1Bones[k] == null)
-                        //{
-                            v1Bones[1] =v3Bones[j];
-                            v1Weights[1] =0;
-                        //    break;
-                       // }
-                    }
-                    
-                }
-                if (!v2Bones.Contains(v3Bones[j]))
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        //if(v2Bones[k] == null)
-                        //{
-                            v2Bones[1] =v3Bones[j];
-                            v2Weights[1] =0;
-                         //   break;
-                        //}
-                    }                    
-                }
-                
-            }*/
-            for (int j = 0; j < 2; j++)
-            {
-                for (int k = 0; k < 2; k++)
-                {
-                    if (v1Bones[j] == v2Bones[k])
-                    {
-                        for (int l = 0; l < 2; l++)
-                        {
-                            if (v1Bones[j] == v3Bones[l])
-                            {
-
-                                v1Weights[j] =(v1Weights[j]+v2Weights[k]+v3Weights[l])/3;
-                                v2Weights[k] = (v1Weights[j]+v2Weights[k]+v3Weights[l])/3;
-                                v3Weights[l] = (v1Weights[j]+v2Weights[k]+v3Weights[l])/3;
-
-
-                            }
-                        }
-                    }
-                }/*
-                for (int k = 0; k < 2; k++)
-                {
-                    if (v1Bones[j] == v3Bones[k])
-                    {
-                        v1Weights[j] =(v1Weights[j]+v3Weights[k])/2;
-                        v3Weights[k] = (v1Weights[j]+v3Weights[k])/2;
-                    }
-
-                }
-                for (int k = 0; k < 2; k++)
-                {
-                    if (v2Bones[j] == v3Bones[k])
-                    {                       
-                        v2Weights[j] =(v2Weights[j]+v3Weights[k])/2;
-                        v3Weights[k] = (v2Weights[j]+v3Weights[k])/2;
-                    }
-                    
-                }*/
-
-            }
-            boneWeights[triangles[i]].weight0 = v1Weights[0];
-            boneWeights[triangles[i]].weight1 = v1Weights[1];
-            //boneWeights[triangles[i]].weight2 = v1Weights[2];
-            //boneWeights[triangles[i]].weight3 = v1Weights[3];
-
-            boneWeights[triangles[i+1]].weight0 = v2Weights[0];
-            boneWeights[triangles[i+1]].weight1 = v2Weights[1];
-            //boneWeights[triangles[i+1]].weight2 = v2Weights[2];
-            //boneWeights[triangles[i+1]].weight3 = v2Weights[3];
-
-            boneWeights[triangles[i+2]].weight0 = v3Weights[0];
-            boneWeights[triangles[i+2]].weight1 = v3Weights[1];
-            //boneWeights[triangles[i+2]].weight2 = v3Weights[2];
-            //boneWeights[triangles[i+2]].weight3 = v3Weights[3];
-
-        }
-        sharedMesh.boneWeights = boneWeights;
-        return sharedMesh;
-    }
+	
+	
 
 	void ChangeBoneSize ()
 	{
@@ -2117,9 +908,6 @@ public class Puppet2D_Editor : EditorWindow
 		textureImporter.spritePixelsToUnits = (1-BoneSize)*(1-BoneSize)*1000f;
 		AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
 
-		/*Puppet2D_GlobalControl[] globalCtrlScripts = GameObject.FindObjectsOfType<Puppet2D_GlobalControl>();
-		foreach(Puppet2D_GlobalControl globalCtrlScript in globalCtrlScripts)
-			globalCtrlScript.boneSize = BoneSize;*/
 	}
 
 	void ChangeControlSize ()
@@ -2142,6 +930,24 @@ public class Puppet2D_Editor : EditorWindow
 		textureImporter.spritePixelsToUnits = (1-ControlSize)*(1-ControlSize)*1000f;
 		AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
 
+        path = ("Assets/Puppet2D/Textures/GUI/splineControl.psd");
+        sprite =AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
+        textureImporter = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(sprite)) as TextureImporter;
+        textureImporter.spritePixelsToUnits = (1-ControlSize)*(1-ControlSize)*1000f;
+        AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+
+        path = ("Assets/Puppet2D/Textures/GUI/splineMiddleControl.psd");
+        sprite =AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
+        textureImporter = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(sprite)) as TextureImporter;
+        textureImporter.spritePixelsToUnits = (1-ControlSize)*(1-ControlSize)*1000f;
+        AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+
+        path = ("Assets/Puppet2D/Textures/GUI/ffdBone.psd");
+        sprite =AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
+        textureImporter = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(sprite)) as TextureImporter;
+        textureImporter.spritePixelsToUnits = (1-ControlSize)*(1-ControlSize)*1000f;
+        AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+
 	}
 
 	void ChangeVertexHandleSize ()
@@ -2160,7 +966,6 @@ public class Puppet2D_Editor : EditorWindow
 
         var internalEditorUtilityType = typeof(InternalEditorUtility);
         PropertyInfo sortingLayersProperty = internalEditorUtilityType.GetProperty("sortingLayerNames", BindingFlags.Static | BindingFlags.NonPublic);
-        //string[] stuff = (string[])sortingLayersProperty.GetValue(null, new object[0]);
         string[] stuff = (string[])sortingLayersProperty.GetValue(null, new object[0]);
 
         sortingLayersProperty.SetValue(null, newName,new object[stuff.Length]);
@@ -2170,8 +975,121 @@ public class Puppet2D_Editor : EditorWindow
     {
         var internalEditorUtilityType = typeof(InternalEditorUtility);
         PropertyInfo sortingLayersProperty = internalEditorUtilityType.GetProperty("sortingLayerNames", BindingFlags.Static | BindingFlags.NonPublic);
-        //string[] stuff = (string[])sortingLayersProperty.GetValue(null, new object[0]);
 
         return (string[])sortingLayersProperty.GetValue(null, new object[0]);
     }
+
+
+
+    void MoveControl(Vector3 mousePos)
+    {
+        GameObject selectedGO = Selection.activeGameObject; 
+		if(selectedGO && selectedGO.transform && selectedGO.transform.parent)     
+            selectedGO.transform.parent.position = new Vector3(mousePos.x, mousePos.y, 0);
+
+
+    }
+	void OnSelectionChange()
+	{
+		if( SkinWeightsPaint)
+		{
+			if (currentSelection == null)
+				return;
+
+			GameObject c = Selection.activeGameObject;
+			if (c && c.GetComponent<SpriteRenderer>() && c.GetComponent<SpriteRenderer>().sprite && c.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
+			{
+                Puppet2D_HiddenBone[] hiddenBones = Transform.FindObjectsOfType<Puppet2D_HiddenBone>();
+                foreach (Puppet2D_HiddenBone hiddenBone in hiddenBones)
+                {
+                    if (hiddenBone.transform.parent != null && hiddenBone.transform.parent && hiddenBone.transform.parent == c.transform)
+                    {
+                        hiddenBone.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, .5f, 0);
+                        hiddenBone.transform.parent.GetComponent<SpriteRenderer>().color = new Color(1, .5f, 0);
+                    }
+                    else if (hiddenBone.transform.parent)
+                    {
+                        hiddenBone.transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
+                        hiddenBone.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    }
+                    else
+                    {
+                        hiddenBone.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    }
+                }
+				paintWeightsBone = c;
+
+			}
+			
+			Vector3[] vertices =  currentSelectionMesh.vertices;
+			Color[] colrs  =  currentSelectionMesh.colors;			
+			
+			SkinnedMeshRenderer smr = currentSelection.GetComponent<SkinnedMeshRenderer>();
+			//Debug.Log("pos is " +pos);
+			for (int i=0;i<vertices.Length;i++)
+			{
+				colrs[i]=Color.black;
+				if(smr.bones.ToList().IndexOf( paintWeightsBone.transform) >-1&&  currentSelectionMesh.boneWeights[i].boneIndex0==smr.bones.ToList().IndexOf( paintWeightsBone.transform))
+					colrs[i] =new Color( currentSelectionMesh.boneWeights[i].weight0, currentSelectionMesh.boneWeights[i].weight0, currentSelectionMesh.boneWeights[i].weight0);
+				else if(smr.bones.ToList().IndexOf( paintWeightsBone.transform)>-1 &&  currentSelectionMesh.boneWeights[i].boneIndex1==smr.bones.ToList().IndexOf( paintWeightsBone.transform))
+					colrs[i] =new Color( currentSelectionMesh.boneWeights[i].weight1, currentSelectionMesh.boneWeights[i].weight1, currentSelectionMesh.boneWeights[i].weight1);
+				//				else if(smr.bones[ Puppet2D_Editor.currentSelectionMesh.boneWeights[i].boneIndex2]== Puppet2D_Editor.paintWeightsBone.transform)
+				//					colrs[i] =new Color( Puppet2D_Editor.currentSelectionMesh.boneWeights[i].weight2, Puppet2D_Editor.currentSelectionMesh.boneWeights[i].weight2, Puppet2D_Editor.currentSelectionMesh.boneWeights[i].weight2);
+				//				else if(smr.bones[ Puppet2D_Editor.currentSelectionMesh.boneWeights[i].boneIndex3]== Puppet2D_Editor.paintWeightsBone.transform)
+				//					colrs[i] =new Color( Puppet2D_Editor.currentSelectionMesh.boneWeights[i].weight3, Puppet2D_Editor.currentSelectionMesh.boneWeights[i].weight3, Puppet2D_Editor.currentSelectionMesh.boneWeights[i].weight3);
+				
+				
+				
+			}
+			currentSelectionMesh.colors = colrs;
+		}
+	}
+	
+	void Start()
+	{
+		imageCount = 0;
+	}
+	void Update()
+	{
+		if(recordPngSequence && Application.isPlaying)
+		{
+            Time.captureFramerate = 30;
+
+			recordDelta +=Time.deltaTime;
+			
+			if(recordDelta >= 1/30)
+			{ 
+				imageCount++;
+
+
+                if (ExportPngAlpha)
+                {
+                    Shader newshad = Shader.Find("Puppet2D/BlackAndWhite");
+                    Camera.main.SetReplacementShader(newshad, null);
+                    Camera.main.backgroundColor = Color.black;
+
+                    Application.CaptureScreenshot(pngSequPath + "_Alpha." + imageCount.ToString("D4") + ".png", resolution); 
+                }
+                else
+                {
+                    Application.CaptureScreenshot(pngSequPath + "." + imageCount.ToString("D4") + ".png", resolution); 
+                }
+
+ 
+
+				recordDelta = 0f;
+			}
+			Repaint();
+
+		}
+		if(!Application.isPlaying && imageCount >0)
+		{
+			recordPngSequence = false;
+			imageCount =0;
+            ExportPngAlpha = false;
+		}
+
+
+	}
+
 }

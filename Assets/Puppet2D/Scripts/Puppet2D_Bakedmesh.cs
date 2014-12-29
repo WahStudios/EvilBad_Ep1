@@ -32,6 +32,7 @@ public class Puppet2D_Bakedmesh : MonoBehaviour {
                     Debug.LogWarning("vertex " + i + " is corrupted");
                 i++;
             }
+            DestroyImmediate(baked);
         }
 	}
 }

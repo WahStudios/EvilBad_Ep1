@@ -98,9 +98,11 @@ public class Puppet2D_BakeAnimation : MonoBehaviour {
 			newClip.wrapMode = clip.wrapMode;
 			AnimationClipSettings animClipSettings = new AnimationClipSettings();
 			animClipSettings.stopTime = clip.length;
-
-
+			#if UNITY_5_0
+			newClip.legacy = false;
+			#else
 			AnimationUtility.SetAnimationType(newClip, ModelImporterAnimationType.Generic);
+			#endif
 			SaveAnimationClip( newClip );
 
             AnimationEvent[] events = new AnimationEvent[1];
@@ -149,9 +151,15 @@ public class Puppet2D_BakeAnimation : MonoBehaviour {
 		GetAllChilds(transform.gameObject);
 		foreach (GameObject child in childsOfGameobject)
 		{
-			if(child.transform.GetComponent<SpriteRenderer>())
-				if(child.transform.GetComponent<SpriteRenderer>().sprite.name.Contains ("Bone"))
-					returnList.Add(child.transform);
+            if (child.transform.GetComponent<SpriteRenderer>() && child.transform.GetComponent<SpriteRenderer>().sprite && child.transform.GetComponent<SpriteRenderer>().sprite.name.Contains("Bone"))
+            {            
+                returnList.Add(child.transform);
+                if (child.transform.GetComponent<SpriteRenderer>().sprite.name.Contains("ffd"))
+                {
+                    returnList.Add(child.transform.parent.transform);
+                }
+              
+            }
 		}
 		return returnList;
 	}
@@ -359,11 +367,28 @@ public class Puppet2D_BakeAnimation : MonoBehaviour {
 	List<AnimationClip> GetAnimationLengths()
 	{
 		List<AnimationClip> animationClips = new List<AnimationClip>();
+		#if UNITY_5_0
 		RuntimeAnimatorController controller = transform.GetComponent<Animator>().runtimeAnimatorController;
 
+		for (int i = 0; i < controller.animationClips.Length; i++)				
+		{
+			AnimationClip clip = new AnimationClip();
+			// Obviously loading it depends on where/how clip is stored, best case its a resource, worse case you have to search asset database.
+
+			string path = AssetDatabase.GetAssetPath(controller.animationClips[i]);
+			clip = (AnimationClip)Resources.LoadAssetAtPath(path, typeof(AnimationClip));
+			
+			//clip = (AnimationClip)Resources.LoadAssetAtPath("Assets/Puppet2D/Animation/" + m.GetState(i).GetMotion().name + ".anim", typeof(AnimationClip));
+			animationClips.Add(clip);
+
+			
+		}
+
+		return animationClips;
+		#else
+		RuntimeAnimatorController controller = transform.GetComponent<Animator>().runtimeAnimatorController;
 		if (controller is UnityEditorInternal.AnimatorController)
 		{
-
 			UnityEditorInternal.StateMachine m = ((UnityEditorInternal.AnimatorController)controller).GetLayer(0).stateMachine;
 
 			for (int i = 0; i < m.stateCount; i++)
@@ -391,6 +416,7 @@ public class Puppet2D_BakeAnimation : MonoBehaviour {
 
 		}
 		return animationClips;
+		#endif
 	}
 
 

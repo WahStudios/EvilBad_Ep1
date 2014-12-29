@@ -25,6 +25,9 @@ TextureImporter:
     21300040: Shield_1
     21300042: EvilBad_WeaponHandle
     21300044: GoldPillar_1
+    21300046: GoldPillar_2
+    21300048: BrokenGoldPillar_1
+    21300050: BrokenGoldPillar_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -70,9 +73,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 2692
+        y: 2742
         width: 211
-        height: 214
+        height: 213
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -80,9 +83,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 26
-        y: 2413
+        y: 2463
         width: 212
-        height: 214
+        height: 213
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -90,9 +93,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2623
-        y: 6
+        y: 56
         width: 332
-        height: 567
+        height: 566
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,7 +103,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1158
-        y: 2038
+        y: 2087
         width: 246
         height: 248
       alignment: 7
@@ -110,7 +113,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 38
-        y: 1720
+        y: 1769
         width: 277
         height: 238
       alignment: 7
@@ -120,9 +123,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 415
-        y: 1579
+        y: 1628
         width: 64
-        height: 388
+        height: 389
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,9 +133,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 585
-        y: 1687
+        y: 1737
         width: 249
-        height: 253
+        height: 252
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,7 +143,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 890
-        y: 1620
+        y: 1669
         width: 299
         height: 291
       alignment: 7
@@ -150,7 +153,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1322
-        y: 1611
+        y: 1660
         width: 224
         height: 333
       alignment: 7
@@ -160,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2001
-        y: 1622
+        y: 1671
         width: 310
         height: 206
       alignment: 7
@@ -170,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1618
-        y: 1622
+        y: 1671
         width: 309
         height: 67
       alignment: 7
@@ -180,9 +183,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 2067
+        y: 2117
         width: 281
-        height: 278
+        height: 277
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,7 +193,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 438
-        y: 2050
+        y: 2099
         width: 276
         height: 272
       alignment: 7
@@ -200,7 +203,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 780
-        y: 2051
+        y: 2100
         width: 268
         height: 265
       alignment: 7
@@ -210,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 304
-        y: 2440
+        y: 2489
         width: 129
         height: 129
       alignment: 0
@@ -220,9 +223,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 42
-        y: 1385
+        y: 1435
         width: 226
-        height: 272
+        height: 271
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,7 +233,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 627
-        y: 1407
+        y: 1456
         width: 120
         height: 220
       alignment: 0
@@ -242,7 +245,7 @@ TextureImporter:
         x: 11
         y: 965
         width: 1794
-        height: 346
+        height: 396
       alignment: 4
       pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,9 +253,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 678
-        y: 384
+        y: 433
         width: 363
-        height: 511
+        height: 512
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,9 +263,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1091
-        y: 375
+        y: 425
         width: 377
-        height: 512
+        height: 511
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,7 +273,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 570
-        y: 2437
+        y: 2486
         width: 102
         height: 150
       alignment: 9
@@ -283,6 +286,36 @@ TextureImporter:
         y: 30
         width: 315
         height: 1599
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GoldPillar_2
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 326
+        width: 296
+        height: 1263
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BrokenGoldPillar_1
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 2093
+        width: 315
+        height: 886
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BrokenGoldPillar_2
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 2270
+        width: 296
+        height: 681
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

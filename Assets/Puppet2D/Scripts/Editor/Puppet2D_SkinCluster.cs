@@ -21,7 +21,7 @@ public class Puppet2D_SkinCluster: MonoBehaviour
             GameObject closestBone = null;
             foreach (GameObject bone in bones)
             {
-                float dist = Vector2.Distance(new Vector2(bone.renderer.bounds.center.x, bone.renderer.bounds.center.y), new Vector2(vert.x, vert.y));
+				float dist = Vector2.Distance(new Vector2(bone.GetComponent<Renderer>().bounds.center.x, bone.GetComponent<Renderer>().bounds.center.y), new Vector2(vert.x, vert.y));
                 if (dist < testdist)
                 {
                     testdist = dist;
