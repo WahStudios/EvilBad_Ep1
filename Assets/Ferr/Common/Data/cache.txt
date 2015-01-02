@@ -56,6 +56,8 @@ Assets/Art Assests/Textures/Rock.prefab
 Assets/Prefabs/Clock.prefab
 Assets/Puppet2D/Prefabs/FFDMonster_Global_CTRL.prefab
 Assets/Puppet2D/Prefabs/croc_Global_CTRL.prefab
+Assets/Prefabs/UndeadSpartan.prefab
+Assets/Prefabs/Harpy.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -114,3 +116,5 @@ Assets/Art Assests/Textures/Rock.prefab
 Assets/Prefabs/Clock.prefab
 Assets/Puppet2D/Prefabs/FFDMonster_Global_CTRL.prefab
 Assets/Puppet2D/Prefabs/croc_Global_CTRL.prefab
+Assets/Prefabs/UndeadSpartan.prefab
+Assets/Prefabs/Harpy.prefab

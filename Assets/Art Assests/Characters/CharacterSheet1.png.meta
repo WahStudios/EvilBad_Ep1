@@ -45,6 +45,19 @@ TextureImporter:
     21300080: LilD_Body
     21300082: LilD_Head_Defeated
     21300084: LilD_Body_Defeated
+    21300086: UndeadSpartan_Spear
+    21300088: UndeadSpartan_Head
+    21300090: UndeadSpartan_Shoulder
+    21300092: UndeadSpartan_Arm
+    21300094: UndeadSpartan_Thigh
+    21300096: UndeadSpartan_Foot
+    21300098: UndeadSpartan_Body
+    21300100: UndeadSpartan_Waist
+    21300102: Spartan_Shield
+    21300104: Harpy_Head
+    21300106: Harpy_Wing
+    21300108: Harpy_Body
+    21300110: Harpy_Leg
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -515,6 +528,136 @@ TextureImporter:
         height: 209
       alignment: 7
       pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Spear
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 1938
+        width: 20
+        height: 565
+      alignment: 9
+      pivot: {x: .564819336, y: .270559669}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Head
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 2299
+        width: 128
+        height: 133
+      alignment: 9
+      pivot: {x: .79834938, y: .311316013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 2860
+        y: 2410
+        width: 74
+        height: 111
+      alignment: 9
+      pivot: {x: .544235647, y: .785063863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Arm
+      rect:
+        serializedVersion: 2
+        x: 2873
+        y: 2257
+        width: 49
+        height: 117
+      alignment: 9
+      pivot: {x: .619977653, y: .945658863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Thigh
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 2187
+        width: 23
+        height: 66
+      alignment: 9
+      pivot: {x: .484258235, y: .916829407}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Foot
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 2073
+        width: 56
+        height: 44
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Body
+      rect:
+        serializedVersion: 2
+        x: 2798
+        y: 2108
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UndeadSpartan_Waist
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 1985
+        width: 129
+        height: 74
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spartan_Shield
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1922
+        width: 219
+        height: 217
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Harpy_Head
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 1165
+        width: 177
+        height: 195
+      alignment: 9
+      pivot: {x: .703355372, y: .193979114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Harpy_Wing
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 1070
+        width: 275
+        height: 227
+      alignment: 9
+      pivot: {x: .0660076365, y: .358127415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Harpy_Body
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 1009
+        width: 128
+        height: 135
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Harpy_Leg
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 923
+        width: 110
+        height: 157
+      alignment: 9
+      pivot: {x: .75832963, y: .92232132}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
