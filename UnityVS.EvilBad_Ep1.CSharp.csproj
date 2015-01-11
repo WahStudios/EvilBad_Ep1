@@ -202,6 +202,7 @@
     <Compile Include="Assets\UniTile\Scripts\UniTileMarker.cs" />
     <Compile Include="Assets\UniTile\Scripts\UniTileTemplate.cs" />
     <Compile Include="Assets\UniTile\Scripts\UniTileTileset.cs" />
+    <Compile Include="Assets\tabManager.cs" />
     <None Include="Assets\Ferr\2D\Scripts\LibTessDotNet\LibTessDotNet-LICENSE.txt" />
     <None Include="Assets\Ferr\2DTerrain\Shaders\LightmapColored.shader" />
     <None Include="Assets\Ferr\2DTerrain\Shaders\LightmapColoredTransparent.shader" />

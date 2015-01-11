@@ -28,7 +28,7 @@ public class Item  {
         Hands
     }
 
-    public Item(string name, int id, string desc, int power, int speed, int value, ItemType type, Sprite sprite)
+    public Item(string name, int id, string desc, int power, int speed, int value, ItemType type)
     {
         itemName = name;
         itemID = id;
@@ -37,7 +37,7 @@ public class Item  {
         itemSpeed = speed;
         itemValue = value;
         itemType = type;
-        ItemIcon = sprite;
+		ItemIcon = Resources.Load<Sprite>("" + name);
     }
 
     public Item()

@@ -17,6 +17,7 @@ public class EvilBadControl : MonoBehaviour {
     public bool shieldStand = false;        //^^  ^^
     public bool isSnapped = false;
     public GameObject snapObject;
+	public tabManager Tabmanager;
 	// Use this for initialization
     private void Awake()
     {
@@ -34,6 +35,8 @@ public class EvilBadControl : MonoBehaviour {
         
 	// Update is called once per frame
 	void Update () {
+
+		if(Tabmanager.isActive == false){
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         isGrounded = Physics2D.OverlapCircle(grounder.transform.position, radiuss, ground);
         anim.SetBool("isGrounded", isGrounded);
@@ -199,6 +202,12 @@ public class EvilBadControl : MonoBehaviour {
             //}
             //
         }
+		}
+		else{
+			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+			anim.SetBool("walk", false);
+			anim.SetBool("walkToIdle", true);
+		}
         
 	}
 

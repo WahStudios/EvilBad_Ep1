@@ -197,6 +197,7 @@
      <Compile Include="Assets\UniTile\Scripts\UniTileMarker.cs" />
      <Compile Include="Assets\UniTile\Scripts\UniTileTemplate.cs" />
      <Compile Include="Assets\UniTile\Scripts\UniTileTileset.cs" />
+     <Compile Include="Assets\tabManager.cs" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColoredTint.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnitColoredTransparent.shader" />
      <None Include="Assets\Ferr\Docs\Ferr2DTerrainTool - Readme.txt" />

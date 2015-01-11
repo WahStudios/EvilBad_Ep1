@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 public class ItemDatabase : MonoBehaviour {
 
     public List<Item> items = new List<Item>();
@@ -10,6 +10,7 @@ public class ItemDatabase : MonoBehaviour {
     public Sprite item2;
     public Sprite item3;
     public Sprite item4;
+
     //public Sprite item5;
     //public Sprite item6;
     //public Sprite item7;
@@ -23,9 +24,11 @@ public class ItemDatabase : MonoBehaviour {
 	void Start () {
         
 
-        items.Add(new Item("ItemTile_Spear1", 0, "Nice Armor", 10, 10, 1, Item.ItemType.Chest, item1));
-        items.Add(new Item("ItemTile_Sword1", 1, "Better Armor", 10, 10, 1, Item.ItemType.Chest, item2));
-        items.Add(new Item("ItemTile_WoodenShield", 2, "NiceConsumable", 10, 10, 1, Item.ItemType.Consumable, item3));
+        items.Add(new Item("ItemPlaceholder1", 0, "Description", 10, 10, 23, Item.ItemType.Chest));
+        items.Add(new Item("ItemPlaceholder2", 1, "Description", 15, 10, 45, Item.ItemType.Chest));
+        items.Add(new Item("ItemPlaceholder3", 2, "Description", 05, 10, 101, Item.ItemType.Consumable));
+		items.Add(new Item("ItemPlaceholder1", 3, "Description", 10, 10, 1, Item.ItemType.Chest));
+
        
 
 	}
