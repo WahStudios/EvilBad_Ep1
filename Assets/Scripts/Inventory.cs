@@ -89,9 +89,9 @@ public class Inventory : MonoBehaviour {
             }
         }
 
-        addItem(0);
-        addItem(1);
-		addItem(2);
+		addItem("Hands_SoftMittens");
+       // addItem(1);
+	//	addItem(2);
 
 
 
@@ -99,12 +99,12 @@ public class Inventory : MonoBehaviour {
       
     }
 
-    void addItem(int id)
+   public void addItem(string itemName)
     {
         for (int i = 0; i < database.items.Count; i++)
         {
-
-            if (database.items[i].itemID == id)
+			//database.items[i].itemID == id || 
+            if (database.items[i].itemName == itemName)
             {
                 Item item = database.items[i];
 				addItemAtEmptySlot(item);

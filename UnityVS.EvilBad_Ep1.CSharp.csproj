@@ -80,6 +80,7 @@
     <Compile Include="Assets\Ferr\Common\Scripts\Ferr_JSON.cs" />
     <Compile Include="Assets\Ferr\Common\Scripts\Ferr_LambdaComparer.cs" />
     <Compile Include="Assets\Ferr\Common\Scripts\Ferr_LogoLock.cs" />
+    <Compile Include="Assets\ItemPickup.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_BakeAnimation.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_Bakedmesh.cs" />
     <Compile Include="Assets\Puppet2D\Scripts\Puppet2D_EditSkinWeights.cs" />

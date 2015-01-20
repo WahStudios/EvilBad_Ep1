@@ -18,6 +18,10 @@ public class EvilBadControl : MonoBehaviour {
     public bool isSnapped = false;
     public GameObject snapObject;
 	public tabManager Tabmanager;
+	public ParticleSystem fireBall;
+	public ParticleSystem fireBallLeft;
+	public bool fireBallActive = true;
+	public bool isFacingRight = true;
 	// Use this for initialization
     private void Awake()
     {
@@ -27,7 +31,7 @@ public class EvilBadControl : MonoBehaviour {
     }
     
     void Start () {
-        
+		fireBall.emissionRate = 0;
         jump = anim.GetBool("jump");
         rigid = GetComponent<Rigidbody2D>();
 	
@@ -67,6 +71,7 @@ public class EvilBadControl : MonoBehaviour {
             {
                 if (shieldStand == false)
                 {
+						isFacingRight = true;
                     rigidbody2D.velocity = new Vector2(-speedForce, rigidbody2D.velocity.y);
                 }
                 transform.localScale = new Vector3(1, 1, 1);
@@ -76,6 +81,7 @@ public class EvilBadControl : MonoBehaviour {
             {
                 if (shieldStand == false)
                 {
+						isFacingRight = false;
                     rigidbody2D.velocity = new Vector2(speedForce, rigidbody2D.velocity.y);
                 }
                 transform.localScale = new Vector3(-1, 1, 1);
@@ -146,6 +152,26 @@ public class EvilBadControl : MonoBehaviour {
             if (Input.GetButtonDown("Fire1"))
             //if(Input.GetMouseButton(0))
             {
+				if(fireBallActive == true)
+					{
+						if(isFacingRight == false){
+						CancelInvoke ("KillFireBall");
+						fireBall.emissionRate = 1;
+						Invoke ("KillFireBall", 1f);
+						}
+						else
+						{
+							CancelInvoke ("KillFireBall");
+							fireBallLeft.emissionRate = 1;
+							Invoke ("KillFireBall", 1f);
+
+						}
+					}
+					else{
+						fireBall.emissionRate = 0;
+						fireBallLeft.emissionRate = 0;
+					}
+						
                 if (isGrounded == true)
                 {
                     anim.SetTrigger("stab");
@@ -155,6 +181,7 @@ public class EvilBadControl : MonoBehaviour {
                     anim.SetTrigger("stabJump");
                 }
             }
+
 
 
 
@@ -209,6 +236,12 @@ public class EvilBadControl : MonoBehaviour {
 			anim.SetBool("walkToIdle", true);
 		}
         
+	}
+
+	void KillFireBall()
+	{
+		fireBall.emissionRate = 0;
+		fireBallLeft.emissionRate = 0;
 	}
 
     void OnDrawGizmos()

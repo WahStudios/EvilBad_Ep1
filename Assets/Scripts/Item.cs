@@ -17,15 +17,17 @@ public class Item  {
     {
         Weapon,
         Consumable,
+		Belt,
         Quest,
         Head,
-        Shoes,
+        Feet,
         Chest,
         Trousers,
         Earrings,
-        Necklace,
+        Neck,
         Rings,
-        Hands
+        Hands,
+		Shield
     }
 
     public Item(string name, int id, string desc, int power, int speed, int value, ItemType type)
