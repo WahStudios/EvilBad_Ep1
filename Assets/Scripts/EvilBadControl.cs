@@ -22,6 +22,11 @@ public class EvilBadControl : MonoBehaviour {
 	public ParticleSystem fireBallLeft;
 	public bool fireBallActive = true;
 	public bool isFacingRight = true;
+	public ObjectPool objectPool;
+	public float fireRate = 1;
+	int n = 0;
+
+	private float nextFire;
 	// Use this for initialization
     private void Awake()
     {
@@ -152,25 +157,31 @@ public class EvilBadControl : MonoBehaviour {
             if (Input.GetButtonDown("Fire1"))
             //if(Input.GetMouseButton(0))
             {
+
 				if(fireBallActive == true)
 					{
-						if(isFacingRight == false){
-						CancelInvoke ("KillFireBall");
-						fireBall.emissionRate = 1;
-						Invoke ("KillFireBall", 1f);
-						}
-						else
-						{
-							CancelInvoke ("KillFireBall");
-							fireBallLeft.emissionRate = 1;
-							Invoke ("KillFireBall", 1f);
 
+						if (Time.time > nextFire) {
+								nextFire = Time.time + objectPool.fireBallFireRate;
+								if(n < objectPool.fireBallMaxNumber)
+									n = n + 1;
+								else if(n == objectPool.fireBallMaxNumber)
+									n = 0;
+								objectPool.fireBallList[n].transform.position = transform.position;
+
+							if(isFacingRight == true){
+										objectPool.fireBallMovement[n].FireLeft ();
+
+							}
+							else 
+							{
+								objectPool.fireBallMovement[n].FireRight ();
+							}
 						}
 					}
-					else{
-						fireBall.emissionRate = 0;
-						fireBallLeft.emissionRate = 0;
-					}
+					
+
+				
 						
                 if (isGrounded == true)
                 {
@@ -238,12 +249,8 @@ public class EvilBadControl : MonoBehaviour {
         
 	}
 
-	void KillFireBall()
-	{
-		fireBall.emissionRate = 0;
-		fireBallLeft.emissionRate = 0;
-	}
 
+	
     void OnDrawGizmos()
     {
         Gizmos.color = Color.white;

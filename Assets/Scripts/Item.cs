@@ -30,14 +30,14 @@ public class Item  {
 		Shield
     }
 
-    public Item(string name, int id, string desc, int power, int speed, int value, ItemType type)
+    public Item(string name, int id, string desc, int width, int length, int damage, ItemType type)
     {
         itemName = name;
         itemID = id;
         itemDesc = desc;
-        itemPower = power;
-        itemSpeed = speed;
-        itemValue = value;
+        itemPower = damage;
+        itemSpeed = width;
+        itemValue = length;
         itemType = type;
 		ItemIcon = Resources.Load<Sprite>("" + name);
     }

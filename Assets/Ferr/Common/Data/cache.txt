@@ -58,6 +58,7 @@ Assets/Puppet2D/Prefabs/FFDMonster_Global_CTRL.prefab
 Assets/Puppet2D/Prefabs/croc_Global_CTRL.prefab
 Assets/Prefabs/UndeadSpartan.prefab
 Assets/Prefabs/Harpy.prefab
+Assets/Prefabs/GreenFlare.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -118,3 +119,4 @@ Assets/Puppet2D/Prefabs/FFDMonster_Global_CTRL.prefab
 Assets/Puppet2D/Prefabs/croc_Global_CTRL.prefab
 Assets/Prefabs/UndeadSpartan.prefab
 Assets/Prefabs/Harpy.prefab
+Assets/Prefabs/GreenFlare.prefab
