@@ -1,0 +1,478 @@
+fileFormatVersion: 2
+guid: 340bfa725f0ef324fac94fe7ca0f373d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LightningHit1
+    21300002: LightningHit2
+    21300004: LightningHit3
+    21300006: LightningHit4
+    21300008: LightningHit5
+    21300010: GreenFireBallHit1
+    21300012: GreenFireBallHit2
+    21300014: GreenFireBallHit3
+    21300016: GreenFireBallHit4
+    21300018: GreenFireBallHit5
+    21300020: GreenFireBallHit6
+    21300022: LightningBoltTail1
+    21300024: LightningBoltTail2
+    21300026: LightningBoltTail3
+    21300028: LightingBoltHead
+    21300030: LightningBall1
+    21300032: LightningBall2
+    21300034: LightningBall3
+    21300036: LightningBall4
+    21300038: SmallPurpleLightingBolt1
+    21300040: SmallPurpleLightingBolt2
+    21300042: LargePurpleLightingBolt1
+    21300044: LargePurpleLightingBolt2
+    21300046: LargePurpleLightingBolt3
+    21300048: LargePurpleLightingBolt4
+    21300050: Snap1
+    21300052: Snap2
+    21300054: Snap3
+    21300056: Snap4
+    21300058: Explosion1
+    21300060: Explosion2
+    21300062: Explosion3
+    21300064: Explosion4
+    21300066: Explosion5
+    21300068: Explosion6
+    21300070: Explosion7
+    21300072: LargeOrb_1
+    21300074: Axe
+    21300076: LargeOrb_2
+    21300078: LargeOrb_3
+    21300080: LargeOrb_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LightningHit1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2767
+        width: 84
+        height: 155
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningHit2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 2752
+        width: 126
+        height: 185
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningHit3
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 2741
+        width: 140
+        height: 208
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningHit4
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2738
+        width: 149
+        height: 214
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningHit5
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 2741
+        width: 161
+        height: 208
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBallHit1
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 2823
+        width: 105
+        height: 82
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBallHit2
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 2820
+        width: 71
+        height: 94
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBallHit3
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 2802
+        width: 79
+        height: 120
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBallHit4
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 2793
+        width: 100
+        height: 153
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBallHit5
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 2773
+        width: 99
+        height: 187
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GreenFireBallHit6
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 2770
+        width: 99
+        height: 185
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBoltTail1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 2448
+        width: 445
+        height: 108
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBoltTail2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 2319
+        width: 419
+        height: 94
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBoltTail3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 2167
+        width: 414
+        height: 102
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightingBoltHead
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2459
+        width: 118
+        height: 118
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBall1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1383
+        width: 288
+        height: 277
+      alignment: 9
+      pivot: {x: .64607197, y: .395672739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBall2
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1384
+        width: 281
+        height: 305
+      alignment: 9
+      pivot: {x: .413283587, y: .362925053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBall3
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1329
+        width: 293
+        height: 284
+      alignment: 9
+      pivot: {x: .380503178, y: .581783652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightningBall4
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 1346
+        width: 290
+        height: 311
+      alignment: 9
+      pivot: {x: .587337971, y: .609535515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargePurpleLightingBolt1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1262
+        width: 290
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargePurpleLightingBolt2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1160
+        width: 276
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargePurpleLightingBolt3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1056
+        width: 322
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargePurpleLightingBolt4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 965
+        width: 319
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Snap1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 180
+        width: 108
+        height: 156
+      alignment: 9
+      pivot: {x: .493327528, y: .449180603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Snap2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 104
+        width: 152
+        height: 263
+      alignment: 9
+      pivot: {x: .404930919, y: .536629677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Snap3
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 62
+        width: 295
+        height: 303
+      alignment: 9
+      pivot: {x: .485361487, y: .542756438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Snap4
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 61
+        width: 244
+        height: 294
+      alignment: 9
+      pivot: {x: .523742199, y: .49761793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1901
+        width: 98
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1859
+        width: 173
+        height: 163
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1848
+        width: 207
+        height: 196
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion4
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 1842
+        width: 216
+        height: 215
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion5
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1868
+        width: 209
+        height: 209
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion6
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1893
+        width: 216
+        height: 211
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion7
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 1886
+        width: 206
+        height: 197
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargeOrb_1
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1983
+        width: 432
+        height: 431
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Axe
+      rect:
+        serializedVersion: 2
+        x: 2377
+        y: 2041
+        width: 487
+        height: 386
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargeOrb_2
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1535
+        width: 236
+        height: 254
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargeOrb_3
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1415
+        width: 290
+        height: 497
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargeOrb_4
+      rect:
+        serializedVersion: 2
+        x: 2474
+        y: 1395
+        width: 363
+        height: 547
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

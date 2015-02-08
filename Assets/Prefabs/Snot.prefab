@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
+  - 95: {fileID: 9529162}
   m_Layer: 0
   m_Name: Snot
   m_TagString: Untagged
@@ -70,6 +71,21 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1.29999995, y: 1.29999995}
   m_Center: {x: 0, y: 0}
+--- !u!95 &9529162
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79a32d65e44efc148b8ab0b759deefba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -87,7 +103,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: .319999993
+      scalar: .400000006
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -332,7 +348,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 17
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1173,7 +1189,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300030, guid: 12a28a65ed1e845418ee95df12d68740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

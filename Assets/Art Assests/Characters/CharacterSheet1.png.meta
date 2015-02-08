@@ -37,7 +37,7 @@ TextureImporter:
     21300064: Big_LilD_WingBone1
     21300066: Big_LilD_Hand
     21300068: Big_LilD_Wing
-    21300070: Big_LilD_Scyth
+    21300070: Big_LilD_ScythRod
     21300072: Big_LilD_Body
     21300074: LilD_Head
     21300076: LilD_Arm
@@ -58,6 +58,31 @@ TextureImporter:
     21300106: Harpy_Wing
     21300108: Harpy_Body
     21300110: Harpy_Leg
+    21300112: Khalkotauroi_Head
+    21300114: Khalkotauroi_Jaw
+    21300116: Khalkotauroi_LightningRod1
+    21300118: Khalkotauroi_Body
+    21300120: Khalkotauroi_LightingRod2
+    21300122: Khalkotauroi_Plank
+    21300124: Khalkotauroi_Piston1
+    21300126: Khalkotauroi_Piston2
+    21300128: Khalkotauroi_Thigh
+    21300130: Khalkotauroi_Foot
+    21300132: Medusa_SnakeHead
+    21300134: Medusa_Head
+    21300136: Medusa_Body
+    21300138: Kraken_Shell
+    21300140: Big_LilD_ScythBlade
+    21300142: Kraken_Head
+    21300144: Kraken_Leg
+    21300146: Kraken_Neck
+    21300148: LivingSpartan_Head
+    21300150: LivingSpartan_Shoulder
+    21300152: LivingSpartan_Thigh
+    21300154: LivingSpartan_Foot
+    21300156: LivingSpartan_Body
+    21300158: LivingSpartan_Arm
+    21300160: LivingSpartan_Sword
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -449,16 +474,16 @@ TextureImporter:
       alignment: 9
       pivot: {x: .0466966368, y: .968004107}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Big_LilD_Scyth
+    - name: Big_LilD_ScythRod
       rect:
         serializedVersion: 2
-        x: 1416
+        x: 2044
         y: 829
-        width: 808
-        height: 1553
+        width: 180
+        height: 1456
       alignment: 9
-      pivot: {x: .892843127, y: .473340571}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: .456621647, y: .540220678}
+      border: {x: 180, y: 0, z: 0, w: 0}
     - name: Big_LilD_Body
       rect:
         serializedVersion: 2
@@ -658,6 +683,256 @@ TextureImporter:
         height: 157
       alignment: 9
       pivot: {x: .75832963, y: .92232132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Head
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 2608
+        width: 153
+        height: 141
+      alignment: 9
+      pivot: {x: .9014709, y: .369308591}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Jaw
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 2557
+        width: 70
+        height: 31
+      alignment: 9
+      pivot: {x: .914665878, y: .85134989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_LightningRod1
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 2408
+        width: 8
+        height: 134
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Body
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 2611
+        width: 256
+        height: 161
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_LightingRod2
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 2508
+        width: 48
+        height: 80
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Plank
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 2470
+        width: 7
+        height: 133
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Piston1
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 2462
+        width: 36
+        height: 32
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Piston2
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 2467
+        width: 37
+        height: 27
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Thigh
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 2503
+        width: 79
+        height: 90
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Khalkotauroi_Foot
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 2428
+        width: 72
+        height: 60
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Medusa_SnakeHead
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 2788
+        width: 184
+        height: 165
+      alignment: 9
+      pivot: {x: .645982802, y: .184591025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Medusa_Head
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 2790
+        width: 182
+        height: 166
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Medusa_Body
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 2850
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Kraken_Shell
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 450
+        width: 402
+        height: 285
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big_LilD_ScythBlade
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 2256
+        width: 775
+        height: 206
+      alignment: 9
+      pivot: {x: .915364146, y: .333317131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Kraken_Head
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 463
+        width: 155
+        height: 129
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Kraken_Leg
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 616
+        width: 134
+        height: 172
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Kraken_Neck
+      rect:
+        serializedVersion: 2
+        x: 2487
+        y: 794
+        width: 111
+        height: 111
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Head
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 1699
+        width: 140
+        height: 174
+      alignment: 9
+      pivot: {x: .815726638, y: .0981743932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Shoulder
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 1694
+        width: 75
+        height: 91
+      alignment: 9
+      pivot: {x: .5, y: .71003449}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Thigh
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 1718
+        width: 61
+        height: 69
+      alignment: 9
+      pivot: {x: .476162255, y: .897878468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Foot
+      rect:
+        serializedVersion: 2
+        x: 2748
+        y: 1634
+        width: 57
+        height: 65
+      alignment: 9
+      pivot: {x: .594905615, y: .657414377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Body
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 1500
+        width: 136
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Arm
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 1562
+        width: 50
+        height: 91
+      alignment: 9
+      pivot: {x: .646368384, y: .901009321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LivingSpartan_Sword
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 1403
+        width: 336
+        height: 60
+      alignment: 9
+      pivot: {x: .888838291, y: .567171752}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
