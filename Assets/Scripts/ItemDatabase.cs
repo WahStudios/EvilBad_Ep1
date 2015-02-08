@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 //using UnityEngine.UI;
@@ -27,6 +27,8 @@ public class ItemDatabase : MonoBehaviour {
 	public Sprite item19;
 	public Sprite item20;
 	public Sprite item21;
+	public Sprite item22;
+	public Sprite item23;
 	// Use this for initialization
 	void Start () {
         
@@ -53,6 +55,8 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add(new Item("Weapon_Sword3", 19, "A very nice sword", 10, 10, 1, Item.ItemType.Weapon));
 		items.Add(new Item("Weapon_Sword4", 20, "A rare sword", 10, 10, 1, Item.ItemType.Weapon));
 		items.Add(new Item("Weapon_Sword5", 21, "A very rare sword", 10, 10, 1, Item.ItemType.Weapon));
+		items.Add(new Item("Item_SmoothSoul", 22, "Has a soft glow", 10, 10, 1, Item.ItemType.Weapon));
+		items.Add(new Item("Item_BrittleSoul", 23, "Almost too unstable to hold", 10, 10, 1, Item.ItemType.Weapon));
 	
 
 

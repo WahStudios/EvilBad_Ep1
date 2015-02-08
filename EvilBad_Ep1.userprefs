@@ -1,13 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Item_StatsModified.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ItemDatabase.cs">
     <Files>
-      <File FileName="Assets\Scripts\Item_StatsModified.cs" Line="90" Column="7" />
-      <File FileName="Assets\ObjectPool.cs" Line="17" Column="33" />
-      <File FileName="Assets\Scripts\EvilBadControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\FireballMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SlotScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemDatabase.cs" Line="62" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -122,3 +122,4 @@ Assets/Prefabs/UndeadSpartan.prefab
 Assets/Prefabs/Harpy.prefab
 Assets/Prefabs/GreenFlare.prefab
 Assets/Prefabs/GreenFireImpact.prefab
+Assets/Resources/Soul_BrittleSoul.prefab
