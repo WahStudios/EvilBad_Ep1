@@ -89,7 +89,7 @@ public class Inventory : MonoBehaviour {
             }
         }
 
-		addItem("Hands_SoftMittens");
+		addItem(0);
        // addItem(1);
 	//	addItem(2);
 
@@ -99,12 +99,12 @@ public class Inventory : MonoBehaviour {
       
     }
 
-   public void addItem(string itemName)
+   public void addItem(int id)
     {
         for (int i = 0; i < database.items.Count; i++)
         {
-			//database.items[i].itemID == id || 
-            if (database.items[i].itemName == itemName)
+			if (database.items[i].itemID == id ) 
+             //(database.items[i].itemName == itemName)
             {
                 Item item = database.items[i];
 				addItemAtEmptySlot(item);
@@ -113,6 +113,21 @@ public class Inventory : MonoBehaviour {
             }
         }
     }
+
+	public void addItemOnClick(string itemName)
+	{
+		for (int i = 0; i < database.items.Count; i++)
+		{
+			if (database.items[i].itemName == itemName) 
+				//(database.items[i].itemName == itemName)
+			{
+				Item item = database.items[i];
+				addItemAtEmptySlot(item);
+				
+				break;
+			}
+		}
+	}
 	
     void addItemAtEmptySlot(Item item)
     {

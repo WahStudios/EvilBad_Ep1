@@ -18,7 +18,7 @@ public class ItemPickup : MonoBehaviour {
 			if(Input.GetAxis ("Vertical") > 0){
 				if(axisInUse == false){
 				Destroy (other.gameObject);
-			inventory.addItem (other.gameObject.name);
+			inventory.addItemOnClick (other.gameObject.name);
 					axisInUse = true;
 				}
 			}

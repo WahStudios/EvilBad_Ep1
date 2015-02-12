@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EvilBadStats.cs" />
      <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_Animator.cs" />
      <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_DynamicMesh.cs" />
      <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_IPath.cs" />
@@ -189,7 +190,7 @@
      <Compile Include="Assets\Scripts\ItemOnClickEventLeft.cs" />
      <Compile Include="Assets\Scripts\ItemOnClickEventRight.cs" />
      <Compile Include="Assets\Scripts\ItemScrollEvent.cs" />
-     <Compile Include="Assets\Scripts\Item_StatsModified.cs" />
+     <Compile Include="Assets\Scripts\ItemStats.cs" />
      <Compile Include="Assets\Scripts\OnDisableSummonPanel.cs" />
      <Compile Include="Assets\Scripts\SlotScript.cs" />
      <Compile Include="Assets\Scripts\Snap.cs" />
