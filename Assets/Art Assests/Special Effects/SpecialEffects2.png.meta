@@ -43,6 +43,9 @@ TextureImporter:
     21300076: LargeOrb_2
     21300078: LargeOrb_3
     21300080: LargeOrb_4
+    21300082: LargeOrb_5
+    21300084: Weapon_Saw
+    21300086: Chain
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -427,10 +430,10 @@ TextureImporter:
     - name: LargeOrb_1
       rect:
         serializedVersion: 2
-        x: 1848
-        y: 1983
-        width: 432
-        height: 431
+        x: 2301
+        y: 1668
+        width: 287
+        height: 286
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,30 +450,60 @@ TextureImporter:
     - name: LargeOrb_2
       rect:
         serializedVersion: 2
-        x: 1839
-        y: 1535
-        width: 236
-        height: 254
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 2269
+        y: 1268
+        width: 316
+        height: 340
+      alignment: 9
+      pivot: {x: .546434283, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LargeOrb_3
       rect:
         serializedVersion: 2
-        x: 2096
-        y: 1415
-        width: 290
-        height: 497
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 2644
+        y: 1150
+        width: 322
+        height: 553
+      alignment: 9
+      pivot: {x: .527762771, y: .502114892}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LargeOrb_4
       rect:
         serializedVersion: 2
-        x: 2474
-        y: 1395
-        width: 363
-        height: 547
+        x: 2279
+        y: 585
+        width: 406
+        height: 610
+      alignment: 9
+      pivot: {x: .522336125, y: .504001141}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LargeOrb_5
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 599
+        width: 484
+        height: 610
+      alignment: 9
+      pivot: {x: .485033095, y: .49112156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Weapon_Saw
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 2076
+        width: 347
+        height: 347
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chain
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 2308
+        width: 66
+        height: 67
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
