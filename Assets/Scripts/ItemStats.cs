@@ -119,7 +119,7 @@ public class ItemStats : MonoBehaviour {
 
 	//new
 
-	[SerializeField]string ItemIDMustBeUniqueNumber ="Unique Number";
+	//[SerializeField]string ItemIDMustBeUniqueNumber ="Unique Number";
 	public int itemID;
 
 	public GameObject itemModel;

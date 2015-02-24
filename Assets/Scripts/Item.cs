@@ -72,7 +72,7 @@ public class Item  {
 	            float radius, float knockback, float forwardMomentum, float damagedLoweredPerSecond, float arcRange, float damagedIncresedPerSecond,
 	            float hpRegain, float defense, float waterResist, float gemSlots, float meleeCritChanceIncrease, float weaponLengthRadiusIncrease,
 	            float hpRegainIncrease, float defenseIncrease, float maxHpIncrease, float moveSpeedIncrease, float attackSpeedIncrease, 
-	            float gpCostReduce, float gpDamageIncrease, float gpRegeneration, float increaseBaseMaxHp)
+	            float gpCostReduce, float gpDamageIncrease, float gpRegeneration, float increaseBaseMaxHp, string type)
     {
         itemName = name;
         itemID = id;
@@ -80,7 +80,7 @@ public class Item  {
         itemPower = damage;
         itemSpeed = width;
         itemValue = length;
-        //itemType = type;
+        itemType = type;
 		itemSwingSpeed = swingSpeed; 
 		itemChargeIncrease = chargeIncrease;
 		itemRadus = radius;
@@ -105,7 +105,8 @@ public class Item  {
 		itemGpRegeneration = gpRegeneration;
 		itemIncreaseBaseMaxHp = increaseBaseMaxHp;
 
-		itemType = Resources.Load<GameObject>("" + name).GetComponent<ItemStats>().itemTypeString;
+		//itemType = Resources.Load<GameObject>("" + name).GetComponent<ItemStats>().itemTypeString;
+
 		ItemIcon = Resources.Load<GameObject>("" + name).GetComponent<SpriteRenderer>().sprite;
     }
 
