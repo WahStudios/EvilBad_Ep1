@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Equipment.cs" />
     <Compile Include="Assets\EvilBadStats.cs" />
     <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_Animator.cs" />
     <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_DynamicMesh.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Assets\Scripts\OnDisableSummonPanel.cs" />
     <Compile Include="Assets\Scripts\SlotScript.cs" />
     <Compile Include="Assets\Scripts\Snap.cs" />
+    <Compile Include="Assets\StatsText.cs" />
     <Compile Include="Assets\UniTile\Scripts\ObjectLayer.cs" />
     <Compile Include="Assets\UniTile\Scripts\TileLayer.cs" />
     <Compile Include="Assets\UniTile\Scripts\TileLayerUtil.cs" />
