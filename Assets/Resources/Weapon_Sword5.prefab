@@ -62,7 +62,7 @@ MonoBehaviour:
   fireBallDamageIncreased: 0
   chainLightning: 0
   WeaponStats: Weapon Attributes
-  increaseWrath: 0
+  increaseWrath: 100
   itemPower: 0
   itemSwingSpeed: 0
   itemAttackSpeedIncrease: 0

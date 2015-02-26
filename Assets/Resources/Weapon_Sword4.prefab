@@ -56,13 +56,13 @@ MonoBehaviour:
   itemType: 0
   itemDesc: 
   itemGemSlots: 0
-  HP: 0
+  HP: 200
   CD: 0
   GPrate: 0
   fireBallDamageIncreased: 0
   chainLightning: 0
   WeaponStats: Weapon Attributes
-  increaseWrath: 0
+  increaseWrath: 50
   itemPower: 0
   itemSwingSpeed: 0
   itemAttackSpeedIncrease: 0

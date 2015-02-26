@@ -345,175 +345,6 @@ SpriteRenderer:
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300002, guid: 12a28a65ed1e845418ee95df12d68740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &69336471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-  m_PrefabInternal: {fileID: 1291546670}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 69336475}
-  - 212: {fileID: 69336474}
-  - 61: {fileID: 69336473}
-  - 114: {fileID: 69336472}
-  m_Layer: 0
-  m_Name: Weapon_Sword5
-  m_TagString: Item
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &69336472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1291546670}
-  m_GameObject: {fileID: 69336471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemType: 0
-  itemDesc: 
-  itemGemSlots: 0
-  HP: 100
-  CD: 0
-  GPrate: 0
-  fireBallDamageIncreased: 0
-  chainLightning: 0
-  WeaponStats: Weapon Attributes
-  increaseWrath: 0
-  itemPower: 0
-  itemSwingSpeed: 0
-  itemAttackSpeedIncrease: 0
-  itemArcRange: 0
-  itemWidth: 0
-  itemHeight: 0
-  itemRadus: 0
-  itemWeaponLengthRadiusIncrease: 0
-  itemChargeIncrease: 0
-  itemKnockback: 0
-  itemforwardMomentum: 0
-  itemMeleeCritChanceIncrease: 0
-  increaseMeleeCritDamage: 0
-  increaseMeleeSpeed: 0
-  increaseMeleeMax: 0
-  increaseMaxWeaponDamage: 0
-  SelfStats: Self Attributes
-  increaseAwe: 0
-  itemHpRegain: 0
-  itemHpRegainIncrease: 0
-  itemMaxHpIncrease: 0
-  itemIncreaseBaseMaxHp: 0
-  itemMoveSpeedIncrease: 0
-  increaseJumpHeight: 0
-  SummonStats: Summon Attributes
-  increaseMercy: 0
-  increaseSummonMaxHP: 0
-  increaseSummonMaxGP: 0
-  increaseSummonedMindControl: 0
-  GodStats: God Attributes
-  increaseVengeance: 0
-  increaseExodus: 0
-  itemGpCostReduce: 0
-  itemGpDamageIncrease: 0
-  itemGpRegeneration: 0
-  increaseGPCritBonusDamage: 0
-  maxGPincrease: 0
-  increaseGPresistance: 0
-  increaseMaxGP: 0
-  increaseGPcritDamage: 0
-  increaseGPregeneration: 0
-  DefenseStats: Defense Attributes
-  itemDefense: 0
-  itemDefenseIncrease: 0
-  increaseArmorBonus: 0
-  ResistanceStats: Resistance Attributes
-  itemWaterResist: 0
-  increaseBonusResistFire: 0
-  increaseBonusResistShadow: 0
-  increaseResistLight: 0
-  increaseResistWater: 0
-  increaseResistWind: 0
-  resistFireDamage: 0
-  resistWindDamage: 0
-  increaseWindDamage: 0
-  increaseEarthResistance: 0
-  increaseResistFire: 0
-  resistLight: 0
-  resistBlind: 0
-  resistMelted: 0
-  resistPoision: 0
-  resistSlow: 0
-  resistFright: 0
-  resistHeadache: 0
-  resistBrainFart: 0
-  resistArmCrushed: 0
-  resistWeakened: 0
-  resistBlasphemed: 0
-  DebuffStats: Debuff Attributes
-  itemDamagedLoweredPerSecond: 0
-  itemDamagedIncresedPerSecond: 0
-  decreaseArmCrushTimer: 0
-  decreaseBlasphemedTimer: 0
-  lowerStunTimer: 0
-  lowerCurseDebuffSeconds: 0
-  lowerMuffledDebuffSeconds: 0
-  lowerBrainFartDebuffSeconds: 0
-  lowerJumpHeight: 0
-  itemID: 2
-  itemModel: {fileID: 0}
-  itemTypeString: 
---- !u!61 &69336473
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100760, guid: 7f7a0731811bbbe459e6c83b8d0f259f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1291546670}
-  m_GameObject: {fileID: 69336471}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: 2.25, y: 2.25}
-  m_Center: {x: 0, y: 0}
---- !u!212 &69336474
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 21200760, guid: 7f7a0731811bbbe459e6c83b8d0f259f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1291546670}
-  m_GameObject: {fileID: 69336471}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1afb54560b51ab7429fa80552b5659f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &69336475
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-  m_PrefabInternal: {fileID: 1291546670}
-  m_GameObject: {fileID: 69336471}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.20000005, y: 2.24000001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
 --- !u!1 &75925524
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +772,7 @@ MonoBehaviour:
   fireBallDamageIncreased: 0
   chainLightning: 0
   WeaponStats: Weapon Attributes
-  increaseWrath: 0
+  increaseWrath: 100
   itemPower: 0
   itemSwingSpeed: 0
   itemAttackSpeedIncrease: 0
@@ -1089,7 +920,7 @@ MonoBehaviour:
   itemMoveSpeedIncrease: 0
   increaseJumpHeight: 0
   SummonStats: Summon Attributes
-  increaseMercy: 0
+  increaseMercy: 10
   increaseSummonMaxHP: 0
   increaseSummonMaxGP: 0
   increaseSummonedMindControl: 0
@@ -1106,7 +937,7 @@ MonoBehaviour:
   increaseGPcritDamage: 0
   increaseGPregeneration: 0
   DefenseStats: Defense Attributes
-  itemDefense: 0
+  itemDefense: 15
   itemDefenseIncrease: 0
   increaseArmorBonus: 0
   ResistanceStats: Resistance Attributes
@@ -5374,7 +5205,7 @@ Transform:
   - {fileID: 1776731053}
   - {fileID: 1864932047}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
 --- !u!45 &353630015
 Skybox:
   m_ObjectHideFlags: 0
@@ -6555,7 +6386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &434294913
 GameObject:
   m_ObjectHideFlags: 0
@@ -9974,6 +9805,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1508202128}
+  - {fileID: 668960408}
   m_Father: {fileID: 1587269284}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -10260,6 +10092,72 @@ SpriteRenderer:
   m_SortingOrder: 32
   m_Sprite: {fileID: 21300014, guid: 26e313ecbb58ef84fbc0995e2abaed0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &668960407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 668960408}
+  - 222: {fileID: 668960410}
+  - 114: {fileID: 668960409}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &668960408
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668960407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 641648039}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 89.5, y: 2.00004864}
+  m_SizeDelta: {x: 98.9000015, y: 281.200012}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &668960409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668960407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: .800000012
+  m_Text: "\nHead\n\nChest\n\nHands\n\nBelt \n\nFeet\n\nWeapon\n\nShield\n\nRing1\n\nRing2\n\nNeck"
+--- !u!222 &668960410
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668960407}
 --- !u!1 &674501864
 GameObject:
   m_ObjectHideFlags: 0
@@ -10917,7 +10815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &750076028
 GameObject:
   m_ObjectHideFlags: 0
@@ -12272,7 +12170,7 @@ RectTransform:
   - {fileID: 1939642963}
   - {fileID: 1391849941}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -12536,7 +12434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &802247498
 GameObject:
   m_ObjectHideFlags: 0
@@ -17098,6 +16996,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1001 &1059679115
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .899999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.51999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+  m_RootGameObject: {fileID: 1928519478}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1060785611
 Prefab:
   m_ObjectHideFlags: 0
@@ -18960,7 +18902,7 @@ Transform:
   - {fileID: 1881988399}
   - {fileID: 635451365}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1146269353
 GameObject:
   m_ObjectHideFlags: 0
@@ -21789,54 +21731,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1290278474}
---- !u!1001 &1291546670
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.20000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.24000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: m_RootOrder
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-      propertyPath: itemTypeString
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
-  m_RootGameObject: {fileID: 69336471}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1309010337
 GameObject:
   m_ObjectHideFlags: 0
@@ -21887,7 +21781,7 @@ Transform:
   m_LocalScale: {x: 2.94515824, y: 2.945158, z: 2.945158}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1314973006
 GameObject:
   m_ObjectHideFlags: 0
@@ -23074,7 +22968,7 @@ Transform:
   - {fileID: 1934971360}
   - {fileID: 143001931}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!61 &1333974518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26602,7 +26496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!1 &1532280836
 GameObject:
   m_ObjectHideFlags: 0
@@ -28784,7 +28678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemType: 0
+  itemType: 5
   itemDesc: 
   itemGemSlots: 0
   HP: 10
@@ -28836,7 +28730,7 @@ MonoBehaviour:
   increaseGPcritDamage: 0
   increaseGPregeneration: 0
   DefenseStats: Defense Attributes
-  itemDefense: 0
+  itemDefense: 20
   itemDefenseIncrease: 0
   increaseArmorBonus: 0
   ResistanceStats: Resistance Attributes
@@ -31318,7 +31212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
 --- !u!1 &1786561639
 GameObject:
   m_ObjectHideFlags: 0
@@ -34879,6 +34773,175 @@ SpriteRenderer:
   m_SortingOrder: 32
   m_Sprite: {fileID: 21300014, guid: 26e313ecbb58ef84fbc0995e2abaed0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1928519478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 110872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+  m_PrefabInternal: {fileID: 1059679115}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1928519482}
+  - 212: {fileID: 1928519481}
+  - 114: {fileID: 1928519480}
+  - 61: {fileID: 1928519479}
+  m_Layer: 0
+  m_Name: Weapon_Sword4
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1928519479
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6110872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1059679115}
+  m_GameObject: {fileID: 1928519478}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 2.54999995, y: 2.48000002}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1928519480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1059679115}
+  m_GameObject: {fileID: 1928519478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 200
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 50
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 4
+  itemModel: {fileID: 0}
+  itemTypeString: Weapon
+--- !u!212 &1928519481
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21210872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1059679115}
+  m_GameObject: {fileID: 1928519478}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 27a49472036b7124dbfa5a5bc86c14d9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1928519482
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 410872, guid: 1c9ff3d6b82aadb459f16084a9c9a6d6, type: 2}
+  m_PrefabInternal: {fileID: 1059679115}
+  m_GameObject: {fileID: 1928519478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .899999976, y: 2.51999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &1934971359
 GameObject:
   m_ObjectHideFlags: 0
@@ -36560,7 +36623,7 @@ Transform:
   - {fileID: 1379736353}
   - {fileID: 824932541}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 23
 --- !u!1 &2043437223
 GameObject:
   m_ObjectHideFlags: 0
@@ -37918,7 +37981,7 @@ Transform:
   m_Children:
   - {fileID: 1621134247}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &2084272169
 GameObject:
   m_ObjectHideFlags: 0
@@ -38079,7 +38142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &2090351248
 GameObject:
   m_ObjectHideFlags: 0
@@ -38238,6 +38301,10 @@ Prefab:
       propertyPath: CD
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 11418490, guid: b74f9a59e6e98094982b7aa89b5bf3a4, type: 2}
+      propertyPath: itemType
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b74f9a59e6e98094982b7aa89b5bf3a4, type: 2}
   m_RootGameObject: {fileID: 1621178090}
@@ -38352,7 +38419,7 @@ MonoBehaviour:
   increaseMeleeMax: 0
   increaseMaxWeaponDamage: 0
   SelfStats: Self Attributes
-  increaseAwe: 0
+  increaseAwe: 20
   itemHpRegain: 0
   itemHpRegainIncrease: 0
   itemMaxHpIncrease: 0
@@ -38360,7 +38427,7 @@ MonoBehaviour:
   itemMoveSpeedIncrease: 0
   increaseJumpHeight: 0
   SummonStats: Summon Attributes
-  increaseMercy: 0
+  increaseMercy: 15
   increaseSummonMaxHP: 0
   increaseSummonMaxGP: 0
   increaseSummonedMindControl: 0
@@ -38377,7 +38444,7 @@ MonoBehaviour:
   increaseGPcritDamage: 0
   increaseGPregeneration: 0
   DefenseStats: Defense Attributes
-  itemDefense: 0
+  itemDefense: 30
   itemDefenseIncrease: 0
   increaseArmorBonus: 0
   ResistanceStats: Resistance Attributes

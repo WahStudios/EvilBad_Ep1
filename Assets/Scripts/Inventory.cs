@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour {
     public GameObject slots;
     int x = -110;
     int y = 110;
+	int xx = -175;
+	int yy = 120;
     ItemDatabase database;
 	public GameObject toolTip;
 	public GameObject draggedItemGameObject;
@@ -66,6 +68,7 @@ public class Inventory : MonoBehaviour {
 	void Start()
     {
         int Slotamount = 0;
+		int EquipSlotAmount = 0;
         database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
         for (int i = 0; i < 5; i++)
         {
@@ -87,16 +90,43 @@ public class Inventory : MonoBehaviour {
 
                 Slotamount++;
             }
-        }
 
-		addItem(0);
-       // addItem(1);
-	//	addItem(2);
+		}
+		for (int n = 0; n < 10; n++)
+		{
+			for (int m = 0; m < 1; m++)
+			{
+			GameObject slot = (GameObject)Instantiate(slots);
+			slot.GetComponent<SlotScript>().slotNumber = Slotamount;
+			Slots.Add(slot);
+			Items.Add(new Item());
+			slot.transform.SetParent(this.gameObject.transform, false);
+			slot.name = "Equipment" + n;
+				var slotScale = slot.GetComponent<RectTransform>().localScale;
+				slotScale.x = 0.5f;
+				slotScale.y = 0.5f;
+				slot.GetComponent<RectTransform>().localScale = slotScale;
+			slot.GetComponent<RectTransform>().localPosition = new Vector3(xx, yy, 0);
+				xx = xx + 55;
 
-
-
-
-      
+				if(m == 0)
+				{
+					xx = -175;
+					yy = yy - 27;
+				}
+				
+				Slotamount++;
+			}
+		}
+		
+		//addItem(0);
+		// addItem(1);
+		//	addItem(2);
+		
+		
+		
+		
+		
     }
 
    public void addItem(int id)

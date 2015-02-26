@@ -105,7 +105,7 @@ MonoBehaviour:
   increaseGPcritDamage: 0
   increaseGPregeneration: 0
   DefenseStats: Defense Attributes
-  itemDefense: 0
+  itemDefense: 20
   itemDefenseIncrease: 0
   increaseArmorBonus: 0
   ResistanceStats: Resistance Attributes

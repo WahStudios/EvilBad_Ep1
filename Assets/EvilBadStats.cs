@@ -261,10 +261,11 @@ public class EvilBadStats : MonoBehaviour {
 	void Update(){
 
 		statText.text = "Evil Bad's Stats : \n" +
-			"HP " + HP.ToString() + "\n" +
-			"MaxHP " + maxHp.ToString() + "\n" +
-			"BonusMaxHP " + bonusMaxHP.ToString() + "\n" +
-				"HPRegen " + HPRegen.ToString();
+			//"Smite" + .ToString() + "\n" +            //need to add smite
+			"Wrath   " + wrath.ToString() + "\n" +
+			"Mercy   " + mercy.ToString() + "\n" +
+			"Awe     " + awe.ToString() + "\n" +
+			"Defense " + defense.ToString();
 
 
 
@@ -1327,7 +1328,7 @@ public class EvilBadStats : MonoBehaviour {
 		
 		//make sure to run this function before unequipping item to reset stats.
 		if(equippedRing1 != null && equipRing1 == false){
-			if(equippingRing1 = true){
+			if(equippingRing1 == true){
 			HP -= equippedRing1Stats.HP;
 			CD -= equippedRing1Stats.CD;
 			GPRegen -= equippedRing1Stats.GPrate;

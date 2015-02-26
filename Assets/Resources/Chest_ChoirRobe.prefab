@@ -80,7 +80,7 @@ MonoBehaviour:
   increaseMeleeMax: 0
   increaseMaxWeaponDamage: 0
   SelfStats: Self Attributes
-  increaseAwe: 0
+  increaseAwe: 20
   itemHpRegain: 0
   itemHpRegainIncrease: 0
   itemMaxHpIncrease: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   itemMoveSpeedIncrease: 0
   increaseJumpHeight: 0
   SummonStats: Summon Attributes
-  increaseMercy: 0
+  increaseMercy: 15
   increaseSummonMaxHP: 0
   increaseSummonMaxGP: 0
   increaseSummonedMindControl: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   increaseGPcritDamage: 0
   increaseGPregeneration: 0
   DefenseStats: Defense Attributes
-  itemDefense: 0
+  itemDefense: 30
   itemDefenseIncrease: 0
   increaseArmorBonus: 0
   ResistanceStats: Resistance Attributes
