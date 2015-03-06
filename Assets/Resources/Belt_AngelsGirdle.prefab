@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &140178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 440178}
+  - 212: {fileID: 21240178}
+  - 114: {fileID: 11439476}
+  m_Layer: 0
+  m_Name: Belt_AngelsGirdle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &440178
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.19651699, y: -106.561035, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11439476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
+--- !u!212 &21240178
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140178}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 0c92e7712abfefe4d92e488664da6e21, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 140178}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

@@ -84,6 +84,29 @@ Assets/Resources/Item_SmallRedSoda.prefab
 Assets/Resources/Head_Towel.prefab
 Assets/Resources/Hands_SoftMittens.prefab
 Assets/Resources/Feet_Boots.prefab
+Assets/Resources/Belt_AngelsGirdle.prefab
+Assets/Resources/Belt_AstroidBelt.prefab
+Assets/Resources/Belt_ChainBelt.prefab
+Assets/Resources/Belt_Chaos Belt.prefab
+Assets/Resources/Belt_DemonEntrails.prefab
+Assets/Resources/Belt_GilgameshsWaistBand.prefab
+Assets/Resources/Belt_LeatherBelt.prefab
+Assets/Resources/Belt_NoodleTendril.prefab
+Assets/Resources/Belt_SnakeSkinSash.prefab
+Assets/Resources/Belt_SocketedBelt.prefab
+Assets/Resources/Belt_SpiderSilkSash.prefab
+Assets/Resources/Belt_TitansBelt.prefab
+Assets/Resources/Hands_AncientBracers.prefab
+Assets/Resources/Hands_ChainGloves.prefab
+Assets/Resources/Hands_DemonClaws.prefab
+Assets/Resources/Hands_Gauntlets.prefab
+Assets/Resources/Hands_HellGloves.prefab
+Assets/Resources/Hands_Lich'sWatch.prefab
+Assets/Resources/Hands_MonksBracelet.prefab
+Assets/Resources/Hands_RiggedMittens.prefab
+Assets/Resources/Hands_SpiderGloves.prefab
+Assets/Resources/Hands_TitansGauntlets.prefab
+Assets/Resources/Hands_ArchangelsGauntlets.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -170,3 +193,26 @@ Assets/Resources/Item_SmallRedSoda.prefab
 Assets/Resources/Head_Towel.prefab
 Assets/Resources/Hands_SoftMittens.prefab
 Assets/Resources/Feet_Boots.prefab
+Assets/Resources/Belt_AngelsGirdle.prefab
+Assets/Resources/Belt_AstroidBelt.prefab
+Assets/Resources/Belt_ChainBelt.prefab
+Assets/Resources/Belt_Chaos Belt.prefab
+Assets/Resources/Belt_DemonEntrails.prefab
+Assets/Resources/Belt_GilgameshsWaistBand.prefab
+Assets/Resources/Belt_LeatherBelt.prefab
+Assets/Resources/Belt_NoodleTendril.prefab
+Assets/Resources/Belt_SnakeSkinSash.prefab
+Assets/Resources/Belt_SocketedBelt.prefab
+Assets/Resources/Belt_SpiderSilkSash.prefab
+Assets/Resources/Belt_TitansBelt.prefab
+Assets/Resources/Hands_AncientBracers.prefab
+Assets/Resources/Hands_ChainGloves.prefab
+Assets/Resources/Hands_DemonClaws.prefab
+Assets/Resources/Hands_Gauntlets.prefab
+Assets/Resources/Hands_HellGloves.prefab
+Assets/Resources/Hands_Lich'sWatch.prefab
+Assets/Resources/Hands_MonksBracelet.prefab
+Assets/Resources/Hands_RiggedMittens.prefab
+Assets/Resources/Hands_SpiderGloves.prefab
+Assets/Resources/Hands_TitansGauntlets.prefab
+Assets/Resources/Hands_ArchangelsGauntlets.prefab

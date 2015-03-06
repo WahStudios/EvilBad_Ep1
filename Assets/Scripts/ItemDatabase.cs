@@ -54,6 +54,56 @@ public class ItemDatabase : MonoBehaviour {
 	 ItemStats itemStats23;
 	public GameObject item24;
 	ItemStats itemStats24;
+	public GameObject item25;
+	ItemStats itemStats25;
+	public GameObject item26;
+	ItemStats itemStats26;
+	public GameObject item27;
+	ItemStats itemStats27;
+	public GameObject item28;
+	ItemStats itemStats28;
+	public GameObject item29;
+	ItemStats itemStats29;
+	public GameObject item30;
+	ItemStats itemStats30;
+	public GameObject item31;
+	ItemStats itemStats31;
+	public GameObject item32;
+	ItemStats itemStats32;
+	public GameObject item33;
+	ItemStats itemStats33;
+	public GameObject item34;
+	ItemStats itemStats34;
+	public GameObject item35;
+	ItemStats itemStats35;
+	public GameObject item36;
+	ItemStats itemStats36;
+	public GameObject item37;
+	ItemStats itemStats37;
+	public GameObject item38;
+	ItemStats itemStats38;
+	public GameObject item39;
+	ItemStats itemStats39;
+	public GameObject item40;
+	ItemStats itemStats40;
+	public GameObject item41;
+	ItemStats itemStats41;
+	public GameObject item42;
+	ItemStats itemStats42;
+	public GameObject item43;
+	ItemStats itemStats43;
+	public GameObject item44;
+	ItemStats itemStats44;
+	public GameObject item45;
+	ItemStats itemStats45;
+	public GameObject item46;
+	ItemStats itemStats46;
+	public GameObject item47;
+	ItemStats itemStats47;
+	public GameObject item48;
+	ItemStats itemStats48;
+	public GameObject item49;
+	ItemStats itemStats49;
 	/*
 	public GameObject item25;
 	ItemStats itemStats25;
@@ -98,6 +148,31 @@ ItemStats itemStats30;
 		itemStats22 = item22.GetComponent<ItemStats>();
 		itemStats23 = item23.GetComponent<ItemStats>();
 		itemStats24 = item24.GetComponent<ItemStats>();
+		itemStats25 = item25.GetComponent<ItemStats>();
+		itemStats26 = item26.GetComponent<ItemStats>();
+		itemStats27 = item27.GetComponent<ItemStats>();
+		itemStats28 = item28.GetComponent<ItemStats>();
+		itemStats29 = item29.GetComponent<ItemStats>();
+		itemStats30 = item30.GetComponent<ItemStats>();
+		itemStats31 = item31.GetComponent<ItemStats>();
+		itemStats32 = item32.GetComponent<ItemStats>();
+		itemStats33 = item33.GetComponent<ItemStats>();
+		itemStats34 = item34.GetComponent<ItemStats>();
+		itemStats35 = item35.GetComponent<ItemStats>();
+		itemStats36 = item36.GetComponent<ItemStats>();
+		itemStats37 = item37.GetComponent<ItemStats>();
+		itemStats38 = item38.GetComponent<ItemStats>();
+		itemStats39 = item39.GetComponent<ItemStats>();
+		itemStats40 = item40.GetComponent<ItemStats>();
+		itemStats41 = item41.GetComponent<ItemStats>();
+		itemStats42 = item42.GetComponent<ItemStats>();
+		itemStats43 = item43.GetComponent<ItemStats>();
+		itemStats44 = item44.GetComponent<ItemStats>();
+		itemStats45 = item45.GetComponent<ItemStats>();
+		itemStats46 = item46.GetComponent<ItemStats>();
+		itemStats47 = item47.GetComponent<ItemStats>();
+		itemStats48 = item48.GetComponent<ItemStats>();
+		itemStats49 = item49.GetComponent<ItemStats>();
 		/*
 		itemStats25 = item25.GetComponent<ItemStats>();
 		itemStats26 = item26.GetComponent<ItemStats>();
@@ -254,6 +329,19 @@ ItemStats itemStats30;
 		                   itemStats24.itemHpRegain,itemStats24.itemDefense,itemStats24.itemWaterResist,itemStats24.itemGemSlots,itemStats24.itemMeleeCritChanceIncrease,itemStats24.itemWeaponLengthRadiusIncrease,
 		                   itemStats24.itemHpRegainIncrease,itemStats24.itemDefenseIncrease,itemStats24.itemMaxHpIncrease,itemStats24.itemMoveSpeedIncrease,itemStats24.itemAttackSpeedIncrease,
 		                   itemStats24.itemGpCostReduce,itemStats24.itemGpDamageIncrease,itemStats24.itemGpRegeneration, itemStats24.itemIncreaseBaseMaxHp, itemStats24.itemTypeString));
+
+		items.Add(new Item(item25.name, itemStats25.itemID, itemStats25.itemDesc, itemStats25.itemWidth, itemStats25.itemHeight, itemStats25.itemPower, itemStats25.itemSwingSpeed,itemStats25.itemChargeIncrease,
+		                   itemStats25.itemRadus, itemStats25.itemKnockback, itemStats25.itemforwardMomentum, itemStats25.itemDamagedLoweredPerSecond,itemStats25.itemArcRange,itemStats25.itemDamagedIncresedPerSecond,
+		                   itemStats25.itemHpRegain,itemStats25.itemDefense,itemStats25.itemWaterResist,itemStats25.itemGemSlots,itemStats25.itemMeleeCritChanceIncrease,itemStats25.itemWeaponLengthRadiusIncrease,
+		                   itemStats25.itemHpRegainIncrease,itemStats25.itemDefenseIncrease,itemStats25.itemMaxHpIncrease,itemStats25.itemMoveSpeedIncrease,itemStats25.itemAttackSpeedIncrease,
+		                   itemStats25.itemGpCostReduce,itemStats25.itemGpDamageIncrease,itemStats25.itemGpRegeneration, itemStats25.itemIncreaseBaseMaxHp, itemStats25.itemTypeString));
+
+		items.Add(new Item(item26.name, itemStats26.itemID, itemStats26.itemDesc, itemStats26.itemWidth, itemStats26.itemHeight, itemStats26.itemPower, itemStats26.itemSwingSpeed,itemStats26.itemChargeIncrease,
+		                   itemStats26.itemRadus, itemStats26.itemKnockback, itemStats26.itemforwardMomentum, itemStats26.itemDamagedLoweredPerSecond,itemStats26.itemArcRange,itemStats26.itemDamagedIncresedPerSecond,
+		                   itemStats26.itemHpRegain,itemStats26.itemDefense,itemStats26.itemWaterResist,itemStats26.itemGemSlots,itemStats26.itemMeleeCritChanceIncrease,itemStats26.itemWeaponLengthRadiusIncrease,
+		                   itemStats26.itemHpRegainIncrease,itemStats26.itemDefenseIncrease,itemStats26.itemMaxHpIncrease,itemStats26.itemMoveSpeedIncrease,itemStats26.itemAttackSpeedIncrease,
+		                   itemStats26.itemGpCostReduce,itemStats26.itemGpDamageIncrease,itemStats26.itemGpRegeneration, itemStats26.itemIncreaseBaseMaxHp, itemStats26.itemTypeString));
+
 
 		/* -- Delete this line when creating new item 25
 		items.Add(new Item(item25.name, itemStats25.itemID, itemStats25.itemDesc, itemStats25.itemWidth, itemStats25.itemHeight, itemStats25.itemPower, itemStats25.itemSwingSpeed,itemStats25.itemChargeIncrease,
