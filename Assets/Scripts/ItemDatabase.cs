@@ -104,6 +104,16 @@ public class ItemDatabase : MonoBehaviour {
 	ItemStats itemStats48;
 	public GameObject item49;
 	ItemStats itemStats49;
+	public GameObject item50;
+	ItemStats itemStats50;
+	public GameObject item51;
+	ItemStats itemStats51;
+	public GameObject item52;
+	ItemStats itemStats52;
+	public GameObject item53;
+	ItemStats itemStats53;
+	public GameObject item54;
+	ItemStats itemStats54;
 	/*
 	public GameObject item25;
 	ItemStats itemStats25;
@@ -173,6 +183,11 @@ ItemStats itemStats30;
 		itemStats47 = item47.GetComponent<ItemStats>();
 		itemStats48 = item48.GetComponent<ItemStats>();
 		itemStats49 = item49.GetComponent<ItemStats>();
+		itemStats50 = item50.GetComponent<ItemStats>();
+		itemStats51 = item51.GetComponent<ItemStats>();
+		itemStats52 = item52.GetComponent<ItemStats>();
+		itemStats53 = item53.GetComponent<ItemStats>();
+		itemStats54 = item54.GetComponent<ItemStats>();
 		/*
 		itemStats25 = item25.GetComponent<ItemStats>();
 		itemStats26 = item26.GetComponent<ItemStats>();
@@ -341,6 +356,174 @@ ItemStats itemStats30;
 		                   itemStats26.itemHpRegain,itemStats26.itemDefense,itemStats26.itemWaterResist,itemStats26.itemGemSlots,itemStats26.itemMeleeCritChanceIncrease,itemStats26.itemWeaponLengthRadiusIncrease,
 		                   itemStats26.itemHpRegainIncrease,itemStats26.itemDefenseIncrease,itemStats26.itemMaxHpIncrease,itemStats26.itemMoveSpeedIncrease,itemStats26.itemAttackSpeedIncrease,
 		                   itemStats26.itemGpCostReduce,itemStats26.itemGpDamageIncrease,itemStats26.itemGpRegeneration, itemStats26.itemIncreaseBaseMaxHp, itemStats26.itemTypeString));
+
+		items.Add(new Item(item27.name, itemStats27.itemID, itemStats27.itemDesc, itemStats27.itemWidth, itemStats27.itemHeight, itemStats27.itemPower, itemStats27.itemSwingSpeed,itemStats27.itemChargeIncrease,
+		                   itemStats27.itemRadus, itemStats27.itemKnockback, itemStats27.itemforwardMomentum, itemStats27.itemDamagedLoweredPerSecond,itemStats27.itemArcRange,itemStats27.itemDamagedIncresedPerSecond,
+		                   itemStats27.itemHpRegain,itemStats27.itemDefense,itemStats27.itemWaterResist,itemStats27.itemGemSlots,itemStats27.itemMeleeCritChanceIncrease,itemStats27.itemWeaponLengthRadiusIncrease,
+		                   itemStats27.itemHpRegainIncrease,itemStats27.itemDefenseIncrease,itemStats27.itemMaxHpIncrease,itemStats27.itemMoveSpeedIncrease,itemStats27.itemAttackSpeedIncrease,
+		                   itemStats27.itemGpCostReduce,itemStats27.itemGpDamageIncrease,itemStats27.itemGpRegeneration, itemStats27.itemIncreaseBaseMaxHp, itemStats27.itemTypeString));
+
+		items.Add(new Item(item28.name, itemStats28.itemID, itemStats28.itemDesc, itemStats28.itemWidth, itemStats28.itemHeight, itemStats28.itemPower, itemStats28.itemSwingSpeed,itemStats28.itemChargeIncrease,
+		                   itemStats28.itemRadus, itemStats28.itemKnockback, itemStats28.itemforwardMomentum, itemStats28.itemDamagedLoweredPerSecond,itemStats28.itemArcRange,itemStats28.itemDamagedIncresedPerSecond,
+		                   itemStats28.itemHpRegain,itemStats28.itemDefense,itemStats28.itemWaterResist,itemStats28.itemGemSlots,itemStats28.itemMeleeCritChanceIncrease,itemStats28.itemWeaponLengthRadiusIncrease,
+		                   itemStats28.itemHpRegainIncrease,itemStats28.itemDefenseIncrease,itemStats28.itemMaxHpIncrease,itemStats28.itemMoveSpeedIncrease,itemStats28.itemAttackSpeedIncrease,
+		                   itemStats28.itemGpCostReduce,itemStats28.itemGpDamageIncrease,itemStats28.itemGpRegeneration, itemStats28.itemIncreaseBaseMaxHp, itemStats28.itemTypeString));
+
+		items.Add(new Item(item29.name, itemStats29.itemID, itemStats29.itemDesc, itemStats29.itemWidth, itemStats29.itemHeight, itemStats29.itemPower, itemStats29.itemSwingSpeed,itemStats29.itemChargeIncrease,
+		                   itemStats29.itemRadus, itemStats29.itemKnockback, itemStats29.itemforwardMomentum, itemStats29.itemDamagedLoweredPerSecond,itemStats29.itemArcRange,itemStats29.itemDamagedIncresedPerSecond,
+		                   itemStats29.itemHpRegain,itemStats29.itemDefense,itemStats29.itemWaterResist,itemStats29.itemGemSlots,itemStats29.itemMeleeCritChanceIncrease,itemStats29.itemWeaponLengthRadiusIncrease,
+		                   itemStats29.itemHpRegainIncrease,itemStats29.itemDefenseIncrease,itemStats29.itemMaxHpIncrease,itemStats29.itemMoveSpeedIncrease,itemStats29.itemAttackSpeedIncrease,
+		                   itemStats29.itemGpCostReduce,itemStats29.itemGpDamageIncrease,itemStats29.itemGpRegeneration, itemStats29.itemIncreaseBaseMaxHp, itemStats29.itemTypeString));
+
+		items.Add(new Item(item30.name, itemStats30.itemID, itemStats30.itemDesc, itemStats30.itemWidth, itemStats30.itemHeight, itemStats30.itemPower, itemStats30.itemSwingSpeed,itemStats30.itemChargeIncrease,
+		                   itemStats30.itemRadus, itemStats30.itemKnockback, itemStats30.itemforwardMomentum, itemStats30.itemDamagedLoweredPerSecond,itemStats30.itemArcRange,itemStats30.itemDamagedIncresedPerSecond,
+		                   itemStats30.itemHpRegain,itemStats30.itemDefense,itemStats30.itemWaterResist,itemStats30.itemGemSlots,itemStats30.itemMeleeCritChanceIncrease,itemStats30.itemWeaponLengthRadiusIncrease,
+		                   itemStats30.itemHpRegainIncrease,itemStats30.itemDefenseIncrease,itemStats30.itemMaxHpIncrease,itemStats30.itemMoveSpeedIncrease,itemStats30.itemAttackSpeedIncrease,
+		                   itemStats30.itemGpCostReduce,itemStats30.itemGpDamageIncrease,itemStats30.itemGpRegeneration, itemStats30.itemIncreaseBaseMaxHp, itemStats30.itemTypeString));
+
+		items.Add(new Item(item31.name, itemStats31.itemID, itemStats31.itemDesc, itemStats31.itemWidth, itemStats31.itemHeight, itemStats31.itemPower, itemStats31.itemSwingSpeed,itemStats31.itemChargeIncrease,
+		                   itemStats31.itemRadus, itemStats31.itemKnockback, itemStats31.itemforwardMomentum, itemStats31.itemDamagedLoweredPerSecond,itemStats31.itemArcRange,itemStats31.itemDamagedIncresedPerSecond,
+		                   itemStats31.itemHpRegain,itemStats31.itemDefense,itemStats31.itemWaterResist,itemStats31.itemGemSlots,itemStats31.itemMeleeCritChanceIncrease,itemStats31.itemWeaponLengthRadiusIncrease,
+		                   itemStats31.itemHpRegainIncrease,itemStats31.itemDefenseIncrease,itemStats31.itemMaxHpIncrease,itemStats31.itemMoveSpeedIncrease,itemStats31.itemAttackSpeedIncrease,
+		                   itemStats31.itemGpCostReduce,itemStats31.itemGpDamageIncrease,itemStats31.itemGpRegeneration, itemStats31.itemIncreaseBaseMaxHp, itemStats31.itemTypeString));
+
+		items.Add(new Item(item32.name, itemStats32.itemID, itemStats32.itemDesc, itemStats32.itemWidth, itemStats32.itemHeight, itemStats32.itemPower, itemStats32.itemSwingSpeed,itemStats32.itemChargeIncrease,
+		                   itemStats32.itemRadus, itemStats32.itemKnockback, itemStats32.itemforwardMomentum, itemStats32.itemDamagedLoweredPerSecond,itemStats32.itemArcRange,itemStats32.itemDamagedIncresedPerSecond,
+		                   itemStats32.itemHpRegain,itemStats32.itemDefense,itemStats32.itemWaterResist,itemStats32.itemGemSlots,itemStats32.itemMeleeCritChanceIncrease,itemStats32.itemWeaponLengthRadiusIncrease,
+		                   itemStats32.itemHpRegainIncrease,itemStats32.itemDefenseIncrease,itemStats32.itemMaxHpIncrease,itemStats32.itemMoveSpeedIncrease,itemStats32.itemAttackSpeedIncrease,
+		                   itemStats32.itemGpCostReduce,itemStats32.itemGpDamageIncrease,itemStats32.itemGpRegeneration, itemStats32.itemIncreaseBaseMaxHp, itemStats32.itemTypeString));
+
+		items.Add(new Item(item33.name, itemStats33.itemID, itemStats33.itemDesc, itemStats33.itemWidth, itemStats33.itemHeight, itemStats33.itemPower, itemStats33.itemSwingSpeed,itemStats33.itemChargeIncrease,
+		                   itemStats33.itemRadus, itemStats33.itemKnockback, itemStats33.itemforwardMomentum, itemStats33.itemDamagedLoweredPerSecond,itemStats33.itemArcRange,itemStats33.itemDamagedIncresedPerSecond,
+		                   itemStats33.itemHpRegain,itemStats33.itemDefense,itemStats33.itemWaterResist,itemStats33.itemGemSlots,itemStats33.itemMeleeCritChanceIncrease,itemStats33.itemWeaponLengthRadiusIncrease,
+		                   itemStats33.itemHpRegainIncrease,itemStats33.itemDefenseIncrease,itemStats33.itemMaxHpIncrease,itemStats33.itemMoveSpeedIncrease,itemStats33.itemAttackSpeedIncrease,
+		                   itemStats33.itemGpCostReduce,itemStats33.itemGpDamageIncrease,itemStats33.itemGpRegeneration, itemStats33.itemIncreaseBaseMaxHp, itemStats33.itemTypeString));
+
+		items.Add(new Item(item34.name, itemStats34.itemID, itemStats34.itemDesc, itemStats34.itemWidth, itemStats34.itemHeight, itemStats34.itemPower, itemStats34.itemSwingSpeed,itemStats34.itemChargeIncrease,
+		                   itemStats34.itemRadus, itemStats34.itemKnockback, itemStats34.itemforwardMomentum, itemStats34.itemDamagedLoweredPerSecond,itemStats34.itemArcRange,itemStats34.itemDamagedIncresedPerSecond,
+		                   itemStats34.itemHpRegain,itemStats34.itemDefense,itemStats34.itemWaterResist,itemStats34.itemGemSlots,itemStats34.itemMeleeCritChanceIncrease,itemStats34.itemWeaponLengthRadiusIncrease,
+		                   itemStats34.itemHpRegainIncrease,itemStats34.itemDefenseIncrease,itemStats34.itemMaxHpIncrease,itemStats34.itemMoveSpeedIncrease,itemStats34.itemAttackSpeedIncrease,
+		                   itemStats34.itemGpCostReduce,itemStats34.itemGpDamageIncrease,itemStats34.itemGpRegeneration, itemStats34.itemIncreaseBaseMaxHp, itemStats34.itemTypeString));
+
+		items.Add(new Item(item35.name, itemStats35.itemID, itemStats35.itemDesc, itemStats35.itemWidth, itemStats35.itemHeight, itemStats35.itemPower, itemStats35.itemSwingSpeed,itemStats35.itemChargeIncrease,
+		                   itemStats35.itemRadus, itemStats35.itemKnockback, itemStats35.itemforwardMomentum, itemStats35.itemDamagedLoweredPerSecond,itemStats35.itemArcRange,itemStats35.itemDamagedIncresedPerSecond,
+		                   itemStats35.itemHpRegain,itemStats35.itemDefense,itemStats35.itemWaterResist,itemStats35.itemGemSlots,itemStats35.itemMeleeCritChanceIncrease,itemStats35.itemWeaponLengthRadiusIncrease,
+		                   itemStats35.itemHpRegainIncrease,itemStats35.itemDefenseIncrease,itemStats35.itemMaxHpIncrease,itemStats35.itemMoveSpeedIncrease,itemStats35.itemAttackSpeedIncrease,
+		                   itemStats35.itemGpCostReduce,itemStats35.itemGpDamageIncrease,itemStats35.itemGpRegeneration, itemStats35.itemIncreaseBaseMaxHp, itemStats35.itemTypeString));
+
+		items.Add(new Item(item36.name, itemStats36.itemID, itemStats36.itemDesc, itemStats36.itemWidth, itemStats36.itemHeight, itemStats36.itemPower, itemStats36.itemSwingSpeed,itemStats36.itemChargeIncrease,
+		                   itemStats36.itemRadus, itemStats36.itemKnockback, itemStats36.itemforwardMomentum, itemStats36.itemDamagedLoweredPerSecond,itemStats36.itemArcRange,itemStats36.itemDamagedIncresedPerSecond,
+		                   itemStats36.itemHpRegain,itemStats36.itemDefense,itemStats36.itemWaterResist,itemStats36.itemGemSlots,itemStats36.itemMeleeCritChanceIncrease,itemStats36.itemWeaponLengthRadiusIncrease,
+		                   itemStats36.itemHpRegainIncrease,itemStats36.itemDefenseIncrease,itemStats36.itemMaxHpIncrease,itemStats36.itemMoveSpeedIncrease,itemStats36.itemAttackSpeedIncrease,
+		                   itemStats36.itemGpCostReduce,itemStats36.itemGpDamageIncrease,itemStats36.itemGpRegeneration, itemStats36.itemIncreaseBaseMaxHp, itemStats36.itemTypeString));
+
+		items.Add(new Item(item37.name, itemStats37.itemID, itemStats37.itemDesc, itemStats37.itemWidth, itemStats37.itemHeight, itemStats37.itemPower, itemStats37.itemSwingSpeed,itemStats37.itemChargeIncrease,
+		                   itemStats37.itemRadus, itemStats37.itemKnockback, itemStats37.itemforwardMomentum, itemStats37.itemDamagedLoweredPerSecond,itemStats37.itemArcRange,itemStats37.itemDamagedIncresedPerSecond,
+		                   itemStats37.itemHpRegain,itemStats37.itemDefense,itemStats37.itemWaterResist,itemStats37.itemGemSlots,itemStats37.itemMeleeCritChanceIncrease,itemStats37.itemWeaponLengthRadiusIncrease,
+		                   itemStats37.itemHpRegainIncrease,itemStats37.itemDefenseIncrease,itemStats37.itemMaxHpIncrease,itemStats37.itemMoveSpeedIncrease,itemStats37.itemAttackSpeedIncrease,
+		                   itemStats37.itemGpCostReduce,itemStats37.itemGpDamageIncrease,itemStats37.itemGpRegeneration, itemStats37.itemIncreaseBaseMaxHp, itemStats37.itemTypeString));
+
+		items.Add(new Item(item38.name, itemStats38.itemID, itemStats38.itemDesc, itemStats38.itemWidth, itemStats38.itemHeight, itemStats38.itemPower, itemStats38.itemSwingSpeed,itemStats38.itemChargeIncrease,
+		                   itemStats38.itemRadus, itemStats38.itemKnockback, itemStats38.itemforwardMomentum, itemStats38.itemDamagedLoweredPerSecond,itemStats38.itemArcRange,itemStats38.itemDamagedIncresedPerSecond,
+		                   itemStats38.itemHpRegain,itemStats38.itemDefense,itemStats38.itemWaterResist,itemStats38.itemGemSlots,itemStats38.itemMeleeCritChanceIncrease,itemStats38.itemWeaponLengthRadiusIncrease,
+		                   itemStats38.itemHpRegainIncrease,itemStats38.itemDefenseIncrease,itemStats38.itemMaxHpIncrease,itemStats38.itemMoveSpeedIncrease,itemStats38.itemAttackSpeedIncrease,
+		                   itemStats38.itemGpCostReduce,itemStats38.itemGpDamageIncrease,itemStats38.itemGpRegeneration, itemStats38.itemIncreaseBaseMaxHp, itemStats38.itemTypeString));
+
+		items.Add(new Item(item39.name, itemStats39.itemID, itemStats39.itemDesc, itemStats39.itemWidth, itemStats39.itemHeight, itemStats39.itemPower, itemStats39.itemSwingSpeed,itemStats39.itemChargeIncrease,
+		                   itemStats39.itemRadus, itemStats39.itemKnockback, itemStats39.itemforwardMomentum, itemStats39.itemDamagedLoweredPerSecond,itemStats39.itemArcRange,itemStats39.itemDamagedIncresedPerSecond,
+		                   itemStats39.itemHpRegain,itemStats39.itemDefense,itemStats39.itemWaterResist,itemStats39.itemGemSlots,itemStats39.itemMeleeCritChanceIncrease,itemStats39.itemWeaponLengthRadiusIncrease,
+		                   itemStats39.itemHpRegainIncrease,itemStats39.itemDefenseIncrease,itemStats39.itemMaxHpIncrease,itemStats39.itemMoveSpeedIncrease,itemStats39.itemAttackSpeedIncrease,
+		                   itemStats39.itemGpCostReduce,itemStats39.itemGpDamageIncrease,itemStats39.itemGpRegeneration, itemStats39.itemIncreaseBaseMaxHp, itemStats39.itemTypeString));
+
+		items.Add(new Item(item40.name, itemStats40.itemID, itemStats40.itemDesc, itemStats40.itemWidth, itemStats40.itemHeight, itemStats40.itemPower, itemStats40.itemSwingSpeed,itemStats40.itemChargeIncrease,
+		                   itemStats40.itemRadus, itemStats40.itemKnockback, itemStats40.itemforwardMomentum, itemStats40.itemDamagedLoweredPerSecond,itemStats40.itemArcRange,itemStats40.itemDamagedIncresedPerSecond,
+		                   itemStats40.itemHpRegain,itemStats40.itemDefense,itemStats40.itemWaterResist,itemStats40.itemGemSlots,itemStats40.itemMeleeCritChanceIncrease,itemStats40.itemWeaponLengthRadiusIncrease,
+		                   itemStats40.itemHpRegainIncrease,itemStats40.itemDefenseIncrease,itemStats40.itemMaxHpIncrease,itemStats40.itemMoveSpeedIncrease,itemStats40.itemAttackSpeedIncrease,
+		                   itemStats40.itemGpCostReduce,itemStats40.itemGpDamageIncrease,itemStats40.itemGpRegeneration, itemStats40.itemIncreaseBaseMaxHp, itemStats40.itemTypeString));
+
+		items.Add(new Item(item41.name, itemStats41.itemID, itemStats41.itemDesc, itemStats41.itemWidth, itemStats41.itemHeight, itemStats41.itemPower, itemStats41.itemSwingSpeed,itemStats41.itemChargeIncrease,
+		                   itemStats41.itemRadus, itemStats41.itemKnockback, itemStats41.itemforwardMomentum, itemStats41.itemDamagedLoweredPerSecond,itemStats41.itemArcRange,itemStats41.itemDamagedIncresedPerSecond,
+		                   itemStats41.itemHpRegain,itemStats41.itemDefense,itemStats41.itemWaterResist,itemStats41.itemGemSlots,itemStats41.itemMeleeCritChanceIncrease,itemStats41.itemWeaponLengthRadiusIncrease,
+		                   itemStats41.itemHpRegainIncrease,itemStats41.itemDefenseIncrease,itemStats41.itemMaxHpIncrease,itemStats41.itemMoveSpeedIncrease,itemStats41.itemAttackSpeedIncrease,
+		                   itemStats41.itemGpCostReduce,itemStats41.itemGpDamageIncrease,itemStats41.itemGpRegeneration, itemStats41.itemIncreaseBaseMaxHp, itemStats41.itemTypeString));
+
+		items.Add(new Item(item42.name, itemStats42.itemID, itemStats42.itemDesc, itemStats42.itemWidth, itemStats42.itemHeight, itemStats42.itemPower, itemStats42.itemSwingSpeed,itemStats42.itemChargeIncrease,
+		                   itemStats42.itemRadus, itemStats42.itemKnockback, itemStats42.itemforwardMomentum, itemStats42.itemDamagedLoweredPerSecond,itemStats42.itemArcRange,itemStats42.itemDamagedIncresedPerSecond,
+		                   itemStats42.itemHpRegain,itemStats42.itemDefense,itemStats42.itemWaterResist,itemStats42.itemGemSlots,itemStats42.itemMeleeCritChanceIncrease,itemStats42.itemWeaponLengthRadiusIncrease,
+		                   itemStats42.itemHpRegainIncrease,itemStats42.itemDefenseIncrease,itemStats42.itemMaxHpIncrease,itemStats42.itemMoveSpeedIncrease,itemStats42.itemAttackSpeedIncrease,
+		                   itemStats42.itemGpCostReduce,itemStats42.itemGpDamageIncrease,itemStats42.itemGpRegeneration, itemStats42.itemIncreaseBaseMaxHp, itemStats42.itemTypeString));
+
+		items.Add(new Item(item43.name, itemStats43.itemID, itemStats43.itemDesc, itemStats43.itemWidth, itemStats43.itemHeight, itemStats43.itemPower, itemStats43.itemSwingSpeed,itemStats43.itemChargeIncrease,
+		                   itemStats43.itemRadus, itemStats43.itemKnockback, itemStats43.itemforwardMomentum, itemStats43.itemDamagedLoweredPerSecond,itemStats43.itemArcRange,itemStats43.itemDamagedIncresedPerSecond,
+		                   itemStats43.itemHpRegain,itemStats43.itemDefense,itemStats43.itemWaterResist,itemStats43.itemGemSlots,itemStats43.itemMeleeCritChanceIncrease,itemStats43.itemWeaponLengthRadiusIncrease,
+		                   itemStats43.itemHpRegainIncrease,itemStats43.itemDefenseIncrease,itemStats43.itemMaxHpIncrease,itemStats43.itemMoveSpeedIncrease,itemStats43.itemAttackSpeedIncrease,
+		                   itemStats43.itemGpCostReduce,itemStats43.itemGpDamageIncrease,itemStats43.itemGpRegeneration, itemStats43.itemIncreaseBaseMaxHp, itemStats43.itemTypeString));
+
+		items.Add(new Item(item44.name, itemStats44.itemID, itemStats44.itemDesc, itemStats44.itemWidth, itemStats44.itemHeight, itemStats44.itemPower, itemStats44.itemSwingSpeed,itemStats44.itemChargeIncrease,
+		                   itemStats44.itemRadus, itemStats44.itemKnockback, itemStats44.itemforwardMomentum, itemStats44.itemDamagedLoweredPerSecond,itemStats44.itemArcRange,itemStats44.itemDamagedIncresedPerSecond,
+		                   itemStats44.itemHpRegain,itemStats44.itemDefense,itemStats44.itemWaterResist,itemStats44.itemGemSlots,itemStats44.itemMeleeCritChanceIncrease,itemStats44.itemWeaponLengthRadiusIncrease,
+		                   itemStats44.itemHpRegainIncrease,itemStats44.itemDefenseIncrease,itemStats44.itemMaxHpIncrease,itemStats44.itemMoveSpeedIncrease,itemStats44.itemAttackSpeedIncrease,
+		                   itemStats44.itemGpCostReduce,itemStats44.itemGpDamageIncrease,itemStats44.itemGpRegeneration, itemStats44.itemIncreaseBaseMaxHp, itemStats44.itemTypeString));
+
+		items.Add(new Item(item45.name, itemStats45.itemID, itemStats45.itemDesc, itemStats45.itemWidth, itemStats45.itemHeight, itemStats45.itemPower, itemStats45.itemSwingSpeed,itemStats45.itemChargeIncrease,
+		                   itemStats45.itemRadus, itemStats45.itemKnockback, itemStats45.itemforwardMomentum, itemStats45.itemDamagedLoweredPerSecond,itemStats45.itemArcRange,itemStats45.itemDamagedIncresedPerSecond,
+		                   itemStats45.itemHpRegain,itemStats45.itemDefense,itemStats45.itemWaterResist,itemStats45.itemGemSlots,itemStats45.itemMeleeCritChanceIncrease,itemStats45.itemWeaponLengthRadiusIncrease,
+		                   itemStats45.itemHpRegainIncrease,itemStats45.itemDefenseIncrease,itemStats45.itemMaxHpIncrease,itemStats45.itemMoveSpeedIncrease,itemStats45.itemAttackSpeedIncrease,
+		                   itemStats45.itemGpCostReduce,itemStats45.itemGpDamageIncrease,itemStats45.itemGpRegeneration, itemStats45.itemIncreaseBaseMaxHp, itemStats45.itemTypeString));
+
+		items.Add(new Item(item46.name, itemStats46.itemID, itemStats46.itemDesc, itemStats46.itemWidth, itemStats46.itemHeight, itemStats46.itemPower, itemStats46.itemSwingSpeed,itemStats46.itemChargeIncrease,
+		                   itemStats46.itemRadus, itemStats46.itemKnockback, itemStats46.itemforwardMomentum, itemStats46.itemDamagedLoweredPerSecond,itemStats46.itemArcRange,itemStats46.itemDamagedIncresedPerSecond,
+		                   itemStats46.itemHpRegain,itemStats46.itemDefense,itemStats46.itemWaterResist,itemStats46.itemGemSlots,itemStats46.itemMeleeCritChanceIncrease,itemStats46.itemWeaponLengthRadiusIncrease,
+		                   itemStats46.itemHpRegainIncrease,itemStats46.itemDefenseIncrease,itemStats46.itemMaxHpIncrease,itemStats46.itemMoveSpeedIncrease,itemStats46.itemAttackSpeedIncrease,
+		                   itemStats46.itemGpCostReduce,itemStats46.itemGpDamageIncrease,itemStats46.itemGpRegeneration, itemStats46.itemIncreaseBaseMaxHp, itemStats46.itemTypeString));
+
+		items.Add(new Item(item47.name, itemStats47.itemID, itemStats47.itemDesc, itemStats47.itemWidth, itemStats47.itemHeight, itemStats47.itemPower, itemStats47.itemSwingSpeed,itemStats47.itemChargeIncrease,
+		                   itemStats47.itemRadus, itemStats47.itemKnockback, itemStats47.itemforwardMomentum, itemStats47.itemDamagedLoweredPerSecond,itemStats47.itemArcRange,itemStats47.itemDamagedIncresedPerSecond,
+		                   itemStats47.itemHpRegain,itemStats47.itemDefense,itemStats47.itemWaterResist,itemStats47.itemGemSlots,itemStats47.itemMeleeCritChanceIncrease,itemStats47.itemWeaponLengthRadiusIncrease,
+		                   itemStats47.itemHpRegainIncrease,itemStats47.itemDefenseIncrease,itemStats47.itemMaxHpIncrease,itemStats47.itemMoveSpeedIncrease,itemStats47.itemAttackSpeedIncrease,
+		                   itemStats47.itemGpCostReduce,itemStats47.itemGpDamageIncrease,itemStats47.itemGpRegeneration, itemStats47.itemIncreaseBaseMaxHp, itemStats47.itemTypeString));
+
+		items.Add(new Item(item48.name, itemStats48.itemID, itemStats48.itemDesc, itemStats48.itemWidth, itemStats48.itemHeight, itemStats48.itemPower, itemStats48.itemSwingSpeed,itemStats48.itemChargeIncrease,
+		                   itemStats48.itemRadus, itemStats48.itemKnockback, itemStats48.itemforwardMomentum, itemStats48.itemDamagedLoweredPerSecond,itemStats48.itemArcRange,itemStats48.itemDamagedIncresedPerSecond,
+		                   itemStats48.itemHpRegain,itemStats48.itemDefense,itemStats48.itemWaterResist,itemStats48.itemGemSlots,itemStats48.itemMeleeCritChanceIncrease,itemStats48.itemWeaponLengthRadiusIncrease,
+		                   itemStats48.itemHpRegainIncrease,itemStats48.itemDefenseIncrease,itemStats48.itemMaxHpIncrease,itemStats48.itemMoveSpeedIncrease,itemStats48.itemAttackSpeedIncrease,
+		                   itemStats48.itemGpCostReduce,itemStats48.itemGpDamageIncrease,itemStats48.itemGpRegeneration, itemStats48.itemIncreaseBaseMaxHp, itemStats48.itemTypeString));
+
+		items.Add(new Item(item49.name, itemStats49.itemID, itemStats49.itemDesc, itemStats49.itemWidth, itemStats49.itemHeight, itemStats49.itemPower, itemStats49.itemSwingSpeed,itemStats49.itemChargeIncrease,
+		                   itemStats49.itemRadus, itemStats49.itemKnockback, itemStats49.itemforwardMomentum, itemStats49.itemDamagedLoweredPerSecond,itemStats49.itemArcRange,itemStats49.itemDamagedIncresedPerSecond,
+		                   itemStats49.itemHpRegain,itemStats49.itemDefense,itemStats49.itemWaterResist,itemStats49.itemGemSlots,itemStats49.itemMeleeCritChanceIncrease,itemStats49.itemWeaponLengthRadiusIncrease,
+		                   itemStats49.itemHpRegainIncrease,itemStats49.itemDefenseIncrease,itemStats49.itemMaxHpIncrease,itemStats49.itemMoveSpeedIncrease,itemStats49.itemAttackSpeedIncrease,
+		                   itemStats49.itemGpCostReduce,itemStats49.itemGpDamageIncrease,itemStats49.itemGpRegeneration, itemStats49.itemIncreaseBaseMaxHp, itemStats49.itemTypeString));
+
+		items.Add(new Item(item50.name, itemStats50.itemID, itemStats50.itemDesc, itemStats50.itemWidth, itemStats50.itemHeight, itemStats50.itemPower, itemStats50.itemSwingSpeed,itemStats50.itemChargeIncrease,
+		                   itemStats50.itemRadus, itemStats50.itemKnockback, itemStats50.itemforwardMomentum, itemStats50.itemDamagedLoweredPerSecond,itemStats50.itemArcRange,itemStats50.itemDamagedIncresedPerSecond,
+		                   itemStats50.itemHpRegain,itemStats50.itemDefense,itemStats50.itemWaterResist,itemStats50.itemGemSlots,itemStats50.itemMeleeCritChanceIncrease,itemStats50.itemWeaponLengthRadiusIncrease,
+		                   itemStats50.itemHpRegainIncrease,itemStats50.itemDefenseIncrease,itemStats50.itemMaxHpIncrease,itemStats50.itemMoveSpeedIncrease,itemStats50.itemAttackSpeedIncrease,
+		                   itemStats50.itemGpCostReduce,itemStats50.itemGpDamageIncrease,itemStats50.itemGpRegeneration, itemStats50.itemIncreaseBaseMaxHp, itemStats50.itemTypeString));
+
+		items.Add(new Item(item51.name, itemStats51.itemID, itemStats51.itemDesc, itemStats51.itemWidth, itemStats51.itemHeight, itemStats51.itemPower, itemStats51.itemSwingSpeed,itemStats51.itemChargeIncrease,
+		                   itemStats51.itemRadus, itemStats51.itemKnockback, itemStats51.itemforwardMomentum, itemStats51.itemDamagedLoweredPerSecond,itemStats51.itemArcRange,itemStats51.itemDamagedIncresedPerSecond,
+		                   itemStats51.itemHpRegain,itemStats51.itemDefense,itemStats51.itemWaterResist,itemStats51.itemGemSlots,itemStats51.itemMeleeCritChanceIncrease,itemStats51.itemWeaponLengthRadiusIncrease,
+		                   itemStats51.itemHpRegainIncrease,itemStats51.itemDefenseIncrease,itemStats51.itemMaxHpIncrease,itemStats51.itemMoveSpeedIncrease,itemStats51.itemAttackSpeedIncrease,
+		                   itemStats51.itemGpCostReduce,itemStats51.itemGpDamageIncrease,itemStats51.itemGpRegeneration, itemStats51.itemIncreaseBaseMaxHp, itemStats51.itemTypeString));
+
+		items.Add(new Item(item52.name, itemStats52.itemID, itemStats52.itemDesc, itemStats52.itemWidth, itemStats52.itemHeight, itemStats52.itemPower, itemStats52.itemSwingSpeed,itemStats52.itemChargeIncrease,
+		                   itemStats52.itemRadus, itemStats52.itemKnockback, itemStats52.itemforwardMomentum, itemStats52.itemDamagedLoweredPerSecond,itemStats52.itemArcRange,itemStats52.itemDamagedIncresedPerSecond,
+		                   itemStats52.itemHpRegain,itemStats52.itemDefense,itemStats52.itemWaterResist,itemStats52.itemGemSlots,itemStats52.itemMeleeCritChanceIncrease,itemStats52.itemWeaponLengthRadiusIncrease,
+		                   itemStats52.itemHpRegainIncrease,itemStats52.itemDefenseIncrease,itemStats52.itemMaxHpIncrease,itemStats52.itemMoveSpeedIncrease,itemStats52.itemAttackSpeedIncrease,
+		                   itemStats52.itemGpCostReduce,itemStats52.itemGpDamageIncrease,itemStats52.itemGpRegeneration, itemStats52.itemIncreaseBaseMaxHp, itemStats52.itemTypeString));
+
+		items.Add(new Item(item53.name, itemStats53.itemID, itemStats53.itemDesc, itemStats53.itemWidth, itemStats53.itemHeight, itemStats53.itemPower, itemStats53.itemSwingSpeed,itemStats53.itemChargeIncrease,
+		                   itemStats53.itemRadus, itemStats53.itemKnockback, itemStats53.itemforwardMomentum, itemStats53.itemDamagedLoweredPerSecond,itemStats53.itemArcRange,itemStats53.itemDamagedIncresedPerSecond,
+		                   itemStats53.itemHpRegain,itemStats53.itemDefense,itemStats53.itemWaterResist,itemStats53.itemGemSlots,itemStats53.itemMeleeCritChanceIncrease,itemStats53.itemWeaponLengthRadiusIncrease,
+		                   itemStats53.itemHpRegainIncrease,itemStats53.itemDefenseIncrease,itemStats53.itemMaxHpIncrease,itemStats53.itemMoveSpeedIncrease,itemStats53.itemAttackSpeedIncrease,
+		                   itemStats53.itemGpCostReduce,itemStats53.itemGpDamageIncrease,itemStats53.itemGpRegeneration, itemStats53.itemIncreaseBaseMaxHp, itemStats53.itemTypeString));
+
+		items.Add(new Item(item54.name, itemStats54.itemID, itemStats54.itemDesc, itemStats54.itemWidth, itemStats54.itemHeight, itemStats54.itemPower, itemStats54.itemSwingSpeed,itemStats54.itemChargeIncrease,
+		                   itemStats54.itemRadus, itemStats54.itemKnockback, itemStats54.itemforwardMomentum, itemStats54.itemDamagedLoweredPerSecond,itemStats54.itemArcRange,itemStats54.itemDamagedIncresedPerSecond,
+		                   itemStats54.itemHpRegain,itemStats54.itemDefense,itemStats54.itemWaterResist,itemStats54.itemGemSlots,itemStats54.itemMeleeCritChanceIncrease,itemStats54.itemWeaponLengthRadiusIncrease,
+		                   itemStats54.itemHpRegainIncrease,itemStats54.itemDefenseIncrease,itemStats54.itemMaxHpIncrease,itemStats54.itemMoveSpeedIncrease,itemStats54.itemAttackSpeedIncrease,
+		                   itemStats54.itemGpCostReduce,itemStats54.itemGpDamageIncrease,itemStats54.itemGpRegeneration, itemStats54.itemIncreaseBaseMaxHp, itemStats54.itemTypeString));
 
 
 		/* -- Delete this line when creating new item 25

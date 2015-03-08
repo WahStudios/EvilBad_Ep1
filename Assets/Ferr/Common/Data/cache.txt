@@ -107,6 +107,11 @@ Assets/Resources/Hands_RiggedMittens.prefab
 Assets/Resources/Hands_SpiderGloves.prefab
 Assets/Resources/Hands_TitansGauntlets.prefab
 Assets/Resources/Hands_ArchangelsGauntlets.prefab
+Assets/Resources/Item_Gold.prefab
+Assets/Resources/Consumable_BigBluePotion.prefab
+Assets/Resources/Consumable_BigRedPotion.prefab
+Assets/Resources/Consumable_SmallBluePotion.prefab
+Assets/Resources/Consumable_SmallRedPotion.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -216,3 +221,8 @@ Assets/Resources/Hands_RiggedMittens.prefab
 Assets/Resources/Hands_SpiderGloves.prefab
 Assets/Resources/Hands_TitansGauntlets.prefab
 Assets/Resources/Hands_ArchangelsGauntlets.prefab
+Assets/Resources/Item_Gold.prefab
+Assets/Resources/Consumable_BigBluePotion.prefab
+Assets/Resources/Consumable_BigRedPotion.prefab
+Assets/Resources/Consumable_SmallBluePotion.prefab
+Assets/Resources/Consumable_SmallRedPotion.prefab

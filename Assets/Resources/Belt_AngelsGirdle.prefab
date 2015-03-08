@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemType: 0
+  itemType: 2
   itemDesc: 
   itemGemSlots: 0
   HP: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   increaseGPCritBonusDamage: 0
   maxGPincrease: 0
   increaseGPresistance: 0
-  increaseMaxGP: 0
+  increaseMaxGP: 150
   increaseGPcritDamage: 0
   increaseGPregeneration: 0
   DefenseStats: Defense Attributes
@@ -99,7 +99,7 @@ MonoBehaviour:
   ResistanceStats: Resistance Attributes
   itemWaterResist: 0
   increaseBonusResistFire: 0
-  increaseBonusResistShadow: 0
+  increaseBonusResistShadow: 25
   increaseResistLight: 0
   increaseResistWater: 0
   increaseResistWind: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   resistLight: 0
   resistBlind: 0
   resistMelted: 0
-  resistPoision: 0
+  resistPoision: 50
   resistSlow: 0
   resistFright: 0
   resistHeadache: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   lowerJumpHeight: 0
   itemID: 0
   itemModel: {fileID: 0}
-  itemTypeString: 
+  itemTypeString: Waist
 --- !u!212 &21240178
 SpriteRenderer:
   m_ObjectHideFlags: 1
