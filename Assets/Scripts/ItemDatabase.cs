@@ -185,10 +185,13 @@ ItemStats itemStats30;
 		itemStats49 = item49.GetComponent<ItemStats>();
 		itemStats50 = item50.GetComponent<ItemStats>();
 		itemStats51 = item51.GetComponent<ItemStats>();
+		/*
 		itemStats52 = item52.GetComponent<ItemStats>();
 		itemStats53 = item53.GetComponent<ItemStats>();
 		itemStats54 = item54.GetComponent<ItemStats>();
-		/*
+*/
+
+/*
 		itemStats25 = item25.GetComponent<ItemStats>();
 		itemStats26 = item26.GetComponent<ItemStats>();
 		itemStats27 = item27.GetComponent<ItemStats>();
@@ -506,7 +509,7 @@ ItemStats itemStats30;
 		                   itemStats51.itemHpRegain,itemStats51.itemDefense,itemStats51.itemWaterResist,itemStats51.itemGemSlots,itemStats51.itemMeleeCritChanceIncrease,itemStats51.itemWeaponLengthRadiusIncrease,
 		                   itemStats51.itemHpRegainIncrease,itemStats51.itemDefenseIncrease,itemStats51.itemMaxHpIncrease,itemStats51.itemMoveSpeedIncrease,itemStats51.itemAttackSpeedIncrease,
 		                   itemStats51.itemGpCostReduce,itemStats51.itemGpDamageIncrease,itemStats51.itemGpRegeneration, itemStats51.itemIncreaseBaseMaxHp, itemStats51.itemTypeString));
-
+		/*
 		items.Add(new Item(item52.name, itemStats52.itemID, itemStats52.itemDesc, itemStats52.itemWidth, itemStats52.itemHeight, itemStats52.itemPower, itemStats52.itemSwingSpeed,itemStats52.itemChargeIncrease,
 		                   itemStats52.itemRadus, itemStats52.itemKnockback, itemStats52.itemforwardMomentum, itemStats52.itemDamagedLoweredPerSecond,itemStats52.itemArcRange,itemStats52.itemDamagedIncresedPerSecond,
 		                   itemStats52.itemHpRegain,itemStats52.itemDefense,itemStats52.itemWaterResist,itemStats52.itemGemSlots,itemStats52.itemMeleeCritChanceIncrease,itemStats52.itemWeaponLengthRadiusIncrease,
@@ -524,7 +527,7 @@ ItemStats itemStats30;
 		                   itemStats54.itemHpRegain,itemStats54.itemDefense,itemStats54.itemWaterResist,itemStats54.itemGemSlots,itemStats54.itemMeleeCritChanceIncrease,itemStats54.itemWeaponLengthRadiusIncrease,
 		                   itemStats54.itemHpRegainIncrease,itemStats54.itemDefenseIncrease,itemStats54.itemMaxHpIncrease,itemStats54.itemMoveSpeedIncrease,itemStats54.itemAttackSpeedIncrease,
 		                   itemStats54.itemGpCostReduce,itemStats54.itemGpDamageIncrease,itemStats54.itemGpRegeneration, itemStats54.itemIncreaseBaseMaxHp, itemStats54.itemTypeString));
-
+		*/
 
 		/* -- Delete this line when creating new item 25
 		items.Add(new Item(item25.name, itemStats25.itemID, itemStats25.itemDesc, itemStats25.itemWidth, itemStats25.itemHeight, itemStats25.itemPower, itemStats25.itemSwingSpeed,itemStats25.itemChargeIncrease,

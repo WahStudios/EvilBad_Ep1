@@ -112,6 +112,8 @@ Assets/Resources/Consumable_BigBluePotion.prefab
 Assets/Resources/Consumable_BigRedPotion.prefab
 Assets/Resources/Consumable_SmallBluePotion.prefab
 Assets/Resources/Consumable_SmallRedPotion.prefab
+Assets/Working Prefabs/target.prefab
+Assets/Working Prefabs/Ghoul.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -226,3 +228,5 @@ Assets/Resources/Consumable_BigBluePotion.prefab
 Assets/Resources/Consumable_BigRedPotion.prefab
 Assets/Resources/Consumable_SmallBluePotion.prefab
 Assets/Resources/Consumable_SmallRedPotion.prefab
+Assets/Working Prefabs/target.prefab
+Assets/Working Prefabs/Ghoul.prefab
