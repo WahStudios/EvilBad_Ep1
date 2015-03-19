@@ -9,9 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 449732}
   - 212: {fileID: 21249732}
+  - 61: {fileID: 6188472}
+  - 114: {fileID: 11465284}
   m_Layer: 0
   m_Name: Belt_GilgameshsWaistBand
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,6 +30,120 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6188472
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149732}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &11465284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
 --- !u!212 &21249732
 SpriteRenderer:
   m_ObjectHideFlags: 1

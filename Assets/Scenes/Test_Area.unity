@@ -355,9 +355,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 69918149}
   - 212: {fileID: 69918150}
+  - 61: {fileID: 69918152}
+  - 114: {fileID: 69918151}
   m_Layer: 0
   m_Name: Consumable_SmallRedPotion
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,6 +399,122 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c6816c23c487f9c4fa8c2c874e29b304, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &69918151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11469890, guid: aecf57ce650e7d042b7e0e02595b6f5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 570687998}
+  m_GameObject: {fileID: 69918148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
+--- !u!61 &69918152
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6189806, guid: aecf57ce650e7d042b7e0e02595b6f5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 570687998}
+  m_GameObject: {fileID: 69918148}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &75925524
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +652,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 11400760, guid: 7f7a0731811bbbe459e6c83b8d0f259f, type: 2}
       propertyPath: itemTypeString
@@ -7411,9 +7529,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 469700506}
   - 212: {fileID: 469700507}
+  - 61: {fileID: 469700509}
+  - 114: {fileID: 469700508}
   m_Layer: 0
   m_Name: Consumable_BigBluePotion
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7453,6 +7573,122 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: becd83fdecd75014195f93fe912fa9b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &469700508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11455798, guid: 6d3f8133d6b66984c83de45825f7fd15,
+    type: 2}
+  m_PrefabInternal: {fileID: 208916904}
+  m_GameObject: {fileID: 469700505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
+--- !u!61 &469700509
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6108434, guid: 6d3f8133d6b66984c83de45825f7fd15,
+    type: 2}
+  m_PrefabInternal: {fileID: 208916904}
+  m_GameObject: {fileID: 469700505}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &477049100
 GameObject:
   m_ObjectHideFlags: 0
@@ -11165,9 +11401,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 718165693}
   - 212: {fileID: 718165692}
+  - 61: {fileID: 718165695}
+  - 114: {fileID: 718165694}
   m_Layer: 0
   m_Name: Consumable_SmallBluePotion
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11207,6 +11445,122 @@ Transform:
   m_Children: []
   m_Father: {fileID: 768075860}
   m_RootOrder: 3
+--- !u!114 &718165694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11455798, guid: 625b67806078310498aa6e0603dee414,
+    type: 2}
+  m_PrefabInternal: {fileID: 1344784982}
+  m_GameObject: {fileID: 718165691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
+--- !u!61 &718165695
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6108434, guid: 625b67806078310498aa6e0603dee414,
+    type: 2}
+  m_PrefabInternal: {fileID: 1344784982}
+  m_GameObject: {fileID: 718165691}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &736452105
 GameObject:
   m_ObjectHideFlags: 0
@@ -13150,7 +13504,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417682, guid: 53740fae957ecf5439d9416f281aa264, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 117682, guid: 53740fae957ecf5439d9416f281aa264, type: 2}
       propertyPath: m_TagString
@@ -15911,9 +16265,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 950152412}
   - 212: {fileID: 950152413}
+  - 114: {fileID: 950152415}
+  - 61: {fileID: 950152414}
   m_Layer: 0
   m_Name: Item_Gold
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15953,6 +16309,122 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 375f11d7e6795f04b9c24bfa310d6d58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &950152414
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6106752, guid: 72286e2b73b21754aa263ffd4f3b5114,
+    type: 2}
+  m_PrefabInternal: {fileID: 1387149836}
+  m_GameObject: {fileID: 950152411}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &950152415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11469224, guid: 72286e2b73b21754aa263ffd4f3b5114,
+    type: 2}
+  m_PrefabInternal: {fileID: 1387149836}
+  m_GameObject: {fileID: 950152411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
 --- !u!1 &970661814
 GameObject:
   m_ObjectHideFlags: 0
@@ -22704,12 +23176,12 @@ MonoBehaviour:
       id="_ai" /></fields><references><reference type="RAIN.Core.AI" refcount="1"
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
-      id="_workingMemory" childrenvisible="True" /><field type="RAIN.Minds.BasicMind"
+      id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
       reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.MecanimMotor"
       reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
       reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
       reference="5" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
-      reference="6" id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
+      reference="6" id="_senses" childrenvisible="True" /><field type="System.Collections.Generic.List"
       id="_customElements" elementtype="RAIN.Core.CustomAIElement" childrenvisible="False"
       /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
       type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
@@ -30368,7 +30840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499946, guid: 124428c117ab9f343b763e282507a716, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 11499946, guid: 124428c117ab9f343b763e282507a716, type: 2}
       propertyPath: itemType
@@ -37883,9 +38355,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1969488843}
   - 212: {fileID: 1969488844}
+  - 61: {fileID: 1969488846}
+  - 114: {fileID: 1969488845}
   m_Layer: 0
   m_Name: Consumable_BigRedPotion
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37925,6 +38399,122 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2fe2b390cc91e1141a7be248f507e671, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1969488845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11455798, guid: 0fc9be79438958b40a485387290ab515,
+    type: 2}
+  m_PrefabInternal: {fileID: 490534396}
+  m_GameObject: {fileID: 1969488842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6406cfc8fc53a46bb13df3cd35e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemType: 0
+  itemDesc: 
+  itemGemSlots: 0
+  HP: 0
+  CD: 0
+  GPrate: 0
+  fireBallDamageIncreased: 0
+  chainLightning: 0
+  WeaponStats: Weapon Attributes
+  increaseWrath: 0
+  itemPower: 0
+  itemSwingSpeed: 0
+  itemAttackSpeedIncrease: 0
+  itemArcRange: 0
+  itemWidth: 0
+  itemHeight: 0
+  itemRadus: 0
+  itemWeaponLengthRadiusIncrease: 0
+  itemChargeIncrease: 0
+  itemKnockback: 0
+  itemforwardMomentum: 0
+  itemMeleeCritChanceIncrease: 0
+  increaseMeleeCritDamage: 0
+  increaseMeleeSpeed: 0
+  increaseMeleeMax: 0
+  increaseMaxWeaponDamage: 0
+  SelfStats: Self Attributes
+  increaseAwe: 0
+  itemHpRegain: 0
+  itemHpRegainIncrease: 0
+  itemMaxHpIncrease: 0
+  itemIncreaseBaseMaxHp: 0
+  itemMoveSpeedIncrease: 0
+  increaseJumpHeight: 0
+  SummonStats: Summon Attributes
+  increaseMercy: 0
+  increaseSummonMaxHP: 0
+  increaseSummonMaxGP: 0
+  increaseSummonedMindControl: 0
+  GodStats: God Attributes
+  increaseVengeance: 0
+  increaseExodus: 0
+  itemGpCostReduce: 0
+  itemGpDamageIncrease: 0
+  itemGpRegeneration: 0
+  increaseGPCritBonusDamage: 0
+  maxGPincrease: 0
+  increaseGPresistance: 0
+  increaseMaxGP: 0
+  increaseGPcritDamage: 0
+  increaseGPregeneration: 0
+  DefenseStats: Defense Attributes
+  itemDefense: 0
+  itemDefenseIncrease: 0
+  increaseArmorBonus: 0
+  ResistanceStats: Resistance Attributes
+  itemWaterResist: 0
+  increaseBonusResistFire: 0
+  increaseBonusResistShadow: 0
+  increaseResistLight: 0
+  increaseResistWater: 0
+  increaseResistWind: 0
+  resistFireDamage: 0
+  resistWindDamage: 0
+  increaseWindDamage: 0
+  increaseEarthResistance: 0
+  increaseResistFire: 0
+  resistLight: 0
+  resistBlind: 0
+  resistMelted: 0
+  resistPoision: 0
+  resistSlow: 0
+  resistFright: 0
+  resistHeadache: 0
+  resistBrainFart: 0
+  resistArmCrushed: 0
+  resistWeakened: 0
+  resistBlasphemed: 0
+  DebuffStats: Debuff Attributes
+  itemDamagedLoweredPerSecond: 0
+  itemDamagedIncresedPerSecond: 0
+  decreaseArmCrushTimer: 0
+  decreaseBlasphemedTimer: 0
+  lowerStunTimer: 0
+  lowerCurseDebuffSeconds: 0
+  lowerMuffledDebuffSeconds: 0
+  lowerBrainFartDebuffSeconds: 0
+  lowerJumpHeight: 0
+  itemID: 0
+  itemModel: {fileID: 0}
+  itemTypeString: 
+--- !u!61 &1969488846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6108434, guid: 0fc9be79438958b40a485387290ab515,
+    type: 2}
+  m_PrefabInternal: {fileID: 490534396}
+  m_GameObject: {fileID: 1969488842}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1987384759
 Prefab:
   m_ObjectHideFlags: 0
@@ -38089,12 +38679,12 @@ Prefab:
         type="RAIN.Core.AI" refcount="1" id="0"><field value="True" type="System.Boolean"
         id="_isActive" /><field type="UnityEngine.GameObject" id="_body" gameobject="0"
         /><field type="RAIN.Memory.BasicMemory" reference="1" id="_workingMemory"
-        childrenvisible="True" /><field type="RAIN.Minds.BasicMind" reference="2"
+        childrenvisible="False" /><field type="RAIN.Minds.BasicMind" reference="2"
         id="_mind" childrenvisible="False" /><field type="RAIN.Motion.MecanimMotor"
         reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
         reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
         reference="5" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
-        reference="6" id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
+        reference="6" id="_senses" childrenvisible="True" /><field type="System.Collections.Generic.List"
         id="_customElements" elementtype="RAIN.Core.CustomAIElement" childrenvisible="False"
         /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
         type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
@@ -40431,7 +41021,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 418490, guid: b74f9a59e6e98094982b7aa89b5bf3a4, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 11418490, guid: b74f9a59e6e98094982b7aa89b5bf3a4, type: 2}
       propertyPath: HP
@@ -41922,7 +42512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444636, guid: cd4ccab7e5caa944d9321e0c41370d79, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4ccab7e5caa944d9321e0c41370d79, type: 2}

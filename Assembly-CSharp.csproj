@@ -201,6 +201,7 @@
      <Compile Include="Assets\Scripts\SlotScript.cs" />
      <Compile Include="Assets\Scripts\Snap.cs" />
      <Compile Include="Assets\Scripts\StatsText.cs" />
+     <Compile Include="Assets\Scripts\facingDirection.cs" />
      <Compile Include="Assets\Scripts\tabManager.cs" />
      <Compile Include="Assets\UniTile\Scripts\ObjectLayer.cs" />
      <Compile Include="Assets\UniTile\Scripts\TileLayer.cs" />
@@ -210,7 +211,6 @@
      <Compile Include="Assets\UniTile\Scripts\UniTileMarker.cs" />
      <Compile Include="Assets\UniTile\Scripts\UniTileTemplate.cs" />
      <Compile Include="Assets\UniTile\Scripts\UniTileTileset.cs" />
-     <Compile Include="Assets\facingDirection.cs" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColoredTint.shader" />
      <None Include="Assets\RAIN\Editor\Shaders\AspectSphereShader.shader" />
      <None Include="Assets\Ferr\2DTerrain\Shaders\UnitColoredTransparent.shader" />
