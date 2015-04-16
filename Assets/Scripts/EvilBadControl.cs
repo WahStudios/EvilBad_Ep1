@@ -74,21 +74,21 @@ public class EvilBadControl : MonoBehaviour {
             }
             if (Input.GetAxis("Horizontal") < 0)
             {
-                if (shieldStand == false)
-                {
+               // if (shieldStand == false)
+                //{
 						isFacingRight = true;
                     rigidbody2D.velocity = new Vector2(-speedForce, rigidbody2D.velocity.y);
-                }
+                //}
                 transform.localScale = new Vector3(1, 1, 1);
 
             }
             else if (Input.GetAxis("Horizontal") > 0)
             {
-                if (shieldStand == false)
-                {
+                //if (shieldStand == false)
+                //{
 						isFacingRight = false;
                     rigidbody2D.velocity = new Vector2(speedForce, rigidbody2D.velocity.y);
-                }
+                //}
                 transform.localScale = new Vector3(-1, 1, 1);
 
             }
@@ -110,7 +110,7 @@ public class EvilBadControl : MonoBehaviour {
                 {
                     isFalling = true;
                     anim.SetBool("isFalling", isFalling);
-                    anim.SetBool("jump", false);
+                  //  anim.SetBool("jump", false);
                     anim.SetBool("jumpForward", false);
 
                 }
@@ -203,32 +203,32 @@ public class EvilBadControl : MonoBehaviour {
             }
 
 
-            if (rigid.velocity.y == 0)
-            {
+           // if (rigid.velocity.y == 0)
+            //{
                 if (shieldStand == true)
                 {
                     anim.SetBool("shieldStand", true);
-                    anim.SetBool("shieldJump", false);
+                  //  anim.SetBool("shieldJump", false);
                 }
                 //else
                 //  anim.SetBool("shieldStand", false);
-            }
+            //}
 
 
             ///below should be used after shieldJump anim is done
-            if (rigid.velocity.y > 1)
-            {
-                if (shieldStand == true)
-                {
-                    anim.SetBool("shieldStand", false);
+            //if (rigid.velocity.y > 1)
+            //{
+               // if (shieldStand == true)
+                //{
+              //      anim.SetBool("shieldStand", false);
                     //                anim.SetBool("shieldJump", true);
-                    shieldStand = false;
-                }
-            }
+                //    shieldStand = false;
+                //}
+            //}
 
             if (shieldStand == false)
             {
-                anim.SetBool("shieldJump", false);
+        //        anim.SetBool("shieldJump", false);
                 anim.SetBool("shieldStand", false);
             }
 
