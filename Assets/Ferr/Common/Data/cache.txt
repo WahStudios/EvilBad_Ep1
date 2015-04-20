@@ -114,6 +114,10 @@ Assets/Resources/Consumable_SmallBluePotion.prefab
 Assets/Resources/Consumable_SmallRedPotion.prefab
 Assets/Working Prefabs/target.prefab
 Assets/Working Prefabs/Ghoul.prefab
+Assets/Art Assests/BG Textures/Egypt_Texture.prefab
+Assets/Prefabs/EgyptianPillar.prefab
+Assets/Prefabs/RedPillar.prefab
+Assets/Art Assests/BG Textures/Egypt_PurpleGlass.prefab
 
 [Ferr2DT_PathTerrain]
 Assets/Ferr/2DTerrain/TerrainMaterials/ForestTerrainMaterial.prefab
@@ -230,3 +234,9 @@ Assets/Resources/Consumable_SmallBluePotion.prefab
 Assets/Resources/Consumable_SmallRedPotion.prefab
 Assets/Working Prefabs/target.prefab
 Assets/Working Prefabs/Ghoul.prefab
+Assets/Art Assests/BG Textures/Egypt_Texture.prefab
+Assets/Prefabs/EgyptianPillar.prefab
+Assets/Prefabs/RedPillar.prefab
+Assets/RAIN/NewTerrainMaterial.prefab
+Assets/Art Assests/BG Textures/NewTerrainMaterial.prefab
+Assets/Art Assests/BG Textures/Egypt_PurpleGlass.prefab
