@@ -27,11 +27,10 @@ public class EvilBadControl : MonoBehaviour {
 	int n = 0;
 
 	private float nextFire;
-	// Use this for initialization
+
     private void Awake()
     {
-        // Setting up references.
-        
+      
         anim = GetComponent<Animator>();
     }
     
@@ -41,14 +40,21 @@ public class EvilBadControl : MonoBehaviour {
         rigid = GetComponent<Rigidbody2D>();
 	
 	}
-        
+	public bool jumpButton = false;    
+	public bool jumpStop = false;
+	public bool jumpFall = false;
+	public bool shieldUp = false;
+	public bool snapping = false;
+	public bool tabManager = false;
+	public bool walking = false;
 	// Update is called once per frame
 	void Update () {
 
 		if(Tabmanager.isActive == false){
+			tabManager = false;
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         isGrounded = Physics2D.OverlapCircle(grounder.transform.position, radiuss, ground);
-        anim.SetBool("isGrounded", isGrounded);
+      	anim.SetBool("isGrounded", isGrounded);
         if(Input.GetButtonDown("Snap") && isGrounded == true)
         {
             if (isSnapped == false)
@@ -59,39 +65,56 @@ public class EvilBadControl : MonoBehaviour {
 
         if (isSnapped == true)
         {
+			if(snapping == false){
             snapObject.SetActive(true);
             rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
-            anim.SetBool("walk", false);
+					if(anim.GetBool("walk") == true)
+			anim.SetBool("walk", false);
+					if(anim.GetBool("walkToIdle") ==false)
             anim.SetBool("walkToIdle", true);
+					snapping = true;	
+				}
+
         }
               
         else if (isSnapped == false)
         {
-            snapObject.SetActive(false);
+			if(snapping == true){
+			snapping = false;
+			snapObject.SetActive(false);
+				}
+
+          
             if (Input.GetButton("Jump") && isGrounded == true)
             {
+				jumpButton = false;
+				if(jumpButton == false){
                 rigidbody2D.AddForce(jumpVector, ForceMode2D.Force);
+				jumpButton = true;
+				}
+				
             }
             if (Input.GetAxis("Horizontal") < 0)
             {
-               // if (shieldStand == false)
-                //{
+					if(anim.GetBool("duck") == false){
+           
 						isFacingRight = true;
                     rigidbody2D.velocity = new Vector2(-speedForce, rigidbody2D.velocity.y);
-                //}
+           
                 transform.localScale = new Vector3(1, 1, 1);
+					}
 
             }
             else if (Input.GetAxis("Horizontal") > 0)
             {
-                //if (shieldStand == false)
-                //{
+					if(anim.GetBool("duck")== false){
 						isFacingRight = false;
                     rigidbody2D.velocity = new Vector2(speedForce, rigidbody2D.velocity.y);
-                //}
+          
                 transform.localScale = new Vector3(-1, 1, 1);
 
-            }
+					}
+					}
             else
             {
                 rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
@@ -100,64 +123,103 @@ public class EvilBadControl : MonoBehaviour {
 
             if (rigid.velocity.y == 0)
             {
-                isFalling = false;
+
+			
+				if(anim.GetBool("jump") == true)
                 anim.SetBool("jump", false);
+				if(anim.GetBool("jumpForward") == true)
                 anim.SetBool("jumpForward", false);
+				if(anim.GetBool("isFalling")== true)
                 anim.SetBool("isFalling", false);
+			
             }
             else
                 if (rigid.velocity.y < -1)
                 {
-                    isFalling = true;
-                    anim.SetBool("isFalling", isFalling);
-                  //  anim.SetBool("jump", false);
+                    if(anim.GetBool("isFalling") == false)
+					anim.SetBool("isFalling", true);
+                    if(anim.GetBool("jump") == false)
+					anim.SetBool("jump", true);
+					if(anim.GetBool("jumpForward") == true)
                     anim.SetBool("jumpForward", false);
+						//jumpFall = true;
+						//jumpStop = false;
+					//}
 
                 }
                 else
                     if (rigid.velocity.y > 1)
                     {
-                        isFalling = false;
-                        anim.SetBool("jump", true);
+
+					if(anim.GetBool("jump") == false)
+					anim.SetBool("jump", true);
+					if(anim.GetBool("isFalling")== true)
                         anim.SetBool("isFalling", false);
+
                     }
-            //if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)//forward or backward
+     
             if (rigid.velocity.x > 0 || rigid.velocity.x < 0)
             {
-                //jump = anim.GetBool("jump");
-                // isGrounded = anim.GetBool("isGrounded");
-                //if (jump == false)
-                //{
+             
                 if (isGrounded == true)
                 {
+						if(anim.GetBool("walk") == false)
                     anim.SetBool("walk", true);
+						if(anim.GetBool("jumpForward") == true)
                     anim.SetBool("jumpForward", false);
-                    anim.SetBool("walkToIdle", false);
+						if(anim.GetBool("walkToIdle") == true)
+							anim.SetBool("walkToIdle", false);
+				//			walking = false;
+				//		}
                 }
                 //}
                 else //if (jump == true)
                     //{
                     if (isGrounded == false)
                     {
+				//		if(walking == true){
+						if(anim.GetBool("jumpForward")== false)
                         anim.SetBool("jumpForward", true);
+						if(anim.GetBool("jump") == true)
                         anim.SetBool("jump", false);
-                        anim.SetBool("walk", false);
+						if(anim.GetBool("walk")== true)
+						anim.SetBool("walk", false);
+						if(anim.GetBool("walkToIdle") == true)
                         anim.SetBool("walkToIdle", false);
+				//			walking = false;
+				//		}
                     }
 
                 //}
             }
             else if (rigid.velocity.x == 0) //not in use
             {
+				//if(walking == false){
+					if(anim.GetBool("walk")== true)
                 anim.SetBool("walk", false);
+					if(anim.GetBool("jumpForward")== true)
                 anim.SetBool("jumpForward", false);
+					if(anim.GetBool("walkToIdle")== false)
                 anim.SetBool("walkToIdle", true);
+				//		walking = true;
+
+			if(Input.GetAxis("Vertical")< 0)
+					{
+						if(anim.GetBool("duck") == false)
+							anim.SetBool("duck", true);
+					}
+			else
+					{
+						if(anim.GetBool("duck") == true)
+							anim.SetBool("duck", false);
+					}
+				//	}
             }
 
             if (Input.GetButtonDown("Fire1"))
             //if(Input.GetMouseButton(0))
             {
-
+					if(anim.GetBool("shieldStand") == false){
 				if(fireBallActive == true)
 					{
 
@@ -185,12 +247,15 @@ public class EvilBadControl : MonoBehaviour {
 						
                 if (isGrounded == true)
                 {
+					
                     anim.SetTrigger("stab");
                 }
                 else
                 {
+						
                     anim.SetTrigger("stabJump");
                 }
+					}
             }
 
 
@@ -203,48 +268,33 @@ public class EvilBadControl : MonoBehaviour {
             }
 
 
-           // if (rigid.velocity.y == 0)
-            //{
                 if (shieldStand == true)
                 {
+	
+					if(anim.GetBool("shieldStand")== false)
                     anim.SetBool("shieldStand", true);
-                  //  anim.SetBool("shieldJump", false);
+
+					}
+
                 }
-                //else
-                //  anim.SetBool("shieldStand", false);
-            //}
 
-
-            ///below should be used after shieldJump anim is done
-            //if (rigid.velocity.y > 1)
-            //{
-               // if (shieldStand == true)
-                //{
-              //      anim.SetBool("shieldStand", false);
-                    //                anim.SetBool("shieldJump", true);
-                //    shieldStand = false;
-                //}
-            //}
 
             if (shieldStand == false)
             {
-        //        anim.SetBool("shieldJump", false);
+
+				if(anim.GetBool("shieldStand") == true)
                 anim.SetBool("shieldStand", false);
+			
+					}
             }
 
-            //if(Input.GetButtonUp("Fire1"))
-            //if(Input.GetMouseButtonUp(0))
-            //{
-            //  anim.SetT("stab", false);
-            //anim.SetTrigger("stabjum");
-            //}
-            //
-        }
-		}
+  
 		else{
+		
 			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
 			anim.SetBool("walk", false);
 			anim.SetBool("walkToIdle", true);
+			
 		}
         
 	}
